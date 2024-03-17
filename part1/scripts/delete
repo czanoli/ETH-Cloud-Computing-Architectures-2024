@@ -1,3 +1,5 @@
 #!/bin/sh -ex
 
+source $(dirname "$0")/env
+
 kops delete cluster part1.k8s.local --yes
