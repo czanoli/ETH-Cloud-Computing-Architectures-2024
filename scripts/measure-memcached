@@ -9,7 +9,7 @@ iters=11
 # no interference
 for ((i = 0; i < iters; i++)); do
   echo "Gathering no-interference #$i"
-  gcloud compute ssh --ssh-key-file cloud-computing ubuntu@$measure --zone europe-west3-a --command "$(sh $(dirname "$0")/measure-memcached-cmds)" > $out/no-interference-$i.raw;
+  gcloud compute ssh --ssh-key-file cloud-computing ubuntu@$measure --zone europe-west3-a --command "$(sh $(dirname "$0")/measure-memcached-cmds)" > $out/interference-none-$i.raw;
 done
 
 interferences=("cpu" "l1d" "l1i" "l2" "llc" "membw")
