@@ -1,0 +1,36 @@
+#!/bin/sh -ex
+
+out=$(mktemp -d)
+measure=$(kubectl get nodes -o=jsonpath="{range .items[*]}{.metadata.name}{'\n'}{end}" | grep client-measure)
+
+echo "output measurements are in $out"
+iters=11
+
+# no interference
+for ((i = 0; i < iters; i++)); do
+  echo "Gathering no-interference #$i"
+  gcloud compute ssh --ssh-key-file cloud-computing ubuntu@$measure --zone europe-west3-a --command "$(sh $(dirname "$0")/measure-memcached-cmds)" > $out/no-interference-$i.raw;
+done
+
+interferences=("cpu" "l1d" "l1i" "l2" "llc" "membw")
+
+for interference in "${interferences[@]}"; do
+  echo "Running $iters with $interference interference"
+  kubectl create -f interference/ibench-$interference.yaml
+  state="whatever"
+  while [ $state != "Running" ]; do
+    sleep 2
+    state=$(kubectl get pods -o=jsonpath="{range .items[*]}{.metadata.labels.name}: {.status.phase}{'\n'}{end}" | grep $interference | cut -d' ' -f2)
+    echo "Still waiting for ibench-$interference pod to start..."
+  done
+
+  # with iterference $i
+  for ((i = 0; i < iters; i++)); do
+    echo "Gathering $interference #$i"
+    gcloud compute ssh --ssh-key-file cloud-computing ubuntu@$measure --zone europe-west3-a --command "$(sh $(dirname "$0")/measure-memcached-cmds)" > $out/interference-$interference-$i.raw;
+  done
+
+  kubectl delete pods ibench-$interference
+done
+
+echo "output measurements are in $out"

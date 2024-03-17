@@ -1,0 +1,5 @@
+#!/bin/sh -ex
+
+agent=$(kubectl get nodes -o=jsonpath="{range .items[*]}{.metadata.name}{'\n'}{end}" | grep client-agent)
+
+gcloud compute ssh --ssh-key-file cloud-computing ubuntu@$agent --zone europe-west3-a --command "cd memcache-perf && ./mcperf -T 16 -A"
