@@ -20,7 +20,7 @@ for interference in "${interferences[@]}"; do
   state="whatever"
   while [ $state != "Running" ]; do
     sleep 2
-    state=$(kubectl get pods -o=jsonpath="{range .items[*]}{.metadata.labels.name}: {.status.phase}{'\n'}{end}" | grep $interference | cut -d' ' -f2)
+    state=$(kubectl get pods -o=jsonpath="{range .items[*]}{.metadata.name}: {.status.phase}{'\n'}{end}" | grep $interference | cut -d' ' -f2)
     echo "Still waiting for ibench-$interference pod to start..."
   done
 

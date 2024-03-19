@@ -1,0 +1,6 @@
+#!/bin/sh
+
+ip=$(kubectl get pods -o=jsonpath="{range .items[*]}{.metadata.name}: {.status.podIP}{'\n'}{end}" | grep memcached | cut -d' ' -f2)
+agent_ip=$(kubectl get nodes -o=jsonpath="{range .items[*]}{.name}{.metadata.name}: {range .status.addresses[*]}{}{'\n'}{end}{end}" | grep InternalIP | grep agent | cut -d' ' -f2 | jq -r .address)
+
+echo "cd memcache-perf && ./mcperf -s $ip --loadonly && ./mcperf -s $ip -a $agent_ip --noload -T 16 -C 4 -D 4 -Q 1000 -c 4 -t 5 -w 2 --scan 5000:55000:5000"
