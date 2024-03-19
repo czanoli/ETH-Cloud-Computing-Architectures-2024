@@ -1,7 +1,0 @@
-Launching parsec.vips...
-[PARSEC] Benchmarks to run:  parsec.vips
-
-[PARSEC] [========== Running benchmark parsec.vips [1] ==========]
-[PARSEC] Setting up run directory.
-[PARSEC] Unpacking benchmark input 'native'.
-orion_18000x18000.v

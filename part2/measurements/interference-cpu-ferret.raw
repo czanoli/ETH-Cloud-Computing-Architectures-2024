@@ -1,9 +1,0 @@
-Launching parsec.ferret...
-[PARSEC] Benchmarks to run:  parsec.ferret
-
-[PARSEC] [========== Running benchmark parsec.ferret [1] ==========]
-[PARSEC] Setting up run directory.
-[PARSEC] Unpacking benchmark input 'simlarge'.
-corel/
-corel/__cass.env
-corel/corel.raw

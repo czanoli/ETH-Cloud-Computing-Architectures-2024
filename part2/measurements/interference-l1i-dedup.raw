@@ -1,9 +1,0 @@
-Launching parsec.dedup...
-[PARSEC] Benchmarks to run:  parsec.dedup
-
-[PARSEC] [========== Running benchmark parsec.dedup [1] ==========]
-[PARSEC] Setting up run directory.
-[PARSEC] Unpacking benchmark input 'native'.
-FC-6-x86_64-disc1.iso
-[PARSEC] Running 'time /parsec/pkgs/kernels/dedup/inst/amd64-linux.gcc/bin/dedup -c -p -v -t 1 -i FC-6-x86_64-disc1.iso -o output.dat.ddp':
-[PARSEC] [---------- Beginning of output ----------]

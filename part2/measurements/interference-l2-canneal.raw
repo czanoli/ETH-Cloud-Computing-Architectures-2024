@@ -1,7 +1,0 @@
-Launching parsec.canneal...
-[PARSEC] Benchmarks to run:  parsec.canneal
-
-[PARSEC] [========== Running benchmark parsec.canneal [1] ==========]
-[PARSEC] Setting up run directory.
-[PARSEC] Unpacking benchmark input 'simlarge'.
-400000.nets

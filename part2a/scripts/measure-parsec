@@ -1,0 +1,74 @@
+#!/bin/sh -ex
+
+out=$(mktemp -d)
+ps=$(kubectl get nodes -o=jsonpath="{range .items[*]}{.metadata.name}{'\n'}{end}" | grep parsec-server)
+
+echo "output measurements are in $out"
+
+interferences=("cpu" "l1d" "l1i" "l2" "llc" "membw")
+benchmarks=("blackscholes" "canneal" "dedup" "ferret" "freqmine" "radix" "vips")
+
+for bench in "${benchmarks[@]}"; do
+  interference="none"
+  kubectl label nodes $ps cca-project-nodetype=parsec
+  kubectl create -f parsec-benchmarks/part2a/parsec-$bench.yaml
+  state="whatever"
+  while [ $state != "Completed" ]; do
+    sleep 2
+    state=$(kubectl get pods -o=jsonpath="{range .items[*]}{.metadata.name}: {.status.phase}{'\n'}{end}" | grep $bench | cut -d' ' -f2)
+    echo "Still waiting for parsec-$bench pod to start..."
+  done
+
+  echo "Gathering for $bench"
+  pod=$(kubectl get pods --selector=job-name=parsec-$bench --output=jsonpath='{.items[*].metadata.name}')
+  kubectl logs $pod > $out/interference-$interference-$bench.raw;
+  kubectl delete job parsec-$bench
+  kubectl delete pod $pod || true
+  while [ ! -z $state ]; do
+    sleep 2
+    state=$(kubectl get pods -o=jsonpath="{range .items[*]}{.metadata.name}: {.status.phase}{'\n'}{end}" | grep $bench | cut -d' ' -f2)
+    echo "Still waiting for parsec-$bench pod to terminate..."
+  done
+done
+
+for interference in "${interferences[@]}"; do
+  echo "Running $interference interference"
+  kubectl label nodes $ps cca-project-nodetype=parsec
+  kubectl create -f interference/ibench-$interference.yaml
+  state="whatever"
+  while [ $state != "Completed" ]; do
+    sleep 2
+    state=$(kubectl get pods -o=jsonpath="{range .items[*]}{.metadata.name}: {.status.phase}{'\n'}{end}" | grep $interference | cut -d' ' -f2)
+    echo "Still waiting for ibench-$interference pod to start..."
+  done
+
+  for bench in "${benchmarks[@]}"; do
+    kubectl create -f parsec-benchmarks/part2a/parsec-$bench.yaml
+    state="whatever"
+    while [ $state != "Running" ]; do
+      sleep 2
+      state=$(kubectl get pods -o=jsonpath="{range .items[*]}{.metadata.name}: {.status.phase}{'\n'}{end}" | grep $bench | cut -d' ' -f2)
+      echo "Still waiting for parsec-$bench pod to start..."
+    done
+
+    echo "Gathering for $bench"
+    pod=$(kubectl get pods --selector=job-name=parsec-$bench --output=jsonpath='{.items[*].metadata.name}')
+    kubectl logs $pod > $out/interference-$interference-$bench.raw;
+    kubectl delete job parsec-$bench
+    kubectl delete pod $pod || true
+    while [ ! -z $state ]; do
+      sleep 2
+      state=$(kubectl get pods -o=jsonpath="{range .items[*]}{.metadata.name}: {.status.phase}{'\n'}{end}" | grep $bench | cut -d' ' -f2)
+      echo "Still waiting for parsec-$bench pod to terminate..."
+    done
+  done
+
+  kubectl delete pods ibench-$interference
+  while [ ! -z $state ]; do
+    sleep 2
+    state=$(kubectl get pods -o=jsonpath="{range .items[*]}{.metadata.name}: {.status.phase}{'\n'}{end}" | grep $interference | cut -d' ' -f2)
+    echo "Still waiting for ibench-$interference pod to terminate..."
+  done
+done
+
+echo "output measurements are in $out"
