@@ -36,7 +36,7 @@ for interference in "${interferences[@]}"; do
   kubectl label nodes $ps cca-project-nodetype=parsec
   kubectl create -f interference/ibench-$interference.yaml
   state="whatever"
-  while [ $state != "Completed" ]; do
+  while [ $state != "Running" ]; do
     sleep 2
     state=$(kubectl get pods -o=jsonpath="{range .items[*]}{.metadata.name}: {.status.phase}{'\n'}{end}" | grep $interference | cut -d' ' -f2)
     echo "Still waiting for ibench-$interference pod to start..."
@@ -45,7 +45,7 @@ for interference in "${interferences[@]}"; do
   for bench in "${benchmarks[@]}"; do
     kubectl create -f parsec-benchmarks/part2a/parsec-$bench.yaml
     state="whatever"
-    while [ $state != "Running" ]; do
+    while [ $state != "Completed" ]; do
       sleep 2
       state=$(kubectl get pods -o=jsonpath="{range .items[*]}{.metadata.name}: {.status.phase}{'\n'}{end}" | grep $bench | cut -d' ' -f2)
       echo "Still waiting for parsec-$bench pod to start..."
