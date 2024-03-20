@@ -17,7 +17,7 @@ for thread in "${threads[@]}"; do
     kubectl label nodes $ps cca-project-nodetype=parsec
     kubectl create -f part2b/edited/parsec-$bench.yaml
     state="whatever"
-    while [ $state != "Completed" ]; do
+    while [ $state != "Succeeded" ]; do
       sleep 2
       state=$(kubectl get pods -o=jsonpath="{range .items[*]}{.metadata.name}: {.status.phase}{'\n'}{end}" | grep $bench | cut -d' ' -f2)
       echo "Still waiting for parsec-$bench-$thread pod to start..."
