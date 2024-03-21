@@ -2,4 +2,4 @@
 
 source $(dirname "$0")/env
 
-kops delete cluster part2a.k8s.local --yes
+kops delete cluster part2b.k8s.local --yes

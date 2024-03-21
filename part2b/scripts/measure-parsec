@@ -12,7 +12,7 @@ for thread in "${threads[@]}"; do
   for bench in "${benchmarks[@]}"; do
     echo "Running $bench with $thread threads"
     rm -f part2b/edited/parsec-$bench.yaml
-    sed "s/-n 1/-n $thread/" parsec-benchmarks/part2a/parsec-$bench.yaml > part2b/edited/parsec-$bench.yaml
+    sed "s/-n 1/-n $thread/" parsec-benchmarks/part2b/parsec-$bench.yaml > part2b/edited/parsec-$bench.yaml
 
     kubectl label nodes $ps cca-project-nodetype=parsec
     kubectl create -f part2b/edited/parsec-$bench.yaml

@@ -18,9 +18,9 @@ Data size after deduplication:         658.95 MB (compression factor: 1.02x)
 Data size after compression:           630.26 MB (compression factor: 1.05x)
 Output overhead:                         1.10%
 
-real	0m10.170s
-user	0m28.749s
-sys	0m9.454s
+real	0m9.751s
+user	0m28.449s
+sys	0m7.864s
 [PARSEC] [----------    End of output    ----------]
 [PARSEC]
 [PARSEC] BIBLIOGRAPHY
