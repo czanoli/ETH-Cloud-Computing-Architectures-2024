@@ -1,0 +1,8 @@
+#!/bin/sh
+
+echo "name, value"
+for file in $(ls measurements); do
+  val=$(cat measurements/$file | grep real)
+  val=${val//real/}
+  echo "$file, $val"
+done
