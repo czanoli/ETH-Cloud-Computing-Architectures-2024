@@ -3693,7 +3693,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=6.118357in,y=7.584218in,,base]{\color{textcolor}{\rmfamily\fontsize{22.000000}{26.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}Response Time vs QPS for Benchmarks (10 runs, errobars=1SD)}}%
+\pgftext[x=6.118357in,y=7.584218in,,base]{\color{textcolor}{\rmfamily\fontsize{22.000000}{26.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}Response Time vs QPS with Interferences (10 runs, errobars=1SD)}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetbuttcap%
@@ -3723,7 +3723,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=9.829478in,y=7.050846in,left,base]{\color{textcolor}{\rmfamily\fontsize{20.000000}{24.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}Benchmark}}%
+\pgftext[x=9.806292in,y=7.050846in,left,base]{\color{textcolor}{\rmfamily\fontsize{20.000000}{24.000000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}Interference}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetbuttcap%
