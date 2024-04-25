@@ -1,0 +1,18 @@
+#!/bin/sh -ex
+
+source $(dirname "$0")/env
+
+kubectl create -f memcache-t1-cpuset.yaml || true
+kubectl expose pod some-memcached --name some-memcached-11211 --type LoadBalancer --port 11211 --protocol TCP || true
+
+# sleep 60
+kubectl get service some-memcached-11211
+kubectl get pods -o wide
+
+agents=$(kubectl get nodes -o=jsonpath="{range .items[*]}{.metadata.name}{'\n'}{end}" | grep client-agent)
+measure=$(kubectl get nodes -o=jsonpath="{range .items[*]}{.metadata.name}{'\n'}{end}" | grep client-measure)
+
+for agent in $agents; do
+  gcloud compute ssh --ssh-key-file cloud-computing ubuntu@$agent --zone europe-west3-a --command "$(cat $(dirname "$0")/setup-mcperf)"
+done
+gcloud compute ssh --ssh-key-file cloud-computing ubuntu@$measure --zone europe-west3-a --command "$(cat $(dirname "$0")/setup-mcperf)"

@@ -15,3 +15,12 @@ This repository contains starter code for the Cloud Computing Architecture cours
 5. Run the load with `scripts/load-memached` and in another terminal, gather
    the measurements with `scripts/measure-memcached`.
 6. Bring down the cluster with `scripts/delete`.
+
+
+# Part 3/4 Instructions
+
+1. `scripts/bootstrap`
+2. `scripts/memcached`
+3. `scripts/load-memcached` (in one terminal)
+4. `scripts/measure` (in another terminal)
+5. `scripts/schedule`       (in another terminal)

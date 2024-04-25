@@ -1,0 +1,5 @@
+#!/bin/sh -ex
+
+measure=$(kubectl get nodes -o=jsonpath="{range .items[*]}{.metadata.name}{'\n'}{end}" | grep client-measure)
+
+gcloud compute ssh --ssh-key-file cloud-computing ubuntu@$measure --zone europe-west3-a --command "$(sh $(dirname "$0")/measure-memcached-cmds)" > part3/mcperf.txt

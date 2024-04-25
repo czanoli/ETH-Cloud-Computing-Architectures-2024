@@ -1,0 +1,3 @@
+#!/bin/sh
+
+gcloud compute ssh --ssh-key-file cloud-computing ubuntu@$1 --zone europe-west3-a --command "cd memcache-perf-dynamic && ./mcperf -T 2 -A"

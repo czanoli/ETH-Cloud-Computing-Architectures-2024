@@ -1,0 +1,15 @@
+#!/bin/sh
+
+agent_script="$(dirname "$0")/mcperf-agent"
+
+agents=$(kubectl get nodes -o=jsonpath="{range .items[*]}{.metadata.name}{'\n'}{end}" | grep client-agent)
+agents=($agents)
+
+agent1=${agents[0]}
+agent2=${agents[1]}
+
+tmux new -d -s cca \; split-window -h ;\
+tmux send-keys -t cca.0 "sh $agent_script $agent1" ENTER
+tmux send-keys -t cca.1 "sh $agent_script $agent2" ENTER
+
+tmux a -t cca
