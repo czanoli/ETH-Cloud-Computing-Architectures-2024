@@ -1,6 +1,6 @@
 #!/bin/sh
 
-ip=$(kubectl get nodes '-o=jsonpath={range .items[*]}{.name}{.metadata.name}: {range .status.addresses[*]}{}{'\''\n'\''}{end}{end}' | grep 8core | cut -d' ' -f2 | head -n 1 | jq ".address")
+ip=$(kubectl get pods -o=jsonpath="{range .items[*]}{.metadata.name}: {.status.podIP}{'\n'}{end}" | grep memcached | cut -d' ' -f2)
 agent_ips=$(kubectl get nodes -o=jsonpath="{range .items[*]}{.name}{.metadata.name}: {range .status.addresses[*]}{}{'\n'}{end}{end}" | grep InternalIP | grep agent | cut -d' ' -f2 | jq -r .address)
 
 agent1_ip=$(echo "$agent_ips" | head -n1)

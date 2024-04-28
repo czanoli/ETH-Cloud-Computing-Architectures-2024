@@ -1,0 +1,26 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: parsec-radix
+  labels:
+    name: parsec-radix
+spec:
+  template:
+    spec:
+      containers:
+      - image: anakli/cca:splash2x_radix
+        name: parsec-radix
+        imagePullPolicy: Always
+        command: ["/bin/sh"]
+        args: ["-c", "taskset --cpu-list 0-7 ./run -a run -S splash2x -p radix -i native -n 8"]
+        # realistically, requires <= 2GB of RAM
+        resources:
+          requests:
+            memory: "31G"
+            cpu: "7900m"
+          limits:
+            memory: "31G"
+            cpu: "7900m"
+      restartPolicy: Never
+      nodeSelector:
+        node.kubernetes.io/instance-type: e2-standard-8

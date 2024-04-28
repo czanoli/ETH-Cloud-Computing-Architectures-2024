@@ -2,7 +2,7 @@
 
 source $(dirname "$0")/env
 
-kubectl create -f memcache-t1-cpuset.yaml || true
+kubectl create -f part3/memcached.yaml || true
 kubectl expose pod some-memcached --name some-memcached-11211 --type LoadBalancer --port 11211 --protocol TCP || true
 
 # sleep 60
