@@ -17,10 +17,18 @@ This repository contains starter code for the Cloud Computing Architecture cours
 6. Bring down the cluster with `scripts/delete`.
 
 
-# Part 3/4 Instructions
+# Part 3 Instructions
 
 1. `scripts/bootstrap`
 2. `scripts/memcached`
 3. `scripts/load-memcached` (in one terminal)
 4. `scripts/measure` (in another terminal)
 5. `scripts/schedule`       (in another terminal)
+
+# Part 4 Instructions
+
+1. `scripts/bootstrap` start the machines
+2. `scripts/memcached` setup memcached
+
+(for part 1)
+3. `scripts/measure-1`

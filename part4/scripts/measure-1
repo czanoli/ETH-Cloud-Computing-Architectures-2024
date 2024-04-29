@@ -1,0 +1,11 @@
+#!/bin/sh -ex
+
+agent=$(kubectl get nodes -o=jsonpath="{range .items[*]}{.metadata.name}{'\n'}{end}" | grep client-agent)
+agent_script="$(dirname "$0")/mcperf-agent"
+load_script="$(dirname "$0")/load-1"
+
+tmux new -d -s cca \; split-window -h ;\
+tmux send-keys -t cca.0 "sh $agent_script $agent" ENTER
+tmux send-keys -t cca.1 "sh $load_script" ENTER
+
+tmux a -t cca

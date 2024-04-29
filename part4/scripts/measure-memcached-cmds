@@ -1,0 +1,9 @@
+#!/bin/sh
+
+ip=$(kubectl get pods -o=jsonpath="{range .items[*]}{.metadata.name}: {.status.podIP}{'\n'}{end}" | grep memcached | cut -d' ' -f2)
+agent_ips=$(kubectl get nodes -o=jsonpath="{range .items[*]}{.name}{.metadata.name}: {range .status.addresses[*]}{}{'\n'}{end}{end}" | grep InternalIP | grep agent | cut -d' ' -f2 | jq -r .address)
+
+agent1_ip=$(echo "$agent_ips" | head -n1)
+agent2_ip=$(echo "$agent_ips" | tail -n1)
+
+echo "cd memcache-perf-dynamic && ./mcperf -s $ip --loadonly && ./mcperf -s $ip -a $agent1_ip -a $agent2_ip --noload -T 6 -C 4 -D 4 -Q 1000 -c 4 -t 10 --scan 30000:30500:5"
