@@ -3,7 +3,11 @@
 [x] : Plots point1d
 [x] : Compute metrics point3
 [x] : Compute SLO violation ratios point3
+[x] : Synch function plots3
 [ ] : Plots point3
+[x] : Read pauses and unpauses from file
+[x] : Reimplement cpu utilization synch function
 [ ] : Compute SLO violation ratios point4
 [ ] : Compute metrics point4
 [ ] : Plots point4
+
