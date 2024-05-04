@@ -6,6 +6,7 @@ server=$(kubectl get nodes -o=jsonpath="{range .items[*]}{.metadata.name}{'\n'}{
 
 gcloud compute ssh --ssh-key-file cloud-computing ubuntu@$server --zone europe-west3-a --command "$(cat $(dirname "$0")/setup-memcached)"
 
+gcloud compute scp --ssh-key-file cloud-computing --zone europe-west3-a $(dirname "$0")/measure-cpu-py ubuntu@$server:/tmp/measure-cpu-py
 gcloud compute scp --ssh-key-file cloud-computing --zone europe-west3-a $(dirname "$0")/memcached-default-config ubuntu@$server:/tmp/memcached.conf
 gcloud compute scp --ssh-key-file cloud-computing --zone europe-west3-a $(dirname "$0")/conf-memcached-cmd ubuntu@$server:/tmp/conf-memcached
 

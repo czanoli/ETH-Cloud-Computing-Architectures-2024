@@ -1,0 +1,16 @@
+#!/bin/sh -ex
+
+server=$(kubectl get nodes -o=jsonpath="{range .items[*]}{.metadata.name}{'\n'}{end}" | grep memcache-server)
+agent=$(kubectl get nodes -o=jsonpath="{range .items[*]}{.metadata.name}{'\n'}{end}" | grep client-agent)
+measure=$(kubectl get nodes -o=jsonpath="{range .items[*]}{.metadata.name}{'\n'}{end}" | grep client-measure)
+
+measure_dir=$(dirname "$0")/../measurements/1d
+mkdir -p $measure_dir
+
+# run the measurement
+for c in {1..2}; do
+  gcloud compute ssh --ssh-key-file cloud-computing ubuntu@$server --zone europe-west3-a --command "/tmp/conf-memcached 2 $c && sleep 5"
+  for r in {0..3}; do
+    gcloud compute ssh --ssh-key-file cloud-computing ubuntu@$measure --zone europe-west3-a --command "cd memcache-perf-dynamic && ./mcperf -s $server --loadonly && ./mcperf -s $server -a $agent --noload -T 16 -C 4 -D 4 -Q 1000 -c 4 -t 5 --scan 5000:125000:5000" | tee /dev/tty > $measure_dir/mcperf-$c-$r.txt
+  done
+done

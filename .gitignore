@@ -1,2 +1,5 @@
 cloud-computing
 part2b/edited
+__pycache__
+.venv
+part4/mcperfs_to_json.py

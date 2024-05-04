@@ -1,0 +1,8 @@
+#!/bin/sh
+
+server=$(kubectl get nodes -o=jsonpath="{range .items[*]}{.metadata.name}{'\n'}{end}" | grep memcache-server)
+
+measure_dir=$(dirname "$0")/../measurements/1d
+mkdir -p $measure_dir
+
+gcloud compute ssh --ssh-key-file cloud-computing ubuntu@$server --zone europe-west3-a --command "sudo taskset --cpu-list 3 python3 /tmp/measure-cpu-py"

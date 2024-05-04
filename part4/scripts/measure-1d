@@ -1,0 +1,10 @@
+#!/bin/sh -ex
+
+agent=$(kubectl get nodes -o=jsonpath="{range .items[*]}{.metadata.name}{'\n'}{end}" | grep client-agent)
+agent_script="$(dirname "$0")/mcperf-agent"
+load_script="$(dirname "$0")/load-1d"
+measure_cpu_script="$(dirname "$0")/measure-cpu-1d"
+
+echo "run $agent_script $agent"
+echo "run $load_script"
+echo "run $measure_cpu_script"

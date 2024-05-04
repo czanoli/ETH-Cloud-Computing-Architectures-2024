@@ -1,0 +1,15 @@
+#!/usr/bin/env python3
+
+from psutil import cpu_percent
+from time import time_ns, sleep
+
+core0=0
+core1=1
+
+print('timestamp,core0,core1')
+
+while True:
+    cores = cpu_percent(interval=None, percpu=True)
+    t = time_ns()
+    print(f"{t},{cores[core0]},{cores[core1]}")
+    sleep(0.1)
