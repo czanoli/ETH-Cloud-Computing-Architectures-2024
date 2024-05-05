@@ -34,7 +34,7 @@ class SchedulerLogger:
         print(LOG_STRING.format(timestamp=datetime.now().isoformat(), event=event, job_name=job_name.value,
                               args=urllib.parse.unquote_plus(args)))
 
-    def job_start(self, job: Job, initial_cores: list[str], initial_threads: int) -> None:
+    def job_start(self, job: Job, initial_cores: list[int], initial_threads: int) -> None:
         assert job != Job.SCHEDULER, "You don't have to log SCHEDULER here"
 
         self._log("start", job, "["+(",".join(str(i) for i in initial_cores))+"] "+str(initial_threads))
@@ -64,5 +64,6 @@ class SchedulerLogger:
 
     def end(self) -> None:
         self._log("end", Job.SCHEDULER)
-        self.file.flush()
-        self.file.close()
+        if self.to_file:
+            self.file.flush()
+            self.file.close()
