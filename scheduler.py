@@ -15,7 +15,7 @@ from threading import Thread
 import psutil
 from scheduler_logger import SchedulerLogger, Job
 
-prod = False
+prod = True
 
 # hyperparameters
 poll_interval = 0.01 # 10ms
@@ -55,7 +55,7 @@ IMAGE_PER_JOB[Job.FREQMINE] = IMAGES[4]
 IMAGE_PER_JOB[Job.RADIX] = IMAGES[5]
 IMAGE_PER_JOB[Job.VIPS] = IMAGES[6]
 
-ta_file = "part4/target_achieved.json"
+ta_file = "target_achieved.json"
 ta = json.load(open(ta_file))
 
 # taken and modified from:
@@ -190,13 +190,13 @@ class CPUThread():
 
 
     def avg(self, count):
-        tot0 = 0
-        tot1 = 0
+        tot0 = []
+        tot1 = []
         for i in range(min(count, len(self.readings))):
-            tot0 += self.readings[i][0]
-            tot1 += self.readings[i][1]
+            tot0.append(self.readings[i][0])
+            tot1.append(self.readings[i][1])
 
-        return [tot0/count, tot1/count]
+        return [max(tot0), max(tot1)]
 
     def thread(self):
         i = 0
@@ -225,10 +225,8 @@ class CPUThread():
 p = psutil.Process(getpid())
 p.cpu_affinity([0])
 
-# HIGH_CPU_JOBS = [Job.FREQMINE, Job.CANNEAL, Job.FERRET, Job.RADIX]
-# LOW_CPU_JOBS = [Job.BLACKSCHOLES, Job.DEDUP, Job.VIPS]
-HIGH_CPU_JOBS = [Job.RADIX, Job.FREQMINE, Job.CANNEAL, Job.FERRET]
-LOW_CPU_JOBS = [Job.DEDUP, Job.BLACKSCHOLES, Job.VIPS]
+HIGH_CPU_JOBS = [Job.FREQMINE, Job.CANNEAL, Job.FERRET, Job.BLACKSCHOLES, Job.RADIX]
+LOW_CPU_JOBS = [Job.DEDUP, Job.VIPS]
 
 MEMCACHED_ONE_CORE = [0]
 MEMCACHED_TWO_CORES = [0,1]
@@ -236,7 +234,7 @@ HIGH_CPU_CORES = ('2,3', [2,3])
 LOW_CPU_CORES = ('1', [1])
 
 N_JOB_ON_CORE23 = 2
-N_JOB_ON_CORE1 = 2
+N_JOB_ON_CORE1 = 1
 
 class Scheduler:
     msgq = Queue()
@@ -336,7 +334,7 @@ class Scheduler:
 
             [core0, core1] = self.ct.get(10)
             if len(self.memcached_core_list) > 1:
-                if core1 < 50 or core0 < 50:
+                if core1 < 30:
                     self.pause(self.qcore1, 1)
                 else:
                     self.pause(self.qcore1, 2)
