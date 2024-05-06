@@ -1,23 +1,23 @@
 Job:  parsec-blackscholes
-Start time:  2024-04-28 08:57:09
-Job time:  0:02:22
+Start time:  2024-05-06 11:28:25
+Job time:  0:01:55
 Job:  parsec-canneal
-Start time:  2024-04-28 08:57:08
-Job time:  0:02:00
+Start time:  2024-05-06 11:28:25
+Job time:  0:02:19
 Job:  parsec-dedup
-Start time:  2024-04-28 08:59:11
-Job time:  0:00:18
+Start time:  2024-05-06 11:30:47
+Job time:  0:00:10
 Job:  parsec-ferret
-Start time:  2024-04-28 08:57:08
-Job time:  0:01:44
+Start time:  2024-05-06 11:28:24
+Job time:  0:01:34
 Job:  parsec-freqmine
-Start time:  2024-04-28 08:57:06
-Job time:  0:02:43
+Start time:  2024-05-06 11:28:24
+Job time:  0:02:20
 Job:  parsec-radix
-Start time:  2024-04-28 08:59:52
+Start time:  2024-05-06 11:30:37
 Job time:  0:00:10
 Job:  parsec-vips
-Start time:  2024-04-28 08:58:54
-Job time:  0:00:32
+Start time:  2024-05-06 11:30:01
+Job time:  0:00:29
 Job:  memcached
-Total time: 0:02:56
+Total time: 0:02:33
