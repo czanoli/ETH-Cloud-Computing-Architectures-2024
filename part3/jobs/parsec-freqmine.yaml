@@ -12,7 +12,7 @@ spec:
         name: parsec-freqmine
         imagePullPolicy: Always
         command: ["/bin/sh"]
-        args: ["-c", "taskset --cpu-list 0-3 ./run -a run -S parsec -p freqmine -i native -n 4"]
+        args: ["-c", "taskset --cpu-list 0-5 ./run -a run -S parsec -p freqmine -i native -n 8"]
         # realistically, requires <= 1GB of RAM
         resources:
           requests:
@@ -20,7 +20,7 @@ spec:
             cpu: "3900m"
           limits:
             memory: "8G"
-            cpu: "3900m"
+            cpu: "6000m"
       restartPolicy: Never
       nodeSelector:
         node.kubernetes.io/instance-type: e2-standard-8

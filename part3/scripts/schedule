@@ -21,5 +21,5 @@ echo "scheduling later jobs..."
 
 # next jobs
 kubectl create -f part3/jobs/parsec-dedup.yaml || true
-kubectl create -f part3/jobs/parsec-radix.yaml || true
 kubectl create -f part3/jobs/parsec-vips.yaml || true
+kubectl create -f part3/jobs/parsec-radix.yaml || true

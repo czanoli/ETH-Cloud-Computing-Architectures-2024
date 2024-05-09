@@ -12,7 +12,7 @@ spec:
         name: parsec-canneal
         imagePullPolicy: Always
         command: ["/bin/sh"]
-        args: ["-c", "taskset --cpu-list 4-7 ./run -a run -S parsec -p canneal -i native -n 4"]
+        args: ["-c", "taskset --cpu-list 2-7 ./run -a run -S parsec -p canneal -i native -n 8"]
         # realistically, requires <= 2GB of RAM
         resources:
           requests:
@@ -20,7 +20,7 @@ spec:
             cpu: "3900m"
           limits:
             memory: "23G"
-            cpu: "3900m"
+            cpu: "6000m"
       restartPolicy: Never
       nodeSelector:
         node.kubernetes.io/instance-type: e2-standard-8

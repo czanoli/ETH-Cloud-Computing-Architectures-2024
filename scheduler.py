@@ -28,6 +28,7 @@ close_enough = 1000
 to_file = False
 keep_lqs = 4
 threads = 2
+max_qps_one_core = 40_000 # around 39939 
 
 ONE_S_IN_NS = 1e9
 pull_images = False
@@ -112,14 +113,21 @@ class MemcachedStats:
     def last_measurements(self, count=10):
         total_get_after = 0
         summed = 0
-        for i, (_, g) in enumerate(reversed(self.last_readings)):
+        start = time.time_ns()
+        end = 0
+        for i, (t, g) in enumerate(reversed(self.last_readings)):
             if i >= count:
                 break
+            start = min(start, t)
+            end = max(end, t)
             total_get_after += g
             summed += 1
 
-        # print(len(self.last_readings), total_get_after, poll_interval*count, summed, count)
-        return int((total_get_after) / (poll_interval*count))
+        time_diff = abs(end-start)
+        if time_diff == 0:
+            return 0
+        else:
+            return int((total_get_after) / ((end-start)/ONE_S_IN_NS))
 
     def qps(self):
         return self.last_measurements(int(1/poll_interval))
@@ -403,12 +411,10 @@ class CoreQueue:
 
 class Scheduler:
     msgq = Queue()
-    max_qps_by_core = {}
     def __init__(self):
         self.ct = CPUThread()
         self.logger = SchedulerLogger(to_file)
 
-        self.compute_max_qps_per_core()
         self.memcached_pid = int(subprocess.check_output(["sudo", "systemctl", "show", "--property", "MainPID", "--value", "memcached"]))
         self.memcached_cores = 2
         self.scheduler_pid = getpid()
@@ -436,14 +442,6 @@ class Scheduler:
         proc.cpu_affinity(affinity)
         for t in proc.threads():
             psutil.Process(t.id).cpu_affinity(affinity)
-
-    def compute_max_qps_per_core(self):
-        for c in ta:
-            measurements = ta[f"{c}"][f"{threads}"]
-            ok_measurements = list(filter(lambda m: m['p95'] < 950, measurements)) # 950ns instead of 1ms just to have some margin
-            max_qps = max(map(lambda m: m['achieved'], ok_measurements))
-            self.logger.custom_event(JobKind.SCHEDULER, f"max qps by core: t={threads}, c={c}, max={max_qps}")
-            self.max_qps_by_core[int(c)] = max_qps
 
     def thread(self):
         i = 0
@@ -498,7 +496,7 @@ class Scheduler:
 
     def stable(self, qps: int):
         self.logger.custom_event(JobKind.SCHEDULER, f"stable ({qps} QPS)")
-        cores = 1 if self.max_qps_by_core[1] > qps else 2
+        cores = 1 if max_qps_one_core > qps else 2
         self.msgq.put(('memcached_affinity', cores))
 
     def unstable(self, qps: int, curr: int):
@@ -516,7 +514,8 @@ while True:
     time.sleep(sleep_interval)
     curr = mt.do('last_measurements', int(sleep_interval//poll_interval))
     qps = mt.do('qps')
-    if abs(curr - qps) > qps_threshold:
+    # if abs(curr - qps) > qps_threshold:
+    if abs(curr - qps)/max(1,max(curr, qps)) > 0.3:
         if stable:
             stable = False
             # print('unstable', qps, curr)

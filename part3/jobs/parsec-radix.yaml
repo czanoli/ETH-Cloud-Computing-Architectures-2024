@@ -12,15 +12,15 @@ spec:
         name: parsec-radix
         imagePullPolicy: Always
         command: ["/bin/sh"]
-        args: ["-c", "taskset --cpu-list 0-7 ./run -a run -S splash2x -p radix -i native -n 8"]
+        args: ["-c", "taskset --cpu-list 0-3 ./run -a run -S splash2x -p radix -i native -n 4"]
         # realistically, requires <= 2GB of RAM
         resources:
           requests:
-            memory: "31G"
-            cpu: "7900m"
+            memory: "20G"
+            cpu: "3000m"
           limits:
             memory: "31G"
-            cpu: "7900m"
+            cpu: "4000m"
       restartPolicy: Never
       nodeSelector:
-        node.kubernetes.io/instance-type: e2-standard-8
+        node.kubernetes.io/instance-type: n2d-highmem-4

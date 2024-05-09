@@ -12,7 +12,7 @@ spec:
         name: parsec-blackscholes
         imagePullPolicy: Always
         command: ["/bin/sh"]
-        args: ["-c", "taskset --cpu-list 0 ./run -a run -S parsec -p blackscholes -i native -n 1"]
+        args: ["-c", "taskset --cpu-list 0 ./run -a run -S parsec -p blackscholes -i native -n 2"]
         # realistically, requires <= 512M of RAM
         resources:
           requests:
@@ -20,7 +20,7 @@ spec:
             cpu: "800m"
           limits:
             memory: "700M"
-            cpu: "800m"
+            cpu: "1000m"
       restartPolicy: Never
       nodeSelector:
         node.kubernetes.io/instance-type: n2d-highcpu-2

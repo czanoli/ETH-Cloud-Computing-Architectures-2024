@@ -12,7 +12,7 @@ spec:
         name: parsec-ferret
         imagePullPolicy: Always
         command: ["/bin/sh"]
-        args: ["-c", "taskset --cpu-list 0-3 ./run -a run -S parsec -p ferret -i native -n 4"]
+        args: ["-c", "taskset --cpu-list 0-3 ./run -a run -S parsec -p ferret -i native -n 6"]
         # realistically, requires <= 2GB of RAM
         resources:
           requests:
@@ -20,7 +20,7 @@ spec:
             cpu: "3500m"
           limits:
             memory: "31G"
-            cpu: "3500m"
+            cpu: "4000m"
       restartPolicy: Never
       nodeSelector:
         node.kubernetes.io/instance-type: n2d-highmem-4
