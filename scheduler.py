@@ -25,10 +25,10 @@ reading_threshold = 0.4 # 40%
 consecutive_threshold_default = 2
 qps_threshold = 5000
 close_enough = 1000
-to_file = False
+to_file = True
 keep_lqs = 4
 threads = 2
-max_qps_one_core = 40_000 # around 39939 
+max_qps_one_core = 26_000 # around 39939 
 
 ONE_S_IN_NS = 1e9
 pull_images = False
@@ -41,9 +41,6 @@ IMAGE_PER_JOB[JobKind.FERRET] = {'name': 'anakli/cca', 'tag' :'parsec_ferret'}
 IMAGE_PER_JOB[JobKind.FREQMINE] = {'name': 'anakli/cca', 'tag' :'parsec_freqmine'}
 IMAGE_PER_JOB[JobKind.RADIX] = {'name': 'anakli/cca', 'tag' :'splash2x_radix'}
 IMAGE_PER_JOB[JobKind.VIPS] ={'name': 'anakli/cca', 'tag' :'parsec_vips'} 
-
-ta_file = "part4/target_achieved.json"
-ta = json.load(open(ta_file))
 
 # taken and modified from:
 # https://github.com/dlrust/python-memcached-stats/blob/master/src/memcached_stats.py
@@ -136,6 +133,7 @@ class MemcachedThread():
     qin = Queue()
     qout = Queue()
     stats = MemcachedStats()
+    _stop = False
 
     def __init__(self):
         self.t = Thread(target=self.thread)
@@ -143,11 +141,8 @@ class MemcachedThread():
         self.t.start()
 
     def thread(self):
-        i = 0
-        while True:
+        while not self._stop:
             time.sleep(poll_interval)
-            # if i % 10 == 0:
-            #     i = 0
             self.stats.read()
 
             if not self.qin.empty():
@@ -158,18 +153,21 @@ class MemcachedThread():
                     self.qout.put(self.stats.qps())
                 self.qin.task_done()
 
-            # i += 1
-
     def do(self, method, arg=0):
         self.qin.put((method, arg))
         res = self.qout.get()
         self.qout.task_done()
         return res
+   
+    def stop(self):
+        self._stop = True
+        self.t.join()
 
 class CPUThread():
     qin = Queue()
     qout = Queue()
     readings = []
+    _stop = False
 
     def __init__(self):
         self.t = Thread(target=self.thread)
@@ -181,32 +179,39 @@ class CPUThread():
             cores = cores[:2]
             self.readings.append(cores)
             cleanup_point =int(1/poll_interval)
-            self.readings = self.readings[:cleanup_point]
+            if len(self.readings) > cleanup_point:
+                del self.readings[:cleanup_point]
 
 
     def avg(self, count):
-        tot0 = []
-        tot1 = []
-        for i in range(min(count, len(self.readings))):
-            tot0.append(self.readings[i][0])
-            tot1.append(self.readings[i][1])
+        tot0 = 0
+        tot1 = 0
+        n = min(count, len(self.readings))
+        for i in range(n):
+            c0 = self.readings[i][0]
+            c1 = self.readings[i][1]
+            tot0 += c0 # c0 if c0 < 50 else c0*2
+            tot1 += c1 # c1 if c1 < 50 else c1*2
 
-        return [max(tot0), max(tot1)]
+        if n == 0:
+            return [0,0]
+        else:
+            return [tot0/n, tot1/n]
 
     def thread(self):
         i = 0
-        while True:
+        while not self._stop:
             time.sleep(poll_interval)
-            if i % 10 == 0:
-                i = 0
-                self.read()
+            # if i % 10 == 0:
+                # i = 0
+            self.read()
 
             if not self.qin.empty():
                 count = self.qin.get()
                 self.qout.put(self.avg(count))
                 self.qin.task_done()
 
-            i += 1
+            # i += 1
 
     def get(self, readings=int(1/poll_interval)):
         self.qin.put(readings)
@@ -214,14 +219,17 @@ class CPUThread():
         self.qout.task_done()
         return res
 
+    def stop(self):
+        self._stop = True
+        self.t.join()
 
 
 # set the affinity of this script
 p = psutil.Process(getpid())
 p.cpu_affinity([0])
 
-HIGH_QUEUE = [JobKind.FREQMINE, JobKind.CANNEAL, JobKind.FERRET, JobKind.BLACKSCHOLES, JobKind.VIPS]
-LOW_QUEUE = [JobKind.DEDUP, JobKind.RADIX]
+HIGH_QUEUE = [JobKind.FREQMINE, JobKind.CANNEAL, JobKind.FERRET, JobKind.VIPS]
+LOW_QUEUE = [JobKind.DEDUP, JobKind.RADIX, JobKind.BLACKSCHOLES]
 # HIGH_QUEUE = []
 # LOW_QUEUE = [JobKind.RADIX]
 
@@ -374,6 +382,10 @@ class CoreQueue:
     def done(self) -> bool:
         return len(self.r) == 0 and self.q.empty()
 
+    @property
+    def has_space(self) -> bool:
+        return self.q.empty() and len(self.r) < self.cores
+
     def fill(self) -> List[Job]:
         new = []
         while len(self.current) < self.concurrent and not self.q.empty():
@@ -411,8 +423,11 @@ class CoreQueue:
 
 class Scheduler:
     msgq = Queue()
+    _stop = False
+
     def __init__(self):
         self.ct = CPUThread()
+        self.mt = MemcachedThread()
         self.logger = SchedulerLogger(to_file)
 
         self.memcached_pid = int(subprocess.check_output(["sudo", "systemctl", "show", "--property", "MainPID", "--value", "memcached"]))
@@ -430,7 +445,6 @@ class Scheduler:
         self.t = Thread(target=self.thread)
         self.t.daemon = True
         self.t.start()
-        self.mt = MemcachedThread()
 
         # don't run this script alongside memcached
         self.set_affinity(self.scheduler_pid, [2,3])
@@ -445,23 +459,26 @@ class Scheduler:
 
     def thread(self):
         i = 0
-        while True:
+        stable = False
+        qps = 100_000
+        while not self._stop:
             time.sleep(poll_interval)
             if not self.msgq.empty():
-                action, cores = self.msgq.get()
-                if action == 'memcached_affinity':
-                    cores_list = list(range(cores))
-                    self.set_affinity(self.memcached_pid, cores_list)
-                    if self.memcached_cores != cores:
-                        self.memcached_cores = cores
-                        self.logger.update_cores(JobKind.MEMCACHED, cores_list)
+                action, data = self.msgq.get()
+                if action == 'stable':
+                    stable = True
+                    qps = data
+                elif action == 'unstable':
+                    stable = False
+                    curr, _qps = data
+                    qps = max(curr, _qps)
                 else:
                     print('unkown action', action)
                 self.msgq.task_done()
 
-            [core0, core1] = self.ct.get(10)
-            unpause_lowq = self.memcached_cores == 1 and core0 < 95
-            if unpause_lowq:
+            [core0, core1] = self.ct.get(50)
+            unpause_lowq = qps < max_qps_one_core and (core0+core1) < 130 # and core1 < 99
+            if stable and unpause_lowq:
                 for j in self.lowq.paused:
                     j.unpause()
             else:
@@ -478,15 +495,13 @@ class Scheduler:
                 self.highq.fill()
                 self.lowq.fill()
 
-                if self.highq.done and not self.lowq.done:
+                if self.highq.has_space and not self.lowq.done:
                     # move (up to) two jobs from the lowq to the highq
-                    for j in self.lowq.current[:2]:
+                    space = min(self.highq.cores - len(self.highq.current), 2)
+                    for j in self.lowq.current[:space]:
                         jj = self.lowq.disown(j.job)
                         assert(j == jj)
                         self.highq.own(j)
-
-                if self.highq.done and self.lowq.done:
-                    self.logger.end()
 
             i += 1
 
@@ -496,12 +511,18 @@ class Scheduler:
 
     def stable(self, qps: int):
         self.logger.custom_event(JobKind.SCHEDULER, f"stable ({qps} QPS)")
-        cores = 1 if max_qps_one_core > qps else 2
-        self.msgq.put(('memcached_affinity', cores))
+        self.msgq.put(('stable', qps))
 
     def unstable(self, qps: int, curr: int):
         self.logger.custom_event(JobKind.SCHEDULER, f"unstable (CURR {curr} - {qps} QPS)")
-        self.msgq.put(('memcached_affinity', 2))
+        self.msgq.put(('unstable', (curr, qps)))
+
+    def stop(self):
+        self._stop = True
+        self.t.join()
+        self.ct.stop()
+        self.mt.stop()
+        self.logger.end()
 
 scheduler = Scheduler()
 mt = scheduler.mt
@@ -529,33 +550,9 @@ while True:
 
         if i > 10:
             i = 0
+
+    if scheduler.done:
+        scheduler.stop()
+        exit(0)
+
     i += 1
-# while True:
-#     time.sleep(4*poll_interval)
-#     curr = mt.do('last_measurements', 20)
-#     if len(prev_list) > 0:
-#         prev = sum(prev_list)/len(prev_list)
-#     else:
-#         prev = 0
-#
-#     if scheduler.done:
-#         exit(0)
-#
-#     prev_list.append(curr)
-#     prev_list = prev_list[-keep:]
-#     if abs(prev - curr) > qps_threshold:
-#         if stable:
-#             print('unstable')
-#             # scheduler.unstable()
-#             stable = False
-#         div = 1+int(abs(prev - curr)/max(prev, curr) * 10)
-#         last_close_enough = all(map(lambda n: curr - n < close_enough, prev_list[-(keep//div):]))
-#         print('last_close_enough', last_close_enough)
-#         if last_close_enough:
-#             prev_list = [curr]
-#     else:
-#         if not stable:
-#             qps = mt.do('qps')
-#             print('stable', qps)
-#             # scheduler.stable_qps(qps)
-#             stable = True
