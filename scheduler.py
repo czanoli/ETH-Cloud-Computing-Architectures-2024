@@ -29,6 +29,7 @@ to_file = True
 keep_lqs = 4
 threads = 2
 max_qps_one_core = 26_000 # around 39939 
+stash_core = 3
 
 ONE_S_IN_NS = 1e9
 pull_images = False
@@ -238,10 +239,11 @@ MEMCACHED_CORES = [0]
 docker_client = docker_connect()
 
 class Job:
-    def __init__(self, logger: SchedulerLogger, job: JobKind, cores: int) -> None:
+    def __init__(self, logger: SchedulerLogger, job: JobKind, cores: List[int]) -> None:
         self.logger = logger
         self.job = job
         self.id = None
+        self.original_cores = cores
         self.cores = cores
         self.update_cores(cores)
 
@@ -255,27 +257,13 @@ class Job:
 
     @property
     def cores_str(self) -> str:
-        if self.cores == 1:
-            return '1'
-        elif self.cores == 2:
-            return '2,3'
-        elif self.cores == 3:
-            return '1,2,3'
-        else:
-            raise Exception("unexpected number of required cores: ", self.cores)
+        return ','.join([str(c) for c in self.cores])
 
     @property
     def cores_list(self) -> List[int]:
-        if self.cores == 1:
-            return [1]
-        elif self.cores == 2:
-            return [2,3]
-        elif self.cores == 3:
-            return [1,2,3]
-        else:
-            raise Exception("unexpected number of required cores: ", self.cores)
+        return self.cores
 
-    def update_cores(self, cores: int) -> None:
+    def update_cores(self, cores: List[int]) -> None:
         prev_cores = self.cores
         self.cores = cores
 
@@ -333,8 +321,9 @@ class Job:
             raise Exception("tried to pause an unstarted container: ", self.job)
 
         if not self.finished and not self.paused:
-            self.logger.job_pause(self.job)
+            self.update_cores([stash_core])
             container.pause()
+            self.logger.job_pause(self.job)     
 
     def unpause(self) -> None:
         container = self.container
@@ -342,11 +331,12 @@ class Job:
             raise Exception("tried to unpause an unstarted container: ", self.job)
 
         if not self.finished and self.paused:
-            self.logger.job_unpause(self.job)
+            self.update_cores(self.original_cores)
             container.unpause()
-
+            self.logger.job_unpause(self.job)
+            
 class CoreQueue:
-    def __init__(self, logger: SchedulerLogger, cores: int, concurrent: int) -> None:
+    def __init__(self, logger: SchedulerLogger, cores: List[int], concurrent: int) -> None:
         self.logger = logger
         self.cores = cores
         self.concurrent = concurrent
@@ -384,7 +374,7 @@ class CoreQueue:
 
     @property
     def has_space(self) -> bool:
-        return self.q.empty() and len(self.r) < self.cores
+        return self.q.empty() and len(self.r) < len(self.cores)
 
     def fill(self) -> List[Job]:
         new = []
@@ -436,9 +426,9 @@ class Scheduler:
         self.logger.custom_event(JobKind.SCHEDULER, f"memcached pid={self.memcached_pid}")
         self.logger.custom_event(JobKind.SCHEDULER, f"scheduler pid={self.memcached_pid}")
 
-        self.highq = CoreQueue(self.logger, 2, 1)
+        self.highq = CoreQueue(self.logger, [2,3], 1)
         self.highq.append(HIGH_QUEUE)
-        self.lowq = CoreQueue(self.logger, 1, 1)
+        self.lowq = CoreQueue(self.logger, [1], 1)
         self.lowq.append(LOW_QUEUE)
         self.unstable(0, 0)
 
