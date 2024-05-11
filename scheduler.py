@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
-from typing import List, cast
-import json
+from typing import List, cast, Tuple
 from os import getpid
 from psutil import cpu_percent
 import socket
@@ -28,7 +27,7 @@ close_enough = 1000
 to_file = True
 keep_lqs = 4
 threads = 2
-max_qps_one_core = 26_000 # around 39939 
+max_qps_one_core = 27_000 # around 39939 
 stash_core = 3
 
 ONE_S_IN_NS = 1e9
@@ -229,8 +228,18 @@ class CPUThread():
 p = psutil.Process(getpid())
 p.cpu_affinity([0])
 
-HIGH_QUEUE = [JobKind.FREQMINE, JobKind.CANNEAL, JobKind.FERRET, JobKind.VIPS]
-LOW_QUEUE = [JobKind.BLACKSCHOLES, JobKind.RADIX, JobKind.DEDUP]
+default_share = 1024
+HIGH_QUEUE: List[Tuple[JobKind, int, int]] = [
+    (JobKind.FREQMINE, 3, default_share),
+    (JobKind.CANNEAL, 3, default_share),
+    (JobKind.BLACKSCHOLES, 2, default_share),
+    (JobKind.FERRET, 4, default_share),
+    (JobKind.VIPS, 4, default_share)
+]
+LOW_QUEUE: List[Tuple[JobKind, int, int]] = [
+    (JobKind.RADIX, 1, default_share//2),
+    (JobKind.DEDUP, 1, default_share//2)
+]
 # HIGH_QUEUE = []
 # LOW_QUEUE = [JobKind.RADIX]
 
@@ -239,11 +248,14 @@ MEMCACHED_CORES = [0]
 docker_client = docker_connect()
 
 class Job:
-    def __init__(self, logger: SchedulerLogger, job: JobKind, cores: List[int]) -> None:
+    def __init__(self, logger: SchedulerLogger, job: JobKind, cores: List[int], threads: int, shares: int) -> None:
         self.logger = logger
         self.job = job
         self.id = None
         self.original_cores = cores
+        self.threads = threads
+        self.shares = shares
+
         self.cores = cores
         self.update_cores(cores)
 
@@ -277,15 +289,15 @@ class Job:
             # the container has not been created yet
             image = IMAGE_PER_JOB[self.job]
             assert(image is not None)
-            threads = min(3, floor(self.cores * 1.5))
             container = cast(Container, docker_client.containers.run(
                 f"{image['name']}:{image['tag']}",
                 detach=True,
-                command=f"./run -a run -S {'parsec' if self.job != JobKind.RADIX else 'splash2x'} -p {self.job.value} -i native -n {threads}",
-                cpuset_cpus=self.cores_str
+                command=f"./run -a run -S {'parsec' if self.job != JobKind.RADIX else 'splash2x'} -p {self.job.value} -i native -n {self.threads}",
+                cpuset_cpus=self.cores_str,
+                cpu_shares=self.shares
             ))
             self.id = container.id
-            self.logger.job_start(self.job, self.cores_list, threads)
+            self.logger.job_start(self.job, self.cores_list, self.threads)
 
     def done(self) -> None:
         self.logger.job_end(self.job)
@@ -343,9 +355,9 @@ class CoreQueue:
         self.q = cast(Queue[Job], Queue())
         self.r = cast(List[Job], [])
 
-    def append(self, jobs: List[JobKind]) -> None:
-        for job in jobs:
-            self.q.put(Job(self.logger, job, self.cores))
+    def append(self, jobs: List[Tuple[JobKind, int, int]]) -> None:
+        for (jk, threads, shares) in jobs:
+            self.q.put(Job(self.logger, jk, self.cores, threads, shares))
 
     @property
     def current(self) -> List[Job]:
@@ -374,7 +386,11 @@ class CoreQueue:
 
     @property
     def has_space(self) -> bool:
-        return self.q.empty() and len(self.r) < len(self.cores)
+        return self.q.empty() and self.free_space > 0
+
+    @property
+    def free_space(self) -> int:
+        return self.concurrent - len(self.r)
 
     def fill(self) -> List[Job]:
         new = []
@@ -382,6 +398,8 @@ class CoreQueue:
             job = self.q.get()
             self.r.append(job)
             new.append(job)
+            job.original_cores = self.cores
+            job.update_cores(self.cores)
             if not job.created:
                 job.run()
             elif job.paused:
@@ -397,18 +415,19 @@ class CoreQueue:
                 self.r.remove(j)
         return done
 
-    def disown(self, job: JobKind) -> Job:
+    def disown(self) -> Job:
+        if not self.q.empty():
+            job = self.q.get()
+            self.q.task_done()
+            return job
+
         for j in self.current:
-            if j.job == job:
-                self.r.remove(j)
-                return j
-        raise Exception("Requested job ", job, " is not currently running")
+            self.r.remove(j)
+            return j
+
+        raise Exception("No jobs to disown")
 
     def own(self, job: Job) -> None:
-        if not job.created:
-            raise Exception("Tried to own a non-created job: ", job)
-
-        job.update_cores(self.cores)
         self.q.put(job)
 
 class Scheduler:
@@ -426,7 +445,7 @@ class Scheduler:
         self.logger.custom_event(JobKind.SCHEDULER, f"memcached pid={self.memcached_pid}")
         self.logger.custom_event(JobKind.SCHEDULER, f"scheduler pid={self.memcached_pid}")
 
-        self.highq = CoreQueue(self.logger, [2,3], 1)
+        self.highq = CoreQueue(self.logger, [2,3], 2)
         self.highq.append(HIGH_QUEUE)
         self.lowq = CoreQueue(self.logger, [1], 1)
         self.lowq.append(LOW_QUEUE)
@@ -466,8 +485,8 @@ class Scheduler:
                     print('unkown action', action)
                 self.msgq.task_done()
 
-            [core0, core1] = self.ct.get(50)
-            unpause_lowq = qps < max_qps_one_core and (core0+core1) < 130 # and core1 < 99
+            [core0, core1] = self.ct.get(25)
+            unpause_lowq = qps < max_qps_one_core and (core0+core1) < 45 # and core1 < 99
             if stable and unpause_lowq:
                 for j in self.lowq.paused:
                     j.unpause()
@@ -486,12 +505,11 @@ class Scheduler:
                 self.lowq.fill()
 
                 if self.highq.has_space and not self.lowq.done:
+                    self.logger.custom_event(JobKind.MEMCACHED, f"Free space in high priority queue. Moving {self.highq.free_space} jobs there")
                     # move (up to) two jobs from the lowq to the highq
-                    space = min(self.highq.cores - len(self.highq.current), 2)
-                    for j in self.lowq.current[:space]:
-                        jj = self.lowq.disown(j.job)
-                        assert(j == jj)
-                        self.highq.own(j)
+                    for _ in range(self.highq.free_space):
+                        job = self.lowq.disown()
+                        self.highq.own(job)
 
             i += 1
 
