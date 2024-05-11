@@ -229,7 +229,7 @@ p = psutil.Process(getpid())
 p.cpu_affinity([0])
 
 HIGH_QUEUE = [JobKind.FREQMINE, JobKind.CANNEAL, JobKind.FERRET, JobKind.VIPS]
-LOW_QUEUE = [JobKind.DEDUP, JobKind.RADIX, JobKind.BLACKSCHOLES]
+LOW_QUEUE = [JobKind.BLACKSCHOLES, JobKind.RADIX, JobKind.DEDUP]
 # HIGH_QUEUE = []
 # LOW_QUEUE = [JobKind.RADIX]
 
@@ -436,7 +436,7 @@ class Scheduler:
         self.logger.custom_event(JobKind.SCHEDULER, f"memcached pid={self.memcached_pid}")
         self.logger.custom_event(JobKind.SCHEDULER, f"scheduler pid={self.memcached_pid}")
 
-        self.highq = CoreQueue(self.logger, 2, 2)
+        self.highq = CoreQueue(self.logger, 2, 1)
         self.highq.append(HIGH_QUEUE)
         self.lowq = CoreQueue(self.logger, 1, 1)
         self.lowq.append(LOW_QUEUE)
