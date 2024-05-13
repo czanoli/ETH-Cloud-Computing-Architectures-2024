@@ -471,47 +471,50 @@ class Scheduler:
         stable = False
         qps = 100_000
         while not self._stop:
-            time.sleep(poll_interval)
-            if not self.msgq.empty():
-                action, data = self.msgq.get()
-                if action == 'stable':
-                    stable = True
-                    qps = data
-                elif action == 'unstable':
-                    stable = False
-                    curr, _qps = data
-                    qps = max(curr, _qps)
+            try:
+                time.sleep(poll_interval)
+                if not self.msgq.empty():
+                    action, data = self.msgq.get()
+                    if action == 'stable':
+                        stable = True
+                        qps = data
+                    elif action == 'unstable':
+                        stable = False
+                        curr, _qps = data
+                        qps = max(curr, _qps)
+                    else:
+                        print('unkown action', action)
+                    self.msgq.task_done()
+
+                [core0, core1] = self.ct.get(25)
+                unpause_lowq = qps < max_qps_one_core and (core0+core1) < 45 # and core1 < 99
+                if stable and unpause_lowq:
+                    for j in self.lowq.paused:
+                        j.unpause()
                 else:
-                    print('unkown action', action)
-                self.msgq.task_done()
+                    for j in self.lowq.running:
+                        j.pause()
 
-            [core0, core1] = self.ct.get(25)
-            unpause_lowq = qps < max_qps_one_core and (core0+core1) < 45 # and core1 < 99
-            if stable and unpause_lowq:
-                for j in self.lowq.paused:
-                    j.unpause()
-            else:
-                for j in self.lowq.running:
-                    j.pause()
+                if i % 10 == 0:
+                    i = 0
+                    highq_done = self.highq.reap()
+                    lowq_done = self.lowq.reap()
+                    if len(highq_done) > 0 or len(lowq_done) > 0:
+                        self.logger.custom_event(JobKind.MEMCACHED, f"Some jobs are done: (high, {len(highq_done)}), (low, {len(lowq_done)})")
 
-            if i % 10 == 0:
-                i = 0
-                highq_done = self.highq.reap()
-                lowq_done = self.lowq.reap()
-                if len(highq_done) > 0 or len(lowq_done) > 0:
-                    self.logger.custom_event(JobKind.MEMCACHED, f"Some jobs are done: (high, {len(highq_done)}), (low, {len(lowq_done)})")
+                    self.highq.fill()
+                    self.lowq.fill()
 
-                self.highq.fill()
-                self.lowq.fill()
+                    if self.highq.has_space and not self.lowq.done:
+                        self.logger.custom_event(JobKind.MEMCACHED, f"Free space in high priority queue. Moving {self.highq.free_space} jobs there")
+                        # move (up to) two jobs from the lowq to the highq
+                        for _ in range(self.highq.free_space):
+                            job = self.lowq.disown()
+                            self.highq.own(job)
 
-                if self.highq.has_space and not self.lowq.done:
-                    self.logger.custom_event(JobKind.MEMCACHED, f"Free space in high priority queue. Moving {self.highq.free_space} jobs there")
-                    # move (up to) two jobs from the lowq to the highq
-                    for _ in range(self.highq.free_space):
-                        job = self.lowq.disown()
-                        self.highq.own(job)
-
-            i += 1
+                i += 1
+            except:
+                continue
 
     @property
     def done(self) -> bool:
