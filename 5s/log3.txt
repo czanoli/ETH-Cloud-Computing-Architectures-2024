@@ -1,0 +1,2156 @@
+2024-05-13T13:07:19.782699 start scheduler
+2024-05-13T13:07:19.804511 custom scheduler memcached+pid%3D8524
+2024-05-13T13:07:19.804758 custom scheduler scheduler+pid%3D8524
+2024-05-13T13:07:19.804938 custom scheduler unstable+%28CURR+0+-+0+QPS%29
+2024-05-13T13:07:19.806256 update_cores memcached [0,1]
+2024-05-13T13:07:19.868177 custom scheduler stable+%289654+QPS%29
+2024-05-13T13:07:20.118141 start freqmine [2,3] 3
+2024-05-13T13:07:20.425750 start canneal [2,3] 3
+2024-05-13T13:07:20.500809 custom scheduler stable+%287745+QPS%29
+2024-05-13T13:07:20.761502 start radix [1] 1
+2024-05-13T13:07:20.812193 update_cores radix [3]
+2024-05-13T13:07:20.830419 pause radix
+2024-05-13T13:07:20.900086 update_cores radix [1]
+2024-05-13T13:07:20.918652 unpause radix
+2024-05-13T13:07:20.976093 update_cores radix [3]
+2024-05-13T13:07:20.992236 pause radix
+2024-05-13T13:07:21.204682 custom scheduler stable+%287512+QPS%29
+2024-05-13T13:07:21.884709 update_cores radix [1]
+2024-05-13T13:07:21.893003 custom scheduler stable+%287515+QPS%29
+2024-05-13T13:07:21.901270 unpause radix
+2024-05-13T13:07:21.948619 update_cores radix [3]
+2024-05-13T13:07:21.975640 pause radix
+2024-05-13T13:07:22.583288 custom scheduler stable+%287615+QPS%29
+2024-05-13T13:07:22.928507 update_cores radix [1]
+2024-05-13T13:07:22.949160 unpause radix
+2024-05-13T13:07:23.005164 update_cores radix [3]
+2024-05-13T13:07:23.021881 pause radix
+2024-05-13T13:07:23.276528 custom scheduler stable+%287219+QPS%29
+2024-05-13T13:07:23.901094 custom scheduler unstable+%28CURR+49274+-+9691+QPS%29
+2024-05-13T13:07:24.804285 custom scheduler stable+%2863519+QPS%29
+2024-05-13T13:07:25.450068 custom scheduler stable+%2868313+QPS%29
+2024-05-13T13:07:26.155728 custom scheduler stable+%2868467+QPS%29
+2024-05-13T13:07:26.871843 custom scheduler stable+%2868024+QPS%29
+2024-05-13T13:07:27.574502 custom scheduler stable+%2868196+QPS%29
+2024-05-13T13:07:28.285650 custom scheduler stable+%2868077+QPS%29
+2024-05-13T13:07:28.924473 custom scheduler unstable+%28CURR+101823+-+69116+QPS%29
+2024-05-13T13:07:29.185973 custom scheduler stable+%2873642+QPS%29
+2024-05-13T13:07:29.316022 custom scheduler unstable+%28CURR+109550+-+76171+QPS%29
+2024-05-13T13:07:29.380023 custom scheduler stable+%2877642+QPS%29
+2024-05-13T13:07:29.843778 custom scheduler stable+%2886252+QPS%29
+2024-05-13T13:07:30.567798 custom scheduler stable+%2886476+QPS%29
+2024-05-13T13:07:31.292014 custom scheduler stable+%2886713+QPS%29
+2024-05-13T13:07:32.034661 custom scheduler stable+%2887018+QPS%29
+2024-05-13T13:07:32.769341 custom scheduler stable+%2886776+QPS%29
+2024-05-13T13:07:32.972414 custom scheduler unstable+%28CURR+146524+-+87149+QPS%29
+2024-05-13T13:07:33.041814 custom scheduler stable+%2887418+QPS%29
+2024-05-13T13:07:33.504444 custom scheduler stable+%2886790+QPS%29
+2024-05-13T13:07:34.219316 custom scheduler stable+%2878935+QPS%29
+2024-05-13T13:07:34.925683 custom scheduler stable+%2864935+QPS%29
+2024-05-13T13:07:35.641743 custom scheduler stable+%2864602+QPS%29
+2024-05-13T13:07:36.355847 custom scheduler stable+%2864517+QPS%29
+2024-05-13T13:07:37.073753 custom scheduler stable+%2864544+QPS%29
+2024-05-13T13:07:37.795496 custom scheduler stable+%2864486+QPS%29
+2024-05-13T13:07:38.506198 custom scheduler stable+%2864623+QPS%29
+2024-05-13T13:07:38.957208 custom scheduler unstable+%28CURR+39447+-+61266+QPS%29
+2024-05-13T13:07:39.147456 custom scheduler stable+%2855116+QPS%29
+2024-05-13T13:07:39.212187 custom scheduler stable+%2852938+QPS%29
+2024-05-13T13:07:39.921370 custom scheduler stable+%2831729+QPS%29
+2024-05-13T13:07:40.625220 custom scheduler stable+%2831761+QPS%29
+2024-05-13T13:07:41.323971 custom scheduler stable+%2832123+QPS%29
+2024-05-13T13:07:42.025342 custom scheduler stable+%2832022+QPS%29
+2024-05-13T13:07:42.716735 custom scheduler stable+%2832185+QPS%29
+2024-05-13T13:07:43.411810 custom scheduler stable+%2832161+QPS%29
+2024-05-13T13:07:43.918639 custom scheduler unstable+%28CURR+109983+-+35520+QPS%29
+2024-05-13T13:07:44.498572 custom scheduler stable+%2867091+QPS%29
+2024-05-13T13:07:44.562870 custom scheduler unstable+%28CURR+121949+-+71453+QPS%29
+2024-05-13T13:07:44.693318 custom scheduler stable+%2878738+QPS%29
+2024-05-13T13:07:45.147958 custom scheduler stable+%2888508+QPS%29
+2024-05-13T13:07:45.868055 custom scheduler stable+%2889399+QPS%29
+2024-05-13T13:07:46.592353 custom scheduler stable+%2889142+QPS%29
+2024-05-13T13:07:47.315748 custom scheduler stable+%2888751+QPS%29
+2024-05-13T13:07:48.038234 custom scheduler stable+%2888433+QPS%29
+2024-05-13T13:07:48.743858 custom scheduler stable+%2888717+QPS%29
+2024-05-13T13:07:48.934264 custom scheduler unstable+%28CURR+10110+-+82285+QPS%29
+2024-05-13T13:07:49.808068 custom scheduler stable+%2812773+QPS%29
+2024-05-13T13:07:49.846860 update_cores radix [1]
+2024-05-13T13:07:49.866671 unpause radix
+2024-05-13T13:07:49.982639 update_cores radix [3]
+2024-05-13T13:07:49.999500 pause radix
+2024-05-13T13:07:50.105475 update_cores radix [1]
+2024-05-13T13:07:50.123376 unpause radix
+2024-05-13T13:07:50.172522 update_cores radix [3]
+2024-05-13T13:07:50.190869 pause radix
+2024-05-13T13:07:50.437937 custom scheduler stable+%287355+QPS%29
+2024-05-13T13:07:51.019344 update_cores radix [1]
+2024-05-13T13:07:51.041824 unpause radix
+2024-05-13T13:07:51.100171 update_cores radix [3]
+2024-05-13T13:07:51.118830 pause radix
+2024-05-13T13:07:51.126476 custom scheduler stable+%287424+QPS%29
+2024-05-13T13:07:51.201117 update_cores radix [1]
+2024-05-13T13:07:51.220384 unpause radix
+2024-05-13T13:07:51.274219 update_cores radix [3]
+2024-05-13T13:07:51.291010 pause radix
+2024-05-13T13:07:51.820718 custom scheduler stable+%287503+QPS%29
+2024-05-13T13:07:52.035671 update_cores radix [1]
+2024-05-13T13:07:52.055645 unpause radix
+2024-05-13T13:07:52.114981 update_cores radix [3]
+2024-05-13T13:07:52.132750 pause radix
+2024-05-13T13:07:52.282533 update_cores radix [1]
+2024-05-13T13:07:52.301799 unpause radix
+2024-05-13T13:07:52.508550 custom scheduler stable+%287513+QPS%29
+2024-05-13T13:07:53.075407 update_cores radix [3]
+2024-05-13T13:07:53.090692 pause radix
+2024-05-13T13:07:53.195043 update_cores radix [1]
+2024-05-13T13:07:53.206021 custom scheduler stable+%287418+QPS%29
+2024-05-13T13:07:53.212072 unpause radix
+2024-05-13T13:07:53.261144 update_cores radix [3]
+2024-05-13T13:07:53.276974 pause radix
+2024-05-13T13:07:53.891321 custom scheduler unstable+%28CURR+35775+-+9028+QPS%29
+2024-05-13T13:07:54.793038 custom scheduler stable+%2858432+QPS%29
+2024-05-13T13:07:55.433092 custom scheduler stable+%2863069+QPS%29
+2024-05-13T13:07:56.143159 custom scheduler stable+%2862814+QPS%29
+2024-05-13T13:07:56.852950 custom scheduler stable+%2862926+QPS%29
+2024-05-13T13:07:57.567161 custom scheduler stable+%2862743+QPS%29
+2024-05-13T13:07:58.276894 custom scheduler stable+%2862799+QPS%29
+2024-05-13T13:07:58.913747 custom scheduler unstable+%28CURR+9979+-+59559+QPS%29
+2024-05-13T13:07:59.785967 custom scheduler stable+%2811493+QPS%29
+2024-05-13T13:07:59.829072 update_cores radix [1]
+2024-05-13T13:07:59.849275 unpause radix
+2024-05-13T13:08:00.323361 update_cores radix [3]
+2024-05-13T13:08:00.338544 pause radix
+2024-05-13T13:08:00.419098 custom scheduler stable+%286480+QPS%29
+2024-05-13T13:08:00.474705 update_cores radix [1]
+2024-05-13T13:08:00.493294 unpause radix
+2024-05-13T13:08:00.547526 update_cores radix [3]
+2024-05-13T13:08:00.573572 pause radix
+2024-05-13T13:08:01.106546 custom scheduler stable+%286628+QPS%29
+2024-05-13T13:08:01.329291 update_cores radix [1]
+2024-05-13T13:08:01.349093 unpause radix
+2024-05-13T13:08:01.397338 update_cores radix [3]
+2024-05-13T13:08:01.432937 pause radix
+2024-05-13T13:08:01.550213 update_cores radix [1]
+2024-05-13T13:08:01.568067 unpause radix
+2024-05-13T13:08:01.805277 custom scheduler stable+%286722+QPS%29
+2024-05-13T13:08:02.362780 update_cores radix [3]
+2024-05-13T13:08:02.388805 pause radix
+2024-05-13T13:08:02.458088 update_cores radix [1]
+2024-05-13T13:08:02.480078 unpause radix
+2024-05-13T13:08:02.492722 custom scheduler stable+%286736+QPS%29
+2024-05-13T13:08:02.528681 update_cores radix [3]
+2024-05-13T13:08:02.553706 pause radix
+2024-05-13T13:08:03.177002 custom scheduler stable+%286668+QPS%29
+2024-05-13T13:08:03.380812 update_cores radix [1]
+2024-05-13T13:08:03.401506 unpause radix
+2024-05-13T13:08:03.453990 update_cores radix [3]
+2024-05-13T13:08:03.491636 pause radix
+2024-05-13T13:08:03.589752 update_cores radix [1]
+2024-05-13T13:08:03.608890 unpause radix
+2024-05-13T13:08:03.802540 custom scheduler unstable+%28CURR+9612+-+6703+QPS%29
+2024-05-13T13:08:03.862766 update_cores radix [3]
+2024-05-13T13:08:03.867089 custom scheduler stable+%286772+QPS%29
+2024-05-13T13:08:03.889270 pause radix
+2024-05-13T13:08:03.929497 custom scheduler unstable+%28CURR+27431+-+7709+QPS%29
+2024-05-13T13:08:03.936782 update_cores radix [1]
+2024-05-13T13:08:03.953298 unpause radix
+2024-05-13T13:08:03.997795 update_cores radix [3]
+2024-05-13T13:08:04.023495 pause radix
+2024-05-13T13:08:04.751609 custom scheduler stable+%2820681+QPS%29
+2024-05-13T13:08:04.807082 update_cores radix [1]
+2024-05-13T13:08:04.823906 unpause radix
+2024-05-13T13:08:05.385458 custom scheduler stable+%2822705+QPS%29
+2024-05-13T13:08:05.442114 update_cores radix [3]
+2024-05-13T13:08:05.460982 pause radix
+2024-05-13T13:08:05.587543 update_cores radix [1]
+2024-05-13T13:08:05.603804 unpause radix
+2024-05-13T13:08:05.679446 update_cores radix [3]
+2024-05-13T13:08:05.706678 pause radix
+2024-05-13T13:08:06.079168 custom scheduler stable+%2822943+QPS%29
+2024-05-13T13:08:06.470149 update_cores radix [1]
+2024-05-13T13:08:06.492911 unpause radix
+2024-05-13T13:08:06.543196 update_cores radix [3]
+2024-05-13T13:08:06.561482 pause radix
+2024-05-13T13:08:06.770991 custom scheduler stable+%2822702+QPS%29
+2024-05-13T13:08:07.027429 custom scheduler unstable+%28CURR+33024+-+22638+QPS%29
+2024-05-13T13:08:07.090681 custom scheduler stable+%2822709+QPS%29
+2024-05-13T13:08:07.465318 custom scheduler stable+%2822798+QPS%29
+2024-05-13T13:08:07.513166 update_cores radix [1]
+2024-05-13T13:08:07.530198 unpause radix
+2024-05-13T13:08:07.592525 update_cores radix [3]
+2024-05-13T13:08:07.609942 pause radix
+2024-05-13T13:08:07.750474 update_cores radix [1]
+2024-05-13T13:08:07.768423 unpause radix
+2024-05-13T13:08:08.158694 custom scheduler stable+%2822650+QPS%29
+2024-05-13T13:08:08.528287 update_cores radix [3]
+2024-05-13T13:08:08.546290 pause radix
+2024-05-13T13:08:08.702281 update_cores radix [1]
+2024-05-13T13:08:08.720977 unpause radix
+2024-05-13T13:08:08.766315 update_cores radix [3]
+2024-05-13T13:08:08.782902 pause radix
+2024-05-13T13:08:08.852812 custom scheduler stable+%2822651+QPS%29
+2024-05-13T13:08:08.915962 custom scheduler unstable+%28CURR+73699+-+25010+QPS%29
+2024-05-13T13:08:09.625360 custom scheduler stable+%2851884+QPS%29
+2024-05-13T13:08:10.271232 custom scheduler stable+%2861142+QPS%29
+2024-05-13T13:08:10.993193 custom scheduler stable+%2860185+QPS%29
+2024-05-13T13:08:11.059129 custom scheduler unstable+%28CURR+97482+-+60997+QPS%29
+2024-05-13T13:08:11.127119 custom scheduler stable+%2861009+QPS%29
+2024-05-13T13:08:11.764251 custom scheduler stable+%2861876+QPS%29
+2024-05-13T13:08:12.463914 custom scheduler stable+%2861403+QPS%29
+2024-05-13T13:08:13.162249 custom scheduler stable+%2860886+QPS%29
+2024-05-13T13:08:13.860032 custom scheduler stable+%2860999+QPS%29
+2024-05-13T13:08:14.560288 custom scheduler stable+%2860462+QPS%29
+2024-05-13T13:08:15.257513 custom scheduler stable+%2859696+QPS%29
+2024-05-13T13:08:15.956803 custom scheduler stable+%2858766+QPS%29
+2024-05-13T13:08:16.655413 custom scheduler stable+%2859182+QPS%29
+2024-05-13T13:08:17.357462 custom scheduler stable+%2859687+QPS%29
+2024-05-13T13:08:18.059386 custom scheduler stable+%2860198+QPS%29
+2024-05-13T13:08:18.771942 custom scheduler stable+%2859776+QPS%29
+2024-05-13T13:08:19.479785 custom scheduler stable+%2860332+QPS%29
+2024-05-13T13:08:20.191628 custom scheduler stable+%2860767+QPS%29
+2024-05-13T13:08:20.892198 custom scheduler stable+%2860749+QPS%29
+2024-05-13T13:08:21.587893 custom scheduler stable+%2860967+QPS%29
+2024-05-13T13:08:22.287847 custom scheduler stable+%2861438+QPS%29
+2024-05-13T13:08:22.984282 custom scheduler stable+%2861105+QPS%29
+2024-05-13T13:08:23.684971 custom scheduler stable+%2860788+QPS%29
+2024-05-13T13:08:23.936948 custom scheduler unstable+%28CURR+28149+-+57765+QPS%29
+2024-05-13T13:08:24.319852 custom scheduler stable+%2843554+QPS%29
+2024-05-13T13:08:24.383271 custom scheduler stable+%2841177+QPS%29
+2024-05-13T13:08:25.071896 custom scheduler stable+%2823248+QPS%29
+2024-05-13T13:08:25.110360 update_cores radix [1]
+2024-05-13T13:08:25.132416 unpause radix
+2024-05-13T13:08:25.191055 update_cores radix [3]
+2024-05-13T13:08:25.219713 pause radix
+2024-05-13T13:08:25.763532 custom scheduler stable+%2822993+QPS%29
+2024-05-13T13:08:26.132585 update_cores radix [1]
+2024-05-13T13:08:26.155335 unpause radix
+2024-05-13T13:08:26.208398 update_cores radix [3]
+2024-05-13T13:08:26.237339 pause radix
+2024-05-13T13:08:26.462100 custom scheduler stable+%2823193+QPS%29
+2024-05-13T13:08:27.149142 custom scheduler stable+%2823497+QPS%29
+2024-05-13T13:08:27.178569 update_cores radix [1]
+2024-05-13T13:08:27.198362 unpause radix
+2024-05-13T13:08:27.259886 update_cores radix [3]
+2024-05-13T13:08:27.277064 pause radix
+2024-05-13T13:08:27.841182 custom scheduler stable+%2823118+QPS%29
+2024-05-13T13:08:28.194691 update_cores radix [1]
+2024-05-13T13:08:28.218976 unpause radix
+2024-05-13T13:08:28.268942 update_cores radix [3]
+2024-05-13T13:08:28.287815 pause radix
+2024-05-13T13:08:28.410025 update_cores radix [1]
+2024-05-13T13:08:28.433345 unpause radix
+2024-05-13T13:08:28.534899 custom scheduler stable+%2823083+QPS%29
+2024-05-13T13:08:28.911625 custom scheduler unstable+%28CURR+13502+-+22522+QPS%29
+2024-05-13T13:08:28.961057 update_cores radix [3]
+2024-05-13T13:08:28.977441 pause radix
+2024-05-13T13:08:29.483710 custom scheduler stable+%2814102+QPS%29
+2024-05-13T13:08:29.547851 update_cores radix [1]
+2024-05-13T13:08:29.577442 unpause radix
+2024-05-13T13:08:30.109288 custom scheduler stable+%288025+QPS%29
+2024-05-13T13:08:30.249178 update_cores radix [3]
+2024-05-13T13:08:30.274532 pause radix
+2024-05-13T13:08:30.382718 update_cores radix [1]
+2024-05-13T13:08:30.398019 unpause radix
+2024-05-13T13:08:30.453074 update_cores radix [3]
+2024-05-13T13:08:30.469339 pause radix
+2024-05-13T13:08:30.805549 custom scheduler stable+%288300+QPS%29
+2024-05-13T13:08:31.273316 update_cores radix [1]
+2024-05-13T13:08:31.292870 unpause radix
+2024-05-13T13:08:31.335722 update_cores radix [3]
+2024-05-13T13:08:31.351238 pause radix
+2024-05-13T13:08:31.477358 update_cores radix [1]
+2024-05-13T13:08:31.493903 custom scheduler stable+%288474+QPS%29
+2024-05-13T13:08:31.498785 unpause radix
+2024-05-13T13:08:32.187400 custom scheduler stable+%288130+QPS%29
+2024-05-13T13:08:32.299145 update_cores radix [3]
+2024-05-13T13:08:32.317294 pause radix
+2024-05-13T13:08:32.419465 update_cores radix [1]
+2024-05-13T13:08:32.439091 unpause radix
+2024-05-13T13:08:32.488671 update_cores radix [3]
+2024-05-13T13:08:32.504569 pause radix
+2024-05-13T13:08:32.878325 custom scheduler stable+%288161+QPS%29
+2024-05-13T13:08:33.314163 update_cores radix [1]
+2024-05-13T13:08:33.337209 unpause radix
+2024-05-13T13:08:33.388982 update_cores radix [3]
+2024-05-13T13:08:33.404915 pause radix
+2024-05-13T13:08:33.570018 custom scheduler stable+%288222+QPS%29
+2024-05-13T13:08:33.883526 custom scheduler unstable+%28CURR+14407+-+8655+QPS%29
+2024-05-13T13:08:34.707173 custom scheduler stable+%2824562+QPS%29
+2024-05-13T13:08:34.771552 update_cores radix [1]
+2024-05-13T13:08:34.789170 unpause radix
+2024-05-13T13:08:35.291843 custom scheduler unstable+%28CURR+41181+-+28140+QPS%29
+2024-05-13T13:08:35.338661 update_cores radix [3]
+2024-05-13T13:08:35.357837 custom scheduler stable+%2828041+QPS%29
+2024-05-13T13:08:35.366348 pause radix
+2024-05-13T13:08:36.045029 custom scheduler stable+%2828245+QPS%29
+2024-05-13T13:08:36.735315 custom scheduler stable+%2828259+QPS%29
+2024-05-13T13:08:37.432807 custom scheduler stable+%2827907+QPS%29
+2024-05-13T13:08:38.126580 custom scheduler stable+%2827701+QPS%29
+2024-05-13T13:08:38.819155 custom scheduler stable+%2827836+QPS%29
+2024-05-13T13:08:38.944699 custom scheduler unstable+%28CURR+45768+-+28659+QPS%29
+2024-05-13T13:08:39.448838 custom scheduler stable+%2833660+QPS%29
+2024-05-13T13:08:39.511244 custom scheduler unstable+%28CURR+49313+-+34457+QPS%29
+2024-05-13T13:08:39.574075 custom scheduler stable+%2835035+QPS%29
+2024-05-13T13:08:40.207052 custom scheduler stable+%2838403+QPS%29
+2024-05-13T13:08:40.905212 custom scheduler stable+%2838133+QPS%29
+2024-05-13T13:08:41.603260 custom scheduler stable+%2838289+QPS%29
+2024-05-13T13:08:42.297162 custom scheduler stable+%2837936+QPS%29
+2024-05-13T13:08:42.995524 custom scheduler stable+%2837790+QPS%29
+2024-05-13T13:08:43.687372 custom scheduler stable+%2838095+QPS%29
+2024-05-13T13:08:44.383658 custom scheduler stable+%2831132+QPS%29
+2024-05-13T13:08:45.074512 custom scheduler stable+%2824730+QPS%29
+2024-05-13T13:08:45.123944 update_cores radix [1]
+2024-05-13T13:08:45.144943 unpause radix
+2024-05-13T13:08:45.691291 update_cores radix [3]
+2024-05-13T13:08:45.719497 pause radix
+2024-05-13T13:08:45.771130 custom scheduler stable+%2824840+QPS%29
+2024-05-13T13:08:45.850112 update_cores radix [1]
+2024-05-13T13:08:45.886282 unpause radix
+2024-05-13T13:08:45.941276 update_cores radix [3]
+2024-05-13T13:08:45.961025 pause radix
+2024-05-13T13:08:46.465752 custom scheduler stable+%2824658+QPS%29
+2024-05-13T13:08:46.720780 update_cores radix [1]
+2024-05-13T13:08:46.742959 unpause radix
+2024-05-13T13:08:46.804491 update_cores radix [3]
+2024-05-13T13:08:46.831406 pause radix
+2024-05-13T13:08:47.156076 custom scheduler stable+%2824695+QPS%29
+2024-05-13T13:08:47.756542 update_cores radix [1]
+2024-05-13T13:08:47.774224 unpause radix
+2024-05-13T13:08:47.837122 update_cores radix [3]
+2024-05-13T13:08:47.845734 custom scheduler stable+%2824591+QPS%29
+2024-05-13T13:08:47.867303 pause radix
+2024-05-13T13:08:48.533684 custom scheduler stable+%2824653+QPS%29
+2024-05-13T13:08:48.773548 update_cores radix [1]
+2024-05-13T13:08:48.790064 unpause radix
+2024-05-13T13:08:48.857486 update_cores radix [3]
+2024-05-13T13:08:48.874202 pause radix
+2024-05-13T13:08:48.911386 custom scheduler unstable+%28CURR+42437+-+25204+QPS%29
+2024-05-13T13:08:49.355849 custom scheduler stable+%2829379+QPS%29
+2024-05-13T13:08:49.985543 custom scheduler stable+%2834012+QPS%29
+2024-05-13T13:08:50.677798 custom scheduler stable+%2834198+QPS%29
+2024-05-13T13:08:51.383667 custom scheduler stable+%2834561+QPS%29
+2024-05-13T13:08:52.075384 custom scheduler stable+%2833838+QPS%29
+2024-05-13T13:08:52.772187 custom scheduler stable+%2833633+QPS%29
+2024-05-13T13:08:53.463785 custom scheduler stable+%2834184+QPS%29
+2024-05-13T13:08:53.911799 custom scheduler unstable+%28CURR+96733+-+37045+QPS%29
+2024-05-13T13:08:54.624288 custom scheduler stable+%2872771+QPS%29
+2024-05-13T13:08:54.694091 custom scheduler unstable+%28CURR+110903+-+76617+QPS%29
+2024-05-13T13:08:54.757535 custom scheduler stable+%2880023+QPS%29
+2024-05-13T13:08:55.278081 custom scheduler stable+%2885720+QPS%29
+2024-05-13T13:08:56.002917 custom scheduler stable+%2886140+QPS%29
+2024-05-13T13:08:56.736738 custom scheduler stable+%2883852+QPS%29
+2024-05-13T13:08:57.416301 custom scheduler unstable+%28CURR+135590+-+83338+QPS%29
+2024-05-13T13:08:57.481277 custom scheduler stable+%2883507+QPS%29
+2024-05-13T13:08:58.193629 custom scheduler stable+%2889386+QPS%29
+2024-05-13T13:08:58.903648 custom scheduler stable+%2885962+QPS%29
+2024-05-13T13:08:59.615095 custom scheduler stable+%2885668+QPS%29
+2024-05-13T13:09:00.331802 custom scheduler stable+%2886351+QPS%29
+2024-05-13T13:09:00.746600 custom scheduler unstable+%28CURR+125371+-+86553+QPS%29
+2024-05-13T13:09:00.811055 custom scheduler stable+%2886553+QPS%29
+2024-05-13T13:09:01.067433 custom scheduler stable+%2886623+QPS%29
+2024-05-13T13:09:01.787774 custom scheduler stable+%2886539+QPS%29
+2024-05-13T13:09:02.503198 custom scheduler stable+%2886962+QPS%29
+2024-05-13T13:09:03.221337 custom scheduler stable+%2886864+QPS%29
+2024-05-13T13:09:03.930461 custom scheduler stable+%2883574+QPS%29
+2024-05-13T13:09:04.628370 custom scheduler stable+%2860570+QPS%29
+2024-05-13T13:09:05.324290 custom scheduler stable+%2852281+QPS%29
+2024-05-13T13:09:06.022981 custom scheduler stable+%2852386+QPS%29
+2024-05-13T13:09:06.716731 custom scheduler stable+%2852672+QPS%29
+2024-05-13T13:09:07.412070 custom scheduler stable+%2852524+QPS%29
+2024-05-13T13:09:08.116504 custom scheduler stable+%2852939+QPS%29
+2024-05-13T13:09:08.816159 custom scheduler stable+%2852855+QPS%29
+2024-05-13T13:09:09.506511 custom scheduler stable+%2841098+QPS%29
+2024-05-13T13:09:10.197367 custom scheduler stable+%2834787+QPS%29
+2024-05-13T13:09:10.893386 custom scheduler stable+%2834634+QPS%29
+2024-05-13T13:09:11.585142 custom scheduler stable+%2834605+QPS%29
+2024-05-13T13:09:12.276896 custom scheduler stable+%2834859+QPS%29
+2024-05-13T13:09:12.967841 custom scheduler stable+%2834719+QPS%29
+2024-05-13T13:09:13.659385 custom scheduler stable+%2835074+QPS%29
+2024-05-13T13:09:14.353160 custom scheduler stable+%2831696+QPS%29
+2024-05-13T13:09:15.046465 custom scheduler stable+%2828941+QPS%29
+2024-05-13T13:09:15.739775 custom scheduler stable+%2828860+QPS%29
+2024-05-13T13:09:16.431977 custom scheduler stable+%2828894+QPS%29
+2024-05-13T13:09:17.124327 custom scheduler stable+%2828973+QPS%29
+2024-05-13T13:09:17.816287 custom scheduler stable+%2829203+QPS%29
+2024-05-13T13:09:18.507633 custom scheduler stable+%2829017+QPS%29
+2024-05-13T13:09:18.892970 custom scheduler unstable+%28CURR+42419+-+29191+QPS%29
+2024-05-13T13:09:19.336991 custom scheduler stable+%2833375+QPS%29
+2024-05-13T13:09:19.399752 custom scheduler unstable+%28CURR+48676+-+34055+QPS%29
+2024-05-13T13:09:19.462759 custom scheduler stable+%2834544+QPS%29
+2024-05-13T13:09:19.968620 custom scheduler stable+%2838476+QPS%29
+2024-05-13T13:09:20.663116 custom scheduler stable+%2838763+QPS%29
+2024-05-13T13:09:21.361449 custom scheduler stable+%2838833+QPS%29
+2024-05-13T13:09:22.057604 custom scheduler stable+%2838633+QPS%29
+2024-05-13T13:09:22.752852 custom scheduler stable+%2838874+QPS%29
+2024-05-13T13:09:23.444756 custom scheduler stable+%2838797+QPS%29
+2024-05-13T13:09:23.948716 custom scheduler unstable+%28CURR+25602+-+37145+QPS%29
+2024-05-13T13:09:24.011656 custom scheduler stable+%2836183+QPS%29
+2024-05-13T13:09:24.136634 custom scheduler stable+%2833917+QPS%29
+2024-05-13T13:09:24.823826 custom scheduler stable+%2821657+QPS%29
+2024-05-13T13:09:24.906077 update_cores radix [1]
+2024-05-13T13:09:24.925058 unpause radix
+2024-05-13T13:09:25.029518 update_cores radix [3]
+2024-05-13T13:09:25.056948 pause radix
+2024-05-13T13:09:25.238764 update_cores radix [1]
+2024-05-13T13:09:25.260091 unpause radix
+2024-05-13T13:09:25.330203 update_cores radix [3]
+2024-05-13T13:09:25.348050 pause radix
+2024-05-13T13:09:25.518456 custom scheduler stable+%2820800+QPS%29
+2024-05-13T13:09:26.046483 update_cores radix [1]
+2024-05-13T13:09:26.068997 unpause radix
+2024-05-13T13:09:26.128804 update_cores radix [3]
+2024-05-13T13:09:26.156519 pause radix
+2024-05-13T13:09:26.214477 custom scheduler stable+%2820760+QPS%29
+2024-05-13T13:09:26.286488 update_cores radix [1]
+2024-05-13T13:09:26.309080 unpause radix
+2024-05-13T13:09:26.360548 update_cores radix [3]
+2024-05-13T13:09:26.376217 pause radix
+2024-05-13T13:09:26.911155 custom scheduler stable+%2820898+QPS%29
+2024-05-13T13:09:27.102263 update_cores radix [1]
+2024-05-13T13:09:27.120322 unpause radix
+2024-05-13T13:09:27.195213 update_cores radix [3]
+2024-05-13T13:09:27.211395 pause radix
+2024-05-13T13:09:27.605285 custom scheduler stable+%2820999+QPS%29
+2024-05-13T13:09:28.108098 update_cores radix [1]
+2024-05-13T13:09:28.129073 unpause radix
+2024-05-13T13:09:28.186866 update_cores radix [3]
+2024-05-13T13:09:28.212969 pause radix
+2024-05-13T13:09:28.296818 custom scheduler stable+%2820740+QPS%29
+2024-05-13T13:09:28.982982 custom scheduler stable+%2819897+QPS%29
+2024-05-13T13:09:29.150538 update_cores radix [1]
+2024-05-13T13:09:29.166935 unpause radix
+2024-05-13T13:09:29.218340 update_cores radix [3]
+2024-05-13T13:09:29.244473 pause radix
+2024-05-13T13:09:29.674615 custom scheduler stable+%2815302+QPS%29
+2024-05-13T13:09:30.173347 update_cores radix [1]
+2024-05-13T13:09:30.195837 unpause radix
+2024-05-13T13:09:30.247465 update_cores radix [3]
+2024-05-13T13:09:30.267413 pause radix
+2024-05-13T13:09:30.364935 custom scheduler stable+%2814042+QPS%29
+2024-05-13T13:09:31.050775 custom scheduler stable+%2814134+QPS%29
+2024-05-13T13:09:31.234756 update_cores radix [1]
+2024-05-13T13:09:31.254015 unpause radix
+2024-05-13T13:09:31.296041 update_cores radix [3]
+2024-05-13T13:09:31.323090 pause radix
+2024-05-13T13:09:31.452272 update_cores radix [1]
+2024-05-13T13:09:31.474306 unpause radix
+2024-05-13T13:09:31.743856 custom scheduler stable+%2814107+QPS%29
+2024-05-13T13:09:32.243278 update_cores radix [3]
+2024-05-13T13:09:32.260569 pause radix
+2024-05-13T13:09:32.433488 update_cores radix [1]
+2024-05-13T13:09:32.439068 custom scheduler stable+%2813732+QPS%29
+2024-05-13T13:09:32.449779 unpause radix
+2024-05-13T13:09:32.501087 update_cores radix [3]
+2024-05-13T13:09:32.518722 pause radix
+2024-05-13T13:09:33.129464 custom scheduler stable+%2813856+QPS%29
+2024-05-13T13:09:33.267750 update_cores radix [1]
+2024-05-13T13:09:33.283079 unpause radix
+2024-05-13T13:09:33.336103 update_cores radix [3]
+2024-05-13T13:09:33.353775 pause radix
+2024-05-13T13:09:33.505404 update_cores radix [1]
+2024-05-13T13:09:33.529878 unpause radix
+2024-05-13T13:09:33.819167 custom scheduler stable+%2814044+QPS%29
+2024-05-13T13:09:33.882958 custom scheduler unstable+%28CURR+38107+-+15452+QPS%29
+2024-05-13T13:09:33.936000 update_cores radix [3]
+2024-05-13T13:09:33.954597 pause radix
+2024-05-13T13:09:34.805811 custom scheduler stable+%2888934+QPS%29
+2024-05-13T13:09:35.395737 custom scheduler unstable+%28CURR+137229+-+94406+QPS%29
+2024-05-13T13:09:35.461709 custom scheduler stable+%2894495+QPS%29
+2024-05-13T13:09:36.167455 custom scheduler stable+%2894821+QPS%29
+2024-05-13T13:09:36.879427 custom scheduler stable+%2894826+QPS%29
+2024-05-13T13:09:37.585224 custom scheduler stable+%2894613+QPS%29
+2024-05-13T13:09:37.988969 custom scheduler unstable+%28CURR+135490+-+93555+QPS%29
+2024-05-13T13:09:38.052440 custom scheduler stable+%2894310+QPS%29
+2024-05-13T13:09:38.318217 custom scheduler stable+%2894282+QPS%29
+2024-05-13T13:09:39.053670 custom scheduler stable+%2895314+QPS%29
+2024-05-13T13:09:39.774543 custom scheduler stable+%2898720+QPS%29
+2024-05-13T13:09:40.502069 custom scheduler stable+%2899191+QPS%29
+2024-05-13T13:09:41.221139 custom scheduler stable+%2899737+QPS%29
+2024-05-13T13:09:41.947737 custom scheduler stable+%2899619+QPS%29
+2024-05-13T13:09:42.673034 custom scheduler stable+%2898896+QPS%29
+2024-05-13T13:09:43.401696 custom scheduler stable+%2899519+QPS%29
+2024-05-13T13:09:44.132541 custom scheduler stable+%2891389+QPS%29
+2024-05-13T13:09:44.844340 custom scheduler stable+%2873047+QPS%29
+2024-05-13T13:09:45.555430 custom scheduler stable+%2871707+QPS%29
+2024-05-13T13:09:46.258438 custom scheduler stable+%2871873+QPS%29
+2024-05-13T13:09:46.960650 custom scheduler stable+%2871658+QPS%29
+2024-05-13T13:09:47.663435 custom scheduler stable+%2872044+QPS%29
+2024-05-13T13:09:48.363779 custom scheduler stable+%2871661+QPS%29
+2024-05-13T13:09:49.065717 custom scheduler stable+%2865716+QPS%29
+2024-05-13T13:09:49.759101 custom scheduler stable+%2845796+QPS%29
+2024-05-13T13:09:50.455846 custom scheduler stable+%2842352+QPS%29
+2024-05-13T13:09:51.160403 custom scheduler stable+%2842643+QPS%29
+2024-05-13T13:09:51.855697 custom scheduler stable+%2842309+QPS%29
+2024-05-13T13:09:52.551356 custom scheduler stable+%2842264+QPS%29
+2024-05-13T13:09:53.254505 custom scheduler stable+%2842837+QPS%29
+2024-05-13T13:09:53.958551 custom scheduler unstable+%28CURR+64368+-+43549+QPS%29
+2024-05-13T13:09:54.086761 custom scheduler stable+%2844123+QPS%29
+2024-05-13T13:09:54.723408 custom scheduler stable+%2846697+QPS%29
+2024-05-13T13:09:55.440267 custom scheduler stable+%2847388+QPS%29
+2024-05-13T13:09:56.135924 custom scheduler stable+%2846992+QPS%29
+2024-05-13T13:09:56.835619 custom scheduler stable+%2846833+QPS%29
+2024-05-13T13:09:57.535157 custom scheduler stable+%2847252+QPS%29
+2024-05-13T13:09:58.231861 custom scheduler stable+%2847351+QPS%29
+2024-05-13T13:09:58.938088 custom scheduler stable+%2845591+QPS%29
+2024-05-13T13:09:59.635385 custom scheduler stable+%2835020+QPS%29
+2024-05-13T13:10:00.326681 custom scheduler stable+%2831451+QPS%29
+2024-05-13T13:10:01.027100 custom scheduler stable+%2831526+QPS%29
+2024-05-13T13:10:01.717683 custom scheduler stable+%2831226+QPS%29
+2024-05-13T13:10:02.408455 custom scheduler stable+%2831157+QPS%29
+2024-05-13T13:10:03.098582 custom scheduler stable+%2830972+QPS%29
+2024-05-13T13:10:03.788146 custom scheduler stable+%2831384+QPS%29
+2024-05-13T13:10:03.913184 custom scheduler unstable+%28CURR+51140+-+31957+QPS%29
+2024-05-13T13:10:04.421486 custom scheduler stable+%2837819+QPS%29
+2024-05-13T13:10:04.485392 custom scheduler stable+%2838693+QPS%29
+2024-05-13T13:10:04.996331 custom scheduler unstable+%28CURR+64595+-+43464+QPS%29
+2024-05-13T13:10:05.059508 custom scheduler stable+%2843415+QPS%29
+2024-05-13T13:10:05.186604 custom scheduler stable+%2843720+QPS%29
+2024-05-13T13:10:05.879866 custom scheduler stable+%2843655+QPS%29
+2024-05-13T13:10:06.574566 custom scheduler stable+%2843416+QPS%29
+2024-05-13T13:10:07.283072 custom scheduler stable+%2843436+QPS%29
+2024-05-13T13:10:07.986713 custom scheduler stable+%2843258+QPS%29
+2024-05-13T13:10:08.692698 custom scheduler stable+%2842982+QPS%29
+2024-05-13T13:10:08.880009 custom scheduler unstable+%28CURR+70507+-+44426+QPS%29
+2024-05-13T13:10:09.597252 custom scheduler stable+%2881194+QPS%29
+2024-05-13T13:10:10.248187 custom scheduler stable+%2894591+QPS%29
+2024-05-13T13:10:10.951461 custom scheduler stable+%2894436+QPS%29
+2024-05-13T13:10:11.663271 custom scheduler stable+%2894464+QPS%29
+2024-05-13T13:10:12.380852 custom scheduler stable+%2894113+QPS%29
+2024-05-13T13:10:13.087985 custom scheduler stable+%2894426+QPS%29
+2024-05-13T13:10:13.802630 custom scheduler stable+%2894689+QPS%29
+2024-05-13T13:10:14.502364 custom scheduler stable+%2876574+QPS%29
+2024-05-13T13:10:15.216310 custom scheduler stable+%2866425+QPS%29
+2024-05-13T13:10:15.915277 custom scheduler stable+%2866214+QPS%29
+2024-05-13T13:10:16.617105 custom scheduler stable+%2866141+QPS%29
+2024-05-13T13:10:17.322879 custom scheduler stable+%2865994+QPS%29
+2024-05-13T13:10:18.030611 custom scheduler stable+%2865978+QPS%29
+2024-05-13T13:10:18.734800 custom scheduler stable+%2866206+QPS%29
+2024-05-13T13:10:18.924546 custom scheduler unstable+%28CURR+35942+-+63718+QPS%29
+2024-05-13T13:10:19.237380 custom scheduler stable+%2852457+QPS%29
+2024-05-13T13:10:19.425390 custom scheduler stable+%2845797+QPS%29
+2024-05-13T13:10:20.117527 custom scheduler stable+%2829815+QPS%29
+2024-05-13T13:10:20.811942 custom scheduler stable+%2829953+QPS%29
+2024-05-13T13:10:21.502966 custom scheduler stable+%2830430+QPS%29
+2024-05-13T13:10:22.205926 custom scheduler stable+%2829776+QPS%29
+2024-05-13T13:10:22.895410 custom scheduler stable+%2829691+QPS%29
+2024-05-13T13:10:23.588699 custom scheduler stable+%2829722+QPS%29
+2024-05-13T13:10:23.901766 custom scheduler unstable+%28CURR+54404+-+30692+QPS%29
+2024-05-13T13:10:24.603372 custom scheduler stable+%2845931+QPS%29
+2024-05-13T13:10:25.243193 custom scheduler stable+%2851806+QPS%29
+2024-05-13T13:10:25.941403 custom scheduler stable+%2851641+QPS%29
+2024-05-13T13:10:26.642850 custom scheduler stable+%2851832+QPS%29
+2024-05-13T13:10:27.339848 custom scheduler stable+%2851646+QPS%29
+2024-05-13T13:10:28.036543 custom scheduler stable+%2851745+QPS%29
+2024-05-13T13:10:28.732901 custom scheduler stable+%2851826+QPS%29
+2024-05-13T13:10:28.925891 custom scheduler unstable+%28CURR+84617+-+52895+QPS%29
+2024-05-13T13:10:29.243606 custom scheduler stable+%2858046+QPS%29
+2024-05-13T13:10:29.436436 custom scheduler stable+%2861275+QPS%29
+2024-05-13T13:10:30.138761 custom scheduler stable+%2867728+QPS%29
+2024-05-13T13:10:30.836269 custom scheduler stable+%2868328+QPS%29
+2024-05-13T13:10:31.539821 custom scheduler stable+%2868301+QPS%29
+2024-05-13T13:10:32.243639 custom scheduler stable+%2867639+QPS%29
+2024-05-13T13:10:32.941004 custom scheduler stable+%2867449+QPS%29
+2024-05-13T13:10:33.648107 custom scheduler stable+%2867754+QPS%29
+2024-05-13T13:10:33.908406 custom scheduler unstable+%28CURR+35836+-+64858+QPS%29
+2024-05-13T13:10:34.598514 custom scheduler stable+%2830107+QPS%29
+2024-05-13T13:10:35.221659 custom scheduler stable+%2816609+QPS%29
+2024-05-13T13:10:35.297933 update_cores radix [1]
+2024-05-13T13:10:35.317873 unpause radix
+2024-05-13T13:10:35.471883 update_cores radix [3]
+2024-05-13T13:10:35.490063 pause radix
+2024-05-13T13:10:35.699686 update_cores radix [1]
+2024-05-13T13:10:35.730492 unpause radix
+2024-05-13T13:10:35.916903 custom scheduler stable+%2816500+QPS%29
+2024-05-13T13:10:36.518983 update_cores radix [3]
+2024-05-13T13:10:36.546614 pause radix
+2024-05-13T13:10:36.614441 custom scheduler stable+%2816447+QPS%29
+2024-05-13T13:10:36.633483 update_cores radix [1]
+2024-05-13T13:10:36.654455 unpause radix
+2024-05-13T13:10:36.716726 update_cores radix [3]
+2024-05-13T13:10:36.732353 pause radix
+2024-05-13T13:10:37.311749 custom scheduler stable+%2816418+QPS%29
+2024-05-13T13:10:37.536297 update_cores radix [1]
+2024-05-13T13:10:37.557450 unpause radix
+2024-05-13T13:10:37.609006 update_cores radix [3]
+2024-05-13T13:10:37.635912 pause radix
+2024-05-13T13:10:37.782716 update_cores radix [1]
+2024-05-13T13:10:37.803168 unpause radix
+2024-05-13T13:10:38.006840 custom scheduler stable+%2816601+QPS%29
+2024-05-13T13:10:38.552904 update_cores radix [3]
+2024-05-13T13:10:38.581458 pause radix
+2024-05-13T13:10:38.700384 custom scheduler stable+%2816339+QPS%29
+2024-05-13T13:10:38.728453 update_cores radix [1]
+2024-05-13T13:10:38.764567 unpause radix
+2024-05-13T13:10:38.811797 update_cores radix [3]
+2024-05-13T13:10:38.839130 pause radix
+2024-05-13T13:10:38.890979 custom scheduler unstable+%28CURR+56440+-+18526+QPS%29
+2024-05-13T13:10:39.794863 custom scheduler stable+%2877178+QPS%29
+2024-05-13T13:10:40.440952 custom scheduler stable+%2882661+QPS%29
+2024-05-13T13:10:40.573047 custom scheduler unstable+%28CURR+125291+-+82497+QPS%29
+2024-05-13T13:10:40.638079 custom scheduler stable+%2882493+QPS%29
+2024-05-13T13:10:41.150429 custom scheduler stable+%2881984+QPS%29
+2024-05-13T13:10:41.864876 custom scheduler stable+%2881907+QPS%29
+2024-05-13T13:10:42.565784 custom scheduler stable+%2882434+QPS%29
+2024-05-13T13:10:43.016236 custom scheduler unstable+%28CURR+124526+-+79794+QPS%29
+2024-05-13T13:10:43.211468 custom scheduler stable+%2882599+QPS%29
+2024-05-13T13:10:43.277035 custom scheduler stable+%2882647+QPS%29
+2024-05-13T13:10:43.993214 custom scheduler stable+%2887018+QPS%29
+2024-05-13T13:10:44.712290 custom scheduler stable+%2887576+QPS%29
+2024-05-13T13:10:44.994972 custom scheduler unstable+%28CURR+136974+-+88630+QPS%29
+2024-05-13T13:10:45.058892 custom scheduler stable+%2888653+QPS%29
+2024-05-13T13:10:45.446956 custom scheduler stable+%2888608+QPS%29
+2024-05-13T13:10:46.160524 custom scheduler stable+%2887850+QPS%29
+2024-05-13T13:10:46.881285 custom scheduler stable+%2888295+QPS%29
+2024-05-13T13:10:47.593235 custom scheduler stable+%2888689+QPS%29
+2024-05-13T13:10:48.309102 custom scheduler stable+%2888671+QPS%29
+2024-05-13T13:10:49.022629 custom scheduler stable+%2890354+QPS%29
+2024-05-13T13:10:49.739063 custom scheduler stable+%2898703+QPS%29
+2024-05-13T13:10:50.458492 custom scheduler stable+%28101348+QPS%29
+2024-05-13T13:10:51.186106 custom scheduler stable+%2899922+QPS%29
+2024-05-13T13:10:51.908261 custom scheduler stable+%2899162+QPS%29
+2024-05-13T13:10:52.629354 custom scheduler stable+%2899678+QPS%29
+2024-05-13T13:10:53.355627 custom scheduler stable+%28100212+QPS%29
+2024-05-13T13:10:53.947383 custom scheduler unstable+%28CURR+64096+-+95830+QPS%29
+2024-05-13T13:10:54.075068 custom scheduler stable+%2889629+QPS%29
+2024-05-13T13:10:54.772919 custom scheduler stable+%2856319+QPS%29
+2024-05-13T13:10:55.473857 custom scheduler stable+%2852279+QPS%29
+2024-05-13T13:10:56.173055 custom scheduler stable+%2852312+QPS%29
+2024-05-13T13:10:56.877843 custom scheduler stable+%2851692+QPS%29
+2024-05-13T13:10:57.577361 custom scheduler stable+%2851643+QPS%29
+2024-05-13T13:10:58.275330 custom scheduler stable+%2852182+QPS%29
+2024-05-13T13:10:58.907515 custom scheduler unstable+%28CURR+21898+-+49536+QPS%29
+2024-05-13T13:10:59.660515 custom scheduler stable+%2820062+QPS%29
+2024-05-13T13:10:59.738668 update_cores radix [1]
+2024-05-13T13:10:59.758802 unpause radix
+2024-05-13T13:11:00.168810 custom scheduler unstable+%28CURR+17275+-+12027+QPS%29
+2024-05-13T13:11:00.232787 update_cores radix [3]
+2024-05-13T13:11:00.233030 custom scheduler stable+%2812009+QPS%29
+2024-05-13T13:11:00.258870 pause radix
+2024-05-13T13:11:00.295849 custom scheduler stable+%2812025+QPS%29
+2024-05-13T13:11:00.310489 update_cores radix [1]
+2024-05-13T13:11:00.334166 unpause radix
+2024-05-13T13:11:00.448431 update_cores radix [3]
+2024-05-13T13:11:00.466765 pause radix
+2024-05-13T13:11:00.601716 update_cores radix [1]
+2024-05-13T13:11:00.624176 unpause radix
+2024-05-13T13:11:00.697064 update_cores radix [3]
+2024-05-13T13:11:00.724336 pause radix
+2024-05-13T13:11:00.991206 custom scheduler stable+%2811965+QPS%29
+2024-05-13T13:11:01.460787 update_cores radix [1]
+2024-05-13T13:11:01.478814 unpause radix
+2024-05-13T13:11:01.536467 update_cores radix [3]
+2024-05-13T13:11:01.551748 pause radix
+2024-05-13T13:11:01.677377 custom scheduler stable+%2812055+QPS%29
+2024-05-13T13:11:02.364988 custom scheduler stable+%2811866+QPS%29
+2024-05-13T13:11:02.507763 update_cores radix [1]
+2024-05-13T13:11:02.526528 unpause radix
+2024-05-13T13:11:02.571092 update_cores radix [3]
+2024-05-13T13:11:02.586343 pause radix
+2024-05-13T13:11:02.652486 update_cores radix [1]
+2024-05-13T13:11:02.669234 unpause radix
+2024-05-13T13:11:02.714425 update_cores radix [3]
+2024-05-13T13:11:02.732395 pause radix
+2024-05-13T13:11:03.055075 custom scheduler stable+%2811859+QPS%29
+2024-05-13T13:11:03.537039 update_cores radix [1]
+2024-05-13T13:11:03.561398 unpause radix
+2024-05-13T13:11:03.614230 update_cores radix [3]
+2024-05-13T13:11:03.630346 pause radix
+2024-05-13T13:11:03.744208 custom scheduler stable+%2812135+QPS%29
+2024-05-13T13:11:03.783647 update_cores radix [1]
+2024-05-13T13:11:03.799905 unpause radix
+2024-05-13T13:11:03.872618 custom scheduler unstable+%28CURR+24043+-+13132+QPS%29
+2024-05-13T13:11:03.946064 update_cores radix [3]
+2024-05-13T13:11:03.982430 pause radix
+2024-05-13T13:11:04.679354 custom scheduler stable+%2879621+QPS%29
+2024-05-13T13:11:04.747412 custom scheduler unstable+%28CURR+136135+-+86433+QPS%29
+2024-05-13T13:11:04.879331 custom scheduler stable+%2898483+QPS%29
+2024-05-13T13:11:05.338117 custom scheduler stable+%2899200+QPS%29
+2024-05-13T13:11:06.049924 custom scheduler stable+%2897884+QPS%29
+2024-05-13T13:11:06.315103 custom scheduler unstable+%28CURR+144855+-+98213+QPS%29
+2024-05-13T13:11:06.378697 custom scheduler stable+%2898255+QPS%29
+2024-05-13T13:11:06.771125 custom scheduler stable+%2898331+QPS%29
+2024-05-13T13:11:07.506907 custom scheduler stable+%2898461+QPS%29
+2024-05-13T13:11:08.229573 custom scheduler stable+%2899371+QPS%29
+2024-05-13T13:11:08.942880 custom scheduler stable+%2898502+QPS%29
+2024-05-13T13:11:09.679782 custom scheduler stable+%2898387+QPS%29
+2024-05-13T13:11:10.410191 custom scheduler stable+%2898511+QPS%29
+2024-05-13T13:11:11.143498 custom scheduler stable+%2898867+QPS%29
+2024-05-13T13:11:11.866080 custom scheduler stable+%2899147+QPS%29
+2024-05-13T13:11:12.582785 custom scheduler stable+%2898616+QPS%29
+2024-05-13T13:11:13.296030 custom scheduler stable+%2898686+QPS%29
+2024-05-13T13:11:14.005163 custom scheduler stable+%2891660+QPS%29
+2024-05-13T13:11:14.707767 custom scheduler stable+%2862749+QPS%29
+2024-05-13T13:11:15.416816 custom scheduler stable+%2855937+QPS%29
+2024-05-13T13:11:16.113330 custom scheduler stable+%2855878+QPS%29
+2024-05-13T13:11:16.825028 custom scheduler stable+%2855914+QPS%29
+2024-05-13T13:11:17.526565 custom scheduler stable+%2855635+QPS%29
+2024-05-13T13:11:18.225187 custom scheduler stable+%2855905+QPS%29
+2024-05-13T13:11:18.934130 custom scheduler unstable+%28CURR+107778+-+58611+QPS%29
+2024-05-13T13:11:19.512845 custom scheduler stable+%2875677+QPS%29
+2024-05-13T13:11:19.575737 custom scheduler unstable+%28CURR+111166+-+77689+QPS%29
+2024-05-13T13:11:19.640895 custom scheduler stable+%2879689+QPS%29
+2024-05-13T13:11:20.169491 custom scheduler stable+%2886926+QPS%29
+2024-05-13T13:11:20.627576 custom scheduler unstable+%28CURR+123892+-+86658+QPS%29
+2024-05-13T13:11:20.694217 custom scheduler stable+%2886439+QPS%29
+2024-05-13T13:11:20.886211 custom scheduler stable+%2887081+QPS%29
+2024-05-13T13:11:21.600251 custom scheduler stable+%2887022+QPS%29
+2024-05-13T13:11:22.304992 custom scheduler stable+%2886850+QPS%29
+2024-05-13T13:11:23.018130 custom scheduler stable+%2885171+QPS%29
+2024-05-13T13:11:23.085543 custom scheduler unstable+%28CURR+129695+-+86246+QPS%29
+2024-05-13T13:11:23.149280 custom scheduler stable+%2886703+QPS%29
+2024-05-13T13:11:23.794550 custom scheduler stable+%2886968+QPS%29
+2024-05-13T13:11:24.507348 custom scheduler stable+%2883592+QPS%29
+2024-05-13T13:11:25.239116 custom scheduler stable+%2882895+QPS%29
+2024-05-13T13:11:25.834934 custom scheduler unstable+%28CURR+126801+-+83141+QPS%29
+2024-05-13T13:11:25.899211 custom scheduler stable+%2883029+QPS%29
+2024-05-13T13:11:25.967563 custom scheduler stable+%2883546+QPS%29
+2024-05-13T13:11:26.682812 custom scheduler stable+%2882888+QPS%29
+2024-05-13T13:11:27.399109 custom scheduler stable+%2882929+QPS%29
+2024-05-13T13:11:28.113385 custom scheduler stable+%2882890+QPS%29
+2024-05-13T13:11:28.826754 custom scheduler stable+%2882847+QPS%29
+2024-05-13T13:11:29.532779 custom scheduler stable+%2863678+QPS%29
+2024-05-13T13:11:30.237826 custom scheduler stable+%2853818+QPS%29
+2024-05-13T13:11:30.935012 custom scheduler stable+%2853564+QPS%29
+2024-05-13T13:11:31.651164 custom scheduler stable+%2853674+QPS%29
+2024-05-13T13:11:32.361522 custom scheduler stable+%2853514+QPS%29
+2024-05-13T13:11:33.069589 custom scheduler stable+%2853053+QPS%29
+2024-05-13T13:11:33.769510 custom scheduler stable+%2853037+QPS%29
+2024-05-13T13:11:33.957463 custom scheduler unstable+%28CURR+17758+-+49068+QPS%29
+2024-05-13T13:11:34.584721 custom scheduler stable+%2825011+QPS%29
+2024-05-13T13:11:34.657992 update_cores radix [1]
+2024-05-13T13:11:34.674987 unpause radix
+2024-05-13T13:11:34.795692 update_cores radix [3]
+2024-05-13T13:11:34.822761 pause radix
+2024-05-13T13:11:35.021111 update_cores radix [1]
+2024-05-13T13:11:35.038825 unpause radix
+2024-05-13T13:11:35.223298 custom scheduler stable+%2814163+QPS%29
+2024-05-13T13:11:35.816859 update_cores radix [3]
+2024-05-13T13:11:35.843881 pause radix
+2024-05-13T13:11:35.922627 custom scheduler stable+%2814167+QPS%29
+2024-05-13T13:11:35.930547 update_cores radix [1]
+2024-05-13T13:11:35.946955 unpause radix
+2024-05-13T13:11:35.996623 update_cores radix [3]
+2024-05-13T13:11:36.013431 pause radix
+2024-05-13T13:11:36.611924 custom scheduler stable+%2814049+QPS%29
+2024-05-13T13:11:36.864679 update_cores radix [1]
+2024-05-13T13:11:36.885801 unpause radix
+2024-05-13T13:11:36.933530 update_cores radix [3]
+2024-05-13T13:11:36.951363 pause radix
+2024-05-13T13:11:37.073199 update_cores radix [1]
+2024-05-13T13:11:37.092795 unpause radix
+2024-05-13T13:11:37.149030 update_cores radix [3]
+2024-05-13T13:11:37.169563 pause radix
+2024-05-13T13:11:37.303326 custom scheduler stable+%2814114+QPS%29
+2024-05-13T13:11:37.888972 update_cores radix [1]
+2024-05-13T13:11:37.904849 unpause radix
+2024-05-13T13:11:37.952642 update_cores radix [3]
+2024-05-13T13:11:37.971158 pause radix
+2024-05-13T13:11:37.994936 custom scheduler stable+%2814238+QPS%29
+2024-05-13T13:11:38.085112 update_cores radix [1]
+2024-05-13T13:11:38.100951 unpause radix
+2024-05-13T13:11:38.155653 update_cores radix [3]
+2024-05-13T13:11:38.182589 pause radix
+2024-05-13T13:11:38.687381 custom scheduler stable+%2814142+QPS%29
+2024-05-13T13:11:38.876782 custom scheduler unstable+%28CURR+26808+-+14899+QPS%29
+2024-05-13T13:11:38.921322 update_cores radix [1]
+2024-05-13T13:11:38.940685 unpause radix
+2024-05-13T13:11:39.000323 update_cores radix [3]
+2024-05-13T13:11:39.019768 pause radix
+2024-05-13T13:11:39.712271 custom scheduler stable+%2845138+QPS%29
+2024-05-13T13:11:40.355649 custom scheduler stable+%2850525+QPS%29
+2024-05-13T13:11:41.059323 custom scheduler stable+%2850410+QPS%29
+2024-05-13T13:11:41.762369 custom scheduler stable+%2850231+QPS%29
+2024-05-13T13:11:42.463957 custom scheduler stable+%2850562+QPS%29
+2024-05-13T13:11:43.166030 custom scheduler stable+%2850365+QPS%29
+2024-05-13T13:11:43.862280 custom scheduler stable+%2850337+QPS%29
+2024-05-13T13:11:43.924344 custom scheduler unstable+%28CURR+11077+-+47790+QPS%29
+2024-05-13T13:11:44.735882 custom scheduler stable+%2814876+QPS%29
+2024-05-13T13:11:44.792085 update_cores radix [1]
+2024-05-13T13:11:44.807681 unpause radix
+2024-05-13T13:11:45.150044 update_cores radix [3]
+2024-05-13T13:11:45.165104 pause radix
+2024-05-13T13:11:45.375342 custom scheduler stable+%289516+QPS%29
+2024-05-13T13:11:46.062786 custom scheduler stable+%289312+QPS%29
+2024-05-13T13:11:46.162812 update_cores radix [1]
+2024-05-13T13:11:46.180219 unpause radix
+2024-05-13T13:11:46.233031 update_cores radix [3]
+2024-05-13T13:11:46.250882 pause radix
+2024-05-13T13:11:46.408833 update_cores radix [1]
+2024-05-13T13:11:46.429315 unpause radix
+2024-05-13T13:11:46.755266 custom scheduler stable+%289378+QPS%29
+2024-05-13T13:11:47.190308 update_cores radix [3]
+2024-05-13T13:11:47.217147 pause radix
+2024-05-13T13:11:47.335263 update_cores radix [1]
+2024-05-13T13:11:47.354438 unpause radix
+2024-05-13T13:11:47.404784 update_cores radix [3]
+2024-05-13T13:11:47.440951 pause radix
+2024-05-13T13:11:47.444486 custom scheduler stable+%289422+QPS%29
+2024-05-13T13:11:48.130008 custom scheduler stable+%289380+QPS%29
+2024-05-13T13:11:48.215537 update_cores radix [1]
+2024-05-13T13:11:48.237273 unpause radix
+2024-05-13T13:11:48.284613 update_cores radix [3]
+2024-05-13T13:11:48.300747 pause radix
+2024-05-13T13:11:48.445020 update_cores radix [1]
+2024-05-13T13:11:48.469328 unpause radix
+2024-05-13T13:11:48.829068 custom scheduler stable+%289563+QPS%29
+2024-05-13T13:11:48.898759 custom scheduler unstable+%28CURR+20841+-+10147+QPS%29
+2024-05-13T13:11:48.956246 update_cores radix [3]
+2024-05-13T13:11:48.976969 pause radix
+2024-05-13T13:11:49.658676 custom scheduler stable+%2823643+QPS%29
+2024-05-13T13:11:49.705335 update_cores radix [1]
+2024-05-13T13:11:49.721539 custom scheduler unstable+%28CURR+36197+-+24794+QPS%29
+2024-05-13T13:11:49.730232 unpause radix
+2024-05-13T13:11:49.783844 update_cores radix [3]
+2024-05-13T13:11:49.784994 custom scheduler stable+%2825938+QPS%29
+2024-05-13T13:11:49.801310 pause radix
+2024-05-13T13:11:49.847584 update_cores radix [1]
+2024-05-13T13:11:49.865321 unpause radix
+2024-05-13T13:11:50.294199 custom scheduler stable+%2827392+QPS%29
+2024-05-13T13:11:50.305443 update_cores radix [3]
+2024-05-13T13:11:50.321261 pause radix
+2024-05-13T13:11:50.993410 custom scheduler stable+%2827176+QPS%29
+2024-05-13T13:11:51.684012 custom scheduler stable+%2827351+QPS%29
+2024-05-13T13:11:52.376455 custom scheduler stable+%2827340+QPS%29
+2024-05-13T13:11:53.068560 custom scheduler stable+%2827327+QPS%29
+2024-05-13T13:11:53.757607 custom scheduler stable+%2827307+QPS%29
+2024-05-13T13:11:54.446455 custom scheduler stable+%2822510+QPS%29
+2024-05-13T13:11:54.489853 update_cores radix [1]
+2024-05-13T13:11:54.507521 unpause radix
+2024-05-13T13:11:54.622300 update_cores radix [3]
+2024-05-13T13:11:54.658686 pause radix
+2024-05-13T13:11:55.135981 custom scheduler stable+%2819125+QPS%29
+2024-05-13T13:11:55.437310 update_cores radix [1]
+2024-05-13T13:11:55.464243 unpause radix
+2024-05-13T13:11:55.511534 update_cores radix [3]
+2024-05-13T13:11:55.529212 pause radix
+2024-05-13T13:11:55.685411 update_cores radix [1]
+2024-05-13T13:11:55.704726 unpause radix
+2024-05-13T13:11:55.833196 custom scheduler stable+%2818723+QPS%29
+2024-05-13T13:11:56.480458 update_cores radix [3]
+2024-05-13T13:11:56.520810 pause radix
+2024-05-13T13:11:56.524849 custom scheduler stable+%2818862+QPS%29
+2024-05-13T13:11:56.711138 update_cores radix [1]
+2024-05-13T13:11:56.733387 unpause radix
+2024-05-13T13:11:57.214157 custom scheduler stable+%2818777+QPS%29
+2024-05-13T13:11:57.506984 update_cores radix [3]
+2024-05-13T13:11:57.524541 pause radix
+2024-05-13T13:11:57.635800 update_cores radix [1]
+2024-05-13T13:11:57.658121 unpause radix
+2024-05-13T13:11:57.706161 update_cores radix [3]
+2024-05-13T13:11:57.722171 pause radix
+2024-05-13T13:11:57.909206 custom scheduler stable+%2818716+QPS%29
+2024-05-13T13:11:58.522083 update_cores radix [1]
+2024-05-13T13:11:58.538762 unpause radix
+2024-05-13T13:11:58.595181 update_cores radix [3]
+2024-05-13T13:11:58.603382 custom scheduler stable+%2818827+QPS%29
+2024-05-13T13:11:58.622509 pause radix
+2024-05-13T13:11:58.756609 update_cores radix [1]
+2024-05-13T13:11:58.773672 unpause radix
+2024-05-13T13:11:58.923420 custom scheduler unstable+%28CURR+91915+-+22795+QPS%29
+2024-05-13T13:11:59.004096 update_cores radix [3]
+2024-05-13T13:11:59.034154 pause radix
+2024-05-13T13:11:59.587591 custom scheduler stable+%2868275+QPS%29
+2024-05-13T13:11:59.654028 custom scheduler unstable+%28CURR+109328+-+72655+QPS%29
+2024-05-13T13:11:59.719412 custom scheduler stable+%2877578+QPS%29
+2024-05-13T13:12:00.240216 custom scheduler stable+%2887349+QPS%29
+2024-05-13T13:12:00.963068 custom scheduler stable+%2887381+QPS%29
+2024-05-13T13:12:01.683922 custom scheduler stable+%2887490+QPS%29
+2024-05-13T13:12:02.394757 custom scheduler stable+%2887258+QPS%29
+2024-05-13T13:12:03.110099 custom scheduler stable+%2887736+QPS%29
+2024-05-13T13:12:03.817795 custom scheduler stable+%2887819+QPS%29
+2024-05-13T13:12:04.531818 custom scheduler stable+%2892165+QPS%29
+2024-05-13T13:12:05.252272 custom scheduler stable+%2893721+QPS%29
+2024-05-13T13:12:05.968522 custom scheduler stable+%2894117+QPS%29
+2024-05-13T13:12:06.675643 custom scheduler stable+%2894772+QPS%29
+2024-05-13T13:12:07.255178 custom scheduler unstable+%28CURR+134682+-+93592+QPS%29
+2024-05-13T13:12:07.320529 custom scheduler stable+%2893502+QPS%29
+2024-05-13T13:12:07.387594 custom scheduler stable+%2893602+QPS%29
+2024-05-13T13:12:08.098564 custom scheduler stable+%2894344+QPS%29
+2024-05-13T13:12:08.820384 custom scheduler stable+%2893979+QPS%29
+2024-05-13T13:12:09.541491 custom scheduler stable+%2881731+QPS%29
+2024-05-13T13:12:10.259602 custom scheduler stable+%2876112+QPS%29
+2024-05-13T13:12:10.976540 custom scheduler stable+%2876737+QPS%29
+2024-05-13T13:12:11.706740 custom scheduler stable+%2877047+QPS%29
+2024-05-13T13:12:12.416953 custom scheduler stable+%2876830+QPS%29
+2024-05-13T13:12:13.125526 custom scheduler stable+%2876422+QPS%29
+2024-05-13T13:12:13.832470 custom scheduler stable+%2876329+QPS%29
+2024-05-13T13:12:13.959158 custom scheduler unstable+%28CURR+40316+-+71942+QPS%29
+2024-05-13T13:12:14.338141 custom scheduler stable+%2855654+QPS%29
+2024-05-13T13:12:14.528083 custom scheduler stable+%2847422+QPS%29
+2024-05-13T13:12:15.226517 custom scheduler stable+%2832210+QPS%29
+2024-05-13T13:12:15.920171 custom scheduler stable+%2832328+QPS%29
+2024-05-13T13:12:16.613759 custom scheduler stable+%2832596+QPS%29
+2024-05-13T13:12:17.304057 custom scheduler stable+%2832949+QPS%29
+2024-05-13T13:12:17.997256 custom scheduler stable+%2832587+QPS%29
+2024-05-13T13:12:18.693425 custom scheduler stable+%2832639+QPS%29
+2024-05-13T13:12:18.884684 custom scheduler unstable+%28CURR+61369+-+34266+QPS%29
+2024-05-13T13:12:19.415590 custom scheduler stable+%2859937+QPS%29
+2024-05-13T13:12:19.480031 custom scheduler unstable+%28CURR+138814+-+64713+QPS%29
+2024-05-13T13:12:19.740182 custom scheduler stable+%2878038+QPS%29
+2024-05-13T13:12:20.388315 custom scheduler stable+%2885604+QPS%29
+2024-05-13T13:12:20.853878 custom scheduler unstable+%28CURR+127447+-+85415+QPS%29
+2024-05-13T13:12:20.923810 custom scheduler stable+%2884580+QPS%29
+2024-05-13T13:12:20.989018 custom scheduler unstable+%28CURR+123415+-+85265+QPS%29
+2024-05-13T13:12:21.055367 custom scheduler stable+%2885316+QPS%29
+2024-05-13T13:12:21.118719 custom scheduler stable+%2885388+QPS%29
+2024-05-13T13:12:21.834975 custom scheduler stable+%2885613+QPS%29
+2024-05-13T13:12:22.550765 custom scheduler stable+%2884194+QPS%29
+2024-05-13T13:12:23.265566 custom scheduler stable+%2885177+QPS%29
+2024-05-13T13:12:23.983145 custom scheduler stable+%2884417+QPS%29
+2024-05-13T13:12:24.690789 custom scheduler stable+%2883355+QPS%29
+2024-05-13T13:12:25.406138 custom scheduler stable+%2883083+QPS%29
+2024-05-13T13:12:26.134108 custom scheduler stable+%2882584+QPS%29
+2024-05-13T13:12:26.851945 custom scheduler stable+%2882367+QPS%29
+2024-05-13T13:12:27.582664 custom scheduler stable+%2882776+QPS%29
+2024-05-13T13:12:28.303434 custom scheduler stable+%2883167+QPS%29
+2024-05-13T13:12:28.957206 custom scheduler unstable+%28CURR+46926+-+78246+QPS%29
+2024-05-13T13:12:29.211011 custom scheduler stable+%2866885+QPS%29
+2024-05-13T13:12:29.273124 custom scheduler unstable+%28CURR+44793+-+64122+QPS%29
+2024-05-13T13:12:29.336194 custom scheduler stable+%2861101+QPS%29
+2024-05-13T13:12:29.839845 custom scheduler stable+%2839286+QPS%29
+2024-05-13T13:12:30.532959 custom scheduler stable+%2837315+QPS%29
+2024-05-13T13:12:31.173318 custom scheduler unstable+%28CURR+53896+-+37572+QPS%29
+2024-05-13T13:12:31.236525 custom scheduler stable+%2837699+QPS%29
+2024-05-13T13:12:31.935228 custom scheduler stable+%2838079+QPS%29
+2024-05-13T13:12:32.632405 custom scheduler stable+%2838022+QPS%29
+2024-05-13T13:12:33.329549 custom scheduler stable+%2837666+QPS%29
+2024-05-13T13:12:33.893674 custom scheduler unstable+%28CURR+58295+-+38410+QPS%29
+2024-05-13T13:12:34.337171 custom scheduler stable+%2845625+QPS%29
+2024-05-13T13:12:34.975484 custom scheduler stable+%2854080+QPS%29
+2024-05-13T13:12:35.672246 custom scheduler stable+%2854272+QPS%29
+2024-05-13T13:12:36.373191 custom scheduler stable+%2854744+QPS%29
+2024-05-13T13:12:37.073634 custom scheduler stable+%2854436+QPS%29
+2024-05-13T13:12:37.779015 custom scheduler stable+%2854140+QPS%29
+2024-05-13T13:12:38.479936 custom scheduler stable+%2854224+QPS%29
+2024-05-13T13:12:38.929482 custom scheduler unstable+%28CURR+35850+-+52545+QPS%29
+2024-05-13T13:12:38.992817 custom scheduler stable+%2850934+QPS%29
+2024-05-13T13:12:39.181052 custom scheduler stable+%2846457+QPS%29
+2024-05-13T13:12:39.881231 custom scheduler stable+%2830303+QPS%29
+2024-05-13T13:12:40.578835 custom scheduler stable+%2830525+QPS%29
+2024-05-13T13:12:41.271203 custom scheduler stable+%2830385+QPS%29
+2024-05-13T13:12:41.963085 custom scheduler stable+%2830554+QPS%29
+2024-05-13T13:12:42.661326 custom scheduler stable+%2830385+QPS%29
+2024-05-13T13:12:43.356270 custom scheduler stable+%2830497+QPS%29
+2024-05-13T13:12:44.050057 custom scheduler stable+%2830668+QPS%29
+2024-05-13T13:12:44.744078 custom scheduler stable+%2831661+QPS%29
+2024-05-13T13:12:45.446586 custom scheduler stable+%2831504+QPS%29
+2024-05-13T13:12:46.135978 custom scheduler stable+%2831669+QPS%29
+2024-05-13T13:12:46.830316 custom scheduler stable+%2831939+QPS%29
+2024-05-13T13:12:47.525929 custom scheduler stable+%2831721+QPS%29
+2024-05-13T13:12:48.223424 custom scheduler stable+%2831778+QPS%29
+2024-05-13T13:12:48.918638 custom scheduler unstable+%28CURR+49723+-+32436+QPS%29
+2024-05-13T13:12:49.236965 custom scheduler stable+%2834663+QPS%29
+2024-05-13T13:12:49.869721 custom scheduler stable+%2839362+QPS%29
+2024-05-13T13:12:50.571634 custom scheduler stable+%2839530+QPS%29
+2024-05-13T13:12:51.267237 custom scheduler stable+%2839493+QPS%29
+2024-05-13T13:12:51.964317 custom scheduler stable+%2839407+QPS%29
+2024-05-13T13:12:52.660969 custom scheduler stable+%2839203+QPS%29
+2024-05-13T13:12:53.353535 custom scheduler stable+%2839503+QPS%29
+2024-05-13T13:12:53.922618 custom scheduler unstable+%28CURR+13616+-+37374+QPS%29
+2024-05-13T13:12:54.548249 custom scheduler stable+%2819545+QPS%29
+2024-05-13T13:12:54.610520 update_cores radix [1]
+2024-05-13T13:12:54.629980 unpause radix
+2024-05-13T13:12:54.687048 update_cores radix [3]
+2024-05-13T13:12:54.717423 pause radix
+2024-05-13T13:12:54.843955 update_cores radix [1]
+2024-05-13T13:12:54.865054 unpause radix
+2024-05-13T13:12:55.196468 custom scheduler stable+%2810634+QPS%29
+2024-05-13T13:12:55.641103 update_cores radix [3]
+2024-05-13T13:12:55.657272 pause radix
+2024-05-13T13:12:55.843133 update_cores radix [1]
+2024-05-13T13:12:55.862499 unpause radix
+2024-05-13T13:12:55.886727 custom scheduler stable+%2810805+QPS%29
+2024-05-13T13:12:56.577375 custom scheduler stable+%2810749+QPS%29
+2024-05-13T13:12:56.687518 update_cores radix [3]
+2024-05-13T13:12:56.702873 pause radix
+2024-05-13T13:12:57.271628 custom scheduler stable+%2810736+QPS%29
+2024-05-13T13:12:57.689559 update_cores radix [1]
+2024-05-13T13:12:57.708731 unpause radix
+2024-05-13T13:12:57.769067 update_cores radix [3]
+2024-05-13T13:12:57.786911 pause radix
+2024-05-13T13:12:57.962930 custom scheduler stable+%2810669+QPS%29
+2024-05-13T13:12:58.653069 custom scheduler stable+%2810760+QPS%29
+2024-05-13T13:12:58.742136 update_cores radix [1]
+2024-05-13T13:12:58.766127 unpause radix
+2024-05-13T13:12:58.820097 update_cores radix [3]
+2024-05-13T13:12:58.837063 pause radix
+2024-05-13T13:12:58.907701 custom scheduler unstable+%28CURR+90491+-+15172+QPS%29
+2024-05-13T13:12:59.697706 custom scheduler stable+%2884441+QPS%29
+2024-05-13T13:13:00.342340 custom scheduler stable+%2899613+QPS%29
+2024-05-13T13:13:01.058016 custom scheduler stable+%2898490+QPS%29
+2024-05-13T13:13:01.772233 custom scheduler stable+%2898571+QPS%29
+2024-05-13T13:13:02.482905 custom scheduler stable+%2899030+QPS%29
+2024-05-13T13:13:03.204565 custom scheduler stable+%2898962+QPS%29
+2024-05-13T13:13:03.921912 custom scheduler unstable+%28CURR+58964+-+96029+QPS%29
+2024-05-13T13:13:04.175410 custom scheduler stable+%2883673+QPS%29
+2024-05-13T13:13:04.806121 custom scheduler stable+%2851964+QPS%29
+2024-05-13T13:13:05.504420 custom scheduler stable+%2848935+QPS%29
+2024-05-13T13:13:06.210679 custom scheduler stable+%2848573+QPS%29
+2024-05-13T13:13:06.910026 custom scheduler stable+%2848712+QPS%29
+2024-05-13T13:13:07.606879 custom scheduler stable+%2848591+QPS%29
+2024-05-13T13:13:08.247141 custom scheduler unstable+%28CURR+70409+-+48724+QPS%29
+2024-05-13T13:13:08.312003 custom scheduler stable+%2848723+QPS%29
+2024-05-13T13:13:09.010816 custom scheduler stable+%2846482+QPS%29
+2024-05-13T13:13:09.707554 custom scheduler stable+%2837245+QPS%29
+2024-05-13T13:13:10.400965 custom scheduler stable+%2835259+QPS%29
+2024-05-13T13:13:11.094831 custom scheduler stable+%2835499+QPS%29
+2024-05-13T13:13:11.792047 custom scheduler stable+%2835361+QPS%29
+2024-05-13T13:13:12.483162 custom scheduler stable+%2835185+QPS%29
+2024-05-13T13:13:13.180026 custom scheduler stable+%2835192+QPS%29
+2024-05-13T13:13:13.870095 custom scheduler stable+%2836005+QPS%29
+2024-05-13T13:13:13.932848 custom scheduler unstable+%28CURR+92515+-+38337+QPS%29
+2024-05-13T13:13:14.577037 custom scheduler stable+%2860628+QPS%29
+2024-05-13T13:13:15.225831 custom scheduler stable+%2870455+QPS%29
+2024-05-13T13:13:15.945811 custom scheduler stable+%2870697+QPS%29
+2024-05-13T13:13:16.666637 custom scheduler stable+%2869953+QPS%29
+2024-05-13T13:13:17.389435 custom scheduler stable+%2870364+QPS%29
+2024-05-13T13:13:18.102017 custom scheduler stable+%2870287+QPS%29
+2024-05-13T13:13:18.817898 custom scheduler stable+%2870767+QPS%29
+2024-05-13T13:13:18.947931 custom scheduler unstable+%28CURR+25713+-+66035+QPS%29
+2024-05-13T13:13:19.578714 custom scheduler stable+%2835461+QPS%29
+2024-05-13T13:13:20.211613 custom scheduler stable+%2820855+QPS%29
+2024-05-13T13:13:20.276396 update_cores radix [1]
+2024-05-13T13:13:20.297405 unpause radix
+2024-05-13T13:13:20.532854 update_cores radix [3]
+2024-05-13T13:13:20.561266 pause radix
+2024-05-13T13:13:20.746059 update_cores radix [1]
+2024-05-13T13:13:20.761915 unpause radix
+2024-05-13T13:13:20.909882 custom scheduler stable+%2821157+QPS%29
+2024-05-13T13:13:21.541573 update_cores radix [3]
+2024-05-13T13:13:21.566975 pause radix
+2024-05-13T13:13:21.604895 custom scheduler stable+%2820936+QPS%29
+2024-05-13T13:13:21.713161 update_cores radix [1]
+2024-05-13T13:13:21.734360 unpause radix
+2024-05-13T13:13:21.791196 update_cores radix [3]
+2024-05-13T13:13:21.807782 pause radix
+2024-05-13T13:13:22.303119 custom scheduler stable+%2821047+QPS%29
+2024-05-13T13:13:22.566990 update_cores radix [1]
+2024-05-13T13:13:22.584943 unpause radix
+2024-05-13T13:13:22.637424 update_cores radix [3]
+2024-05-13T13:13:22.674340 pause radix
+2024-05-13T13:13:22.782628 update_cores radix [1]
+2024-05-13T13:13:22.798297 unpause radix
+2024-05-13T13:13:22.994476 custom scheduler stable+%2821143+QPS%29
+2024-05-13T13:13:23.604989 update_cores radix [3]
+2024-05-13T13:13:23.623913 pause radix
+2024-05-13T13:13:23.695685 custom scheduler stable+%2820933+QPS%29
+2024-05-13T13:13:23.768750 update_cores radix [1]
+2024-05-13T13:13:23.790292 unpause radix
+2024-05-13T13:13:23.845521 update_cores radix [3]
+2024-05-13T13:13:23.879036 pause radix
+2024-05-13T13:13:23.891186 custom scheduler unstable+%28CURR+57687+-+22857+QPS%29
+2024-05-13T13:13:24.728301 custom scheduler stable+%2876614+QPS%29
+2024-05-13T13:13:24.995199 custom scheduler unstable+%28CURR+126117+-+85559+QPS%29
+2024-05-13T13:13:25.060447 custom scheduler stable+%2885454+QPS%29
+2024-05-13T13:13:25.380979 custom scheduler stable+%2885362+QPS%29
+2024-05-13T13:13:26.098825 custom scheduler unstable+%28CURR+126124+-+85810+QPS%29
+2024-05-13T13:13:26.163504 custom scheduler stable+%2885871+QPS%29
+2024-05-13T13:13:26.566888 custom scheduler unstable+%28CURR+130904+-+86019+QPS%29
+2024-05-13T13:13:26.630714 custom scheduler stable+%2886006+QPS%29
+2024-05-13T13:13:26.825664 custom scheduler stable+%2885821+QPS%29
+2024-05-13T13:13:27.541896 custom scheduler stable+%2886171+QPS%29
+2024-05-13T13:13:28.267621 custom scheduler stable+%2885558+QPS%29
+2024-05-13T13:13:28.923659 custom scheduler unstable+%28CURR+52225+-+82277+QPS%29
+2024-05-13T13:13:29.116174 custom scheduler stable+%2874480+QPS%29
+2024-05-13T13:13:29.751086 custom scheduler stable+%2847753+QPS%29
+2024-05-13T13:13:30.450913 custom scheduler stable+%2842669+QPS%29
+2024-05-13T13:13:31.145014 custom scheduler stable+%2842915+QPS%29
+2024-05-13T13:13:31.837428 custom scheduler stable+%2842505+QPS%29
+2024-05-13T13:13:32.532227 custom scheduler stable+%2842905+QPS%29
+2024-05-13T13:13:33.231385 custom scheduler stable+%2842825+QPS%29
+2024-05-13T13:13:33.928464 custom scheduler unstable+%28CURR+76330+-+44024+QPS%29
+2024-05-13T13:13:34.445331 custom scheduler stable+%2854114+QPS%29
+2024-05-13T13:13:34.584353 custom scheduler unstable+%28CURR+91695+-+56786+QPS%29
+2024-05-13T13:13:34.650431 custom scheduler stable+%2857927+QPS%29
+2024-05-13T13:13:35.099211 custom scheduler stable+%2862130+QPS%29
+2024-05-13T13:13:35.808965 custom scheduler stable+%2862228+QPS%29
+2024-05-13T13:13:36.512030 custom scheduler stable+%2862279+QPS%29
+2024-05-13T13:13:37.216273 custom scheduler stable+%2862269+QPS%29
+2024-05-13T13:13:37.910787 custom scheduler stable+%2862258+QPS%29
+2024-05-13T13:13:38.621213 custom scheduler stable+%2862197+QPS%29
+2024-05-13T13:13:38.951460 custom scheduler unstable+%28CURR+94386+-+63750+QPS%29
+2024-05-13T13:13:39.214871 custom scheduler stable+%2868403+QPS%29
+2024-05-13T13:13:39.281493 custom scheduler unstable+%28CURR+99545+-+69523+QPS%29
+2024-05-13T13:13:39.344860 custom scheduler stable+%2870628+QPS%29
+2024-05-13T13:13:40.067821 custom scheduler stable+%2878679+QPS%29
+2024-05-13T13:13:40.785479 custom scheduler stable+%2878482+QPS%29
+2024-05-13T13:13:41.497100 custom scheduler stable+%2879122+QPS%29
+2024-05-13T13:13:42.231491 custom scheduler stable+%2879110+QPS%29
+2024-05-13T13:13:42.935852 custom scheduler stable+%2879373+QPS%29
+2024-05-13T13:13:43.650693 custom scheduler stable+%2878660+QPS%29
+2024-05-13T13:13:43.975765 custom scheduler unstable+%28CURR+118084+-+81030+QPS%29
+2024-05-13T13:13:44.044717 custom scheduler stable+%2882116+QPS%29
+2024-05-13T13:13:44.109078 custom scheduler unstable+%28CURR+131176+-+83876+QPS%29
+2024-05-13T13:13:44.173930 custom scheduler stable+%2884943+QPS%29
+2024-05-13T13:13:44.373080 custom scheduler unstable+%28CURR+128945+-+88998+QPS%29
+2024-05-13T13:13:44.437549 custom scheduler stable+%2890162+QPS%29
+2024-05-13T13:13:45.091286 custom scheduler stable+%2896452+QPS%29
+2024-05-13T13:13:45.159965 custom scheduler unstable+%28CURR+139039+-+96996+QPS%29
+2024-05-13T13:13:45.227872 custom scheduler stable+%2896641+QPS%29
+2024-05-13T13:13:45.360760 custom scheduler unstable+%28CURR+139211+-+96938+QPS%29
+2024-05-13T13:13:45.424076 custom scheduler stable+%2897234+QPS%29
+2024-05-13T13:13:45.883013 custom scheduler stable+%28102037+QPS%29
+2024-05-13T13:13:46.603069 custom scheduler stable+%28100021+QPS%29
+2024-05-13T13:13:47.314580 custom scheduler stable+%2899372+QPS%29
+2024-05-13T13:13:48.035870 custom scheduler stable+%2898687+QPS%29
+2024-05-13T13:13:48.762432 custom scheduler stable+%2898610+QPS%29
+2024-05-13T13:13:48.954484 custom scheduler unstable+%28CURR+29548+-+91419+QPS%29
+2024-05-13T13:13:49.645516 custom scheduler stable+%2840455+QPS%29
+2024-05-13T13:13:50.272937 custom scheduler stable+%2824236+QPS%29
+2024-05-13T13:13:50.352900 update_cores radix [1]
+2024-05-13T13:13:50.369509 unpause radix
+2024-05-13T13:13:50.676899 update_cores radix [3]
+2024-05-13T13:13:50.707050 pause radix
+2024-05-13T13:13:50.980870 custom scheduler stable+%2824031+QPS%29
+2024-05-13T13:13:51.670877 custom scheduler stable+%2824141+QPS%29
+2024-05-13T13:13:51.685598 update_cores radix [1]
+2024-05-13T13:13:51.709345 unpause radix
+2024-05-13T13:13:51.765502 update_cores radix [3]
+2024-05-13T13:13:51.794154 pause radix
+2024-05-13T13:13:52.363595 custom scheduler stable+%2824301+QPS%29
+2024-05-13T13:13:52.723558 update_cores radix [1]
+2024-05-13T13:13:52.746456 unpause radix
+2024-05-13T13:13:52.800012 update_cores radix [3]
+2024-05-13T13:13:52.816944 pause radix
+2024-05-13T13:13:53.055051 custom scheduler stable+%2824054+QPS%29
+2024-05-13T13:13:53.752433 custom scheduler stable+%2823858+QPS%29
+2024-05-13T13:13:53.761349 update_cores radix [1]
+2024-05-13T13:13:53.783832 unpause radix
+2024-05-13T13:13:53.865339 update_cores radix [3]
+2024-05-13T13:13:53.880593 custom scheduler unstable+%28CURR+43876+-+25022+QPS%29
+2024-05-13T13:13:53.896267 pause radix
+2024-05-13T13:13:54.721101 custom scheduler stable+%2861186+QPS%29
+2024-05-13T13:13:55.372249 custom scheduler stable+%2867039+QPS%29
+2024-05-13T13:13:56.079537 custom scheduler stable+%2867357+QPS%29
+2024-05-13T13:13:56.783017 custom scheduler stable+%2867804+QPS%29
+2024-05-13T13:13:57.483257 custom scheduler stable+%2867757+QPS%29
+2024-05-13T13:13:58.187794 custom scheduler stable+%2867320+QPS%29
+2024-05-13T13:13:58.891671 custom scheduler stable+%2866000+QPS%29
+2024-05-13T13:13:58.954588 custom scheduler unstable+%28CURR+39165+-+63907+QPS%29
+2024-05-13T13:13:59.334175 custom scheduler stable+%2850138+QPS%29
+2024-05-13T13:13:59.966635 custom scheduler stable+%2831389+QPS%29
+2024-05-13T13:14:00.100887 custom scheduler unstable+%28CURR+48769+-+31350+QPS%29
+2024-05-13T13:14:00.163840 custom scheduler stable+%2831215+QPS%29
+2024-05-13T13:14:00.674121 custom scheduler stable+%2831171+QPS%29
+2024-05-13T13:14:01.368226 custom scheduler stable+%2831608+QPS%29
+2024-05-13T13:14:01.607925 end canneal
+2024-05-13T13:14:01.612120 custom memcached Some+jobs+are+done%3A+%28high%2C+1%29%2C+%28low%2C+0%29
+2024-05-13T13:14:01.982409 start blackscholes [2,3] 2
+2024-05-13T13:14:02.091775 custom scheduler stable+%2831758+QPS%29
+2024-05-13T13:14:02.794492 custom scheduler stable+%2831659+QPS%29
+2024-05-13T13:14:03.486601 custom scheduler stable+%2831680+QPS%29
+2024-05-13T13:14:03.928293 custom scheduler unstable+%28CURR+58872+-+32841+QPS%29
+2024-05-13T13:14:04.499778 custom scheduler stable+%2842102+QPS%29
+2024-05-13T13:14:04.691099 custom scheduler unstable+%28CURR+65574+-+45308+QPS%29
+2024-05-13T13:14:04.753931 custom scheduler stable+%2846357+QPS%29
+2024-05-13T13:14:05.133818 custom scheduler stable+%2848208+QPS%29
+2024-05-13T13:14:05.836864 custom scheduler stable+%2847849+QPS%29
+2024-05-13T13:14:06.533828 custom scheduler stable+%2848062+QPS%29
+2024-05-13T13:14:07.233431 custom scheduler stable+%2848047+QPS%29
+2024-05-13T13:14:07.936732 custom scheduler stable+%2848250+QPS%29
+2024-05-13T13:14:08.632795 custom scheduler stable+%2848047+QPS%29
+2024-05-13T13:14:08.887235 custom scheduler unstable+%28CURR+79462+-+49429+QPS%29
+2024-05-13T13:14:09.681817 custom scheduler stable+%2887637+QPS%29
+2024-05-13T13:14:10.336308 custom scheduler stable+%2897389+QPS%29
+2024-05-13T13:14:11.049267 custom scheduler stable+%2896607+QPS%29
+2024-05-13T13:14:11.768347 custom scheduler stable+%2896408+QPS%29
+2024-05-13T13:14:12.492043 custom scheduler stable+%2895956+QPS%29
+2024-05-13T13:14:12.758675 custom scheduler unstable+%28CURR+137343+-+95645+QPS%29
+2024-05-13T13:14:12.825665 custom scheduler stable+%2895834+QPS%29
+2024-05-13T13:14:13.220721 custom scheduler stable+%2896069+QPS%29
+2024-05-13T13:14:13.914558 custom scheduler unstable+%28CURR+34189+-+90608+QPS%29
+2024-05-13T13:14:14.851089 custom scheduler stable+%288520+QPS%29
+2024-05-13T13:14:15.358390 custom scheduler unstable+%28CURR+8040+-+5368+QPS%29
+2024-05-13T13:14:15.420756 custom scheduler stable+%285344+QPS%29
+2024-05-13T13:14:15.482713 custom scheduler stable+%285363+QPS%29
+2024-05-13T13:14:15.559464 update_cores radix [1]
+2024-05-13T13:14:16.174869 custom scheduler stable+%285402+QPS%29
+2024-05-13T13:14:16.436697 unpause radix
+2024-05-13T13:14:16.873091 custom scheduler stable+%285353+QPS%29
+2024-05-13T13:14:17.069708 custom scheduler unstable+%28CURR+7775+-+5351+QPS%29
+2024-05-13T13:14:17.131819 custom scheduler stable+%285380+QPS%29
+2024-05-13T13:14:17.576445 custom scheduler stable+%285450+QPS%29
+2024-05-13T13:14:17.663093 update_cores radix [3]
+2024-05-13T13:14:18.262968 custom scheduler stable+%285248+QPS%29
+2024-05-13T13:14:18.266325 pause radix
+2024-05-13T13:14:18.639144 update_cores radix [1]
+2024-05-13T13:14:18.660690 unpause radix
+2024-05-13T13:14:18.718574 update_cores radix [3]
+2024-05-13T13:14:18.733702 pause radix
+2024-05-13T13:14:18.889232 custom scheduler unstable+%28CURR+23907+-+6326+QPS%29
+2024-05-13T13:14:19.792093 custom scheduler stable+%2860985+QPS%29
+2024-05-13T13:14:20.430878 custom scheduler stable+%2866512+QPS%29
+2024-05-13T13:14:21.139218 custom scheduler stable+%2866593+QPS%29
+2024-05-13T13:14:21.846899 custom scheduler stable+%2866683+QPS%29
+2024-05-13T13:14:22.550877 custom scheduler stable+%2867068+QPS%29
+2024-05-13T13:14:23.259857 custom scheduler stable+%2867157+QPS%29
+2024-05-13T13:14:23.909065 custom scheduler unstable+%28CURR+34308+-+64679+QPS%29
+2024-05-13T13:14:24.613509 custom scheduler stable+%2829884+QPS%29
+2024-05-13T13:14:25.236791 custom scheduler stable+%2816928+QPS%29
+2024-05-13T13:14:25.301925 update_cores radix [1]
+2024-05-13T13:14:25.329463 unpause radix
+2024-05-13T13:14:25.888699 update_cores radix [3]
+2024-05-13T13:14:25.915519 pause radix
+2024-05-13T13:14:25.929083 custom scheduler stable+%2817086+QPS%29
+2024-05-13T13:14:26.121558 update_cores radix [1]
+2024-05-13T13:14:26.144089 unpause radix
+2024-05-13T13:14:26.618397 custom scheduler stable+%2817178+QPS%29
+2024-05-13T13:14:26.900051 update_cores radix [3]
+2024-05-13T13:14:26.915668 pause radix
+2024-05-13T13:14:27.075066 update_cores radix [1]
+2024-05-13T13:14:27.093475 unpause radix
+2024-05-13T13:14:27.150386 update_cores radix [3]
+2024-05-13T13:14:27.166800 pause radix
+2024-05-13T13:14:27.308628 custom scheduler stable+%2817083+QPS%29
+2024-05-13T13:14:27.928220 update_cores radix [1]
+2024-05-13T13:14:27.944394 unpause radix
+2024-05-13T13:14:27.994391 update_cores radix [3]
+2024-05-13T13:14:27.999695 custom scheduler stable+%2817260+QPS%29
+2024-05-13T13:14:28.011692 pause radix
+2024-05-13T13:14:28.688783 custom scheduler stable+%2817137+QPS%29
+2024-05-13T13:14:28.876872 custom scheduler unstable+%28CURR+27817+-+17653+QPS%29
+2024-05-13T13:14:29.699603 custom scheduler stable+%2839152+QPS%29
+2024-05-13T13:14:30.335284 custom scheduler stable+%2843542+QPS%29
+2024-05-13T13:14:31.034884 custom scheduler stable+%2843240+QPS%29
+2024-05-13T13:14:31.727899 custom scheduler stable+%2842978+QPS%29
+2024-05-13T13:14:32.423278 custom scheduler stable+%2843425+QPS%29
+2024-05-13T13:14:33.121736 custom scheduler stable+%2843352+QPS%29
+2024-05-13T13:14:33.814811 custom scheduler stable+%2843377+QPS%29
+2024-05-13T13:14:33.877786 custom scheduler unstable+%28CURR+70407+-+44676+QPS%29
+2024-05-13T13:14:34.673948 custom scheduler stable+%2890022+QPS%29
+2024-05-13T13:14:35.326206 custom scheduler stable+%28101029+QPS%29
+2024-05-13T13:14:36.080280 custom scheduler stable+%28100811+QPS%29
+2024-05-13T13:14:36.819891 custom scheduler stable+%28100645+QPS%29
+2024-05-13T13:14:37.560629 custom scheduler stable+%28101057+QPS%29
+2024-05-13T13:14:38.290654 custom scheduler stable+%28100144+QPS%29
+2024-05-13T13:14:38.959597 custom scheduler unstable+%28CURR+33405+-+92999+QPS%29
+2024-05-13T13:14:39.587638 custom scheduler stable+%2847244+QPS%29
+2024-05-13T13:14:39.652139 custom scheduler unstable+%28CURR+28690+-+42869+QPS%29
+2024-05-13T13:14:39.715530 custom scheduler stable+%2838210+QPS%29
+2024-05-13T13:14:40.217359 custom scheduler stable+%2826261+QPS%29
+2024-05-13T13:14:40.263834 update_cores radix [1]
+2024-05-13T13:14:40.286918 unpause radix
+2024-05-13T13:14:40.439234 update_cores radix [3]
+2024-05-13T13:14:40.467092 pause radix
+2024-05-13T13:14:40.638585 update_cores radix [1]
+2024-05-13T13:14:40.663699 unpause radix
+2024-05-13T13:14:40.917126 custom scheduler stable+%2826468+QPS%29
+2024-05-13T13:14:41.311309 custom scheduler unstable+%28CURR+44272+-+26698+QPS%29
+2024-05-13T13:14:41.366985 update_cores radix [3]
+2024-05-13T13:14:41.375584 custom scheduler stable+%2826733+QPS%29
+2024-05-13T13:14:41.394517 pause radix
+2024-05-13T13:14:41.453685 update_cores radix [1]
+2024-05-13T13:14:41.479226 unpause radix
+2024-05-13T13:14:41.532454 update_cores radix [3]
+2024-05-13T13:14:41.552407 pause radix
+2024-05-13T13:14:41.636009 custom scheduler stable+%2826537+QPS%29
+2024-05-13T13:14:42.327805 custom scheduler stable+%2826440+QPS%29
+2024-05-13T13:14:42.456692 update_cores radix [1]
+2024-05-13T13:14:42.477527 unpause radix
+2024-05-13T13:14:42.533325 update_cores radix [3]
+2024-05-13T13:14:42.563407 pause radix
+2024-05-13T13:14:43.029018 custom scheduler stable+%2826589+QPS%29
+2024-05-13T13:14:43.485304 update_cores radix [1]
+2024-05-13T13:14:43.503294 unpause radix
+2024-05-13T13:14:43.556849 update_cores radix [3]
+2024-05-13T13:14:43.572702 pause radix
+2024-05-13T13:14:43.722599 custom scheduler stable+%2826651+QPS%29
+2024-05-13T13:14:44.412960 custom scheduler stable+%2824158+QPS%29
+2024-05-13T13:14:44.537365 update_cores radix [1]
+2024-05-13T13:14:44.555782 unpause radix
+2024-05-13T13:14:44.612933 update_cores radix [3]
+2024-05-13T13:14:44.632997 pause radix
+2024-05-13T13:14:44.721872 update_cores radix [1]
+2024-05-13T13:14:44.741283 unpause radix
+2024-05-13T13:14:44.804655 update_cores radix [3]
+2024-05-13T13:14:44.831977 pause radix
+2024-05-13T13:14:45.109097 custom scheduler stable+%2822459+QPS%29
+2024-05-13T13:14:45.542304 update_cores radix [1]
+2024-05-13T13:14:45.562373 unpause radix
+2024-05-13T13:14:45.611683 update_cores radix [3]
+2024-05-13T13:14:45.631223 pause radix
+2024-05-13T13:14:45.792893 update_cores radix [1]
+2024-05-13T13:14:45.805982 custom scheduler stable+%2822949+QPS%29
+2024-05-13T13:14:45.822795 unpause radix
+2024-05-13T13:14:46.505379 custom scheduler stable+%2822750+QPS%29
+2024-05-13T13:14:46.589427 update_cores radix [3]
+2024-05-13T13:14:46.606139 pause radix
+2024-05-13T13:14:46.750413 update_cores radix [1]
+2024-05-13T13:14:46.768604 unpause radix
+2024-05-13T13:14:46.815558 update_cores radix [3]
+2024-05-13T13:14:46.843038 pause radix
+2024-05-13T13:14:47.202427 custom scheduler stable+%2822983+QPS%29
+2024-05-13T13:14:47.612100 update_cores radix [1]
+2024-05-13T13:14:47.629817 unpause radix
+2024-05-13T13:14:47.681056 update_cores radix [3]
+2024-05-13T13:14:47.708791 pause radix
+2024-05-13T13:14:47.847752 update_cores radix [1]
+2024-05-13T13:14:47.871449 unpause radix
+2024-05-13T13:14:47.895155 custom scheduler stable+%2823001+QPS%29
+2024-05-13T13:14:48.588870 custom scheduler stable+%2822882+QPS%29
+2024-05-13T13:14:48.662222 update_cores radix [3]
+2024-05-13T13:14:48.680095 pause radix
+2024-05-13T13:14:48.905185 custom scheduler unstable+%28CURR+51474+-+24349+QPS%29
+2024-05-13T13:14:49.603024 custom scheduler stable+%2843653+QPS%29
+2024-05-13T13:14:50.239807 custom scheduler stable+%2850989+QPS%29
+2024-05-13T13:14:50.947529 custom scheduler stable+%2850670+QPS%29
+2024-05-13T13:14:51.644188 custom scheduler stable+%2851184+QPS%29
+2024-05-13T13:14:52.345899 custom scheduler stable+%2851079+QPS%29
+2024-05-13T13:14:53.054283 custom scheduler stable+%2851027+QPS%29
+2024-05-13T13:14:53.754776 custom scheduler stable+%2851159+QPS%29
+2024-05-13T13:14:53.881943 custom scheduler unstable+%28CURR+80382+-+52450+QPS%29
+2024-05-13T13:14:54.533129 custom scheduler stable+%2877433+QPS%29
+2024-05-13T13:14:55.052173 custom scheduler unstable+%28CURR+134278+-+91504+QPS%29
+2024-05-13T13:14:55.118077 custom scheduler stable+%2891177+QPS%29
+2024-05-13T13:14:55.181985 custom scheduler stable+%2891314+QPS%29
+2024-05-13T13:14:55.895718 custom scheduler stable+%2891350+QPS%29
+2024-05-13T13:14:56.620046 custom scheduler stable+%2890106+QPS%29
+2024-05-13T13:14:57.335541 custom scheduler stable+%2891154+QPS%29
+2024-05-13T13:14:58.054901 custom scheduler stable+%2890953+QPS%29
+2024-05-13T13:14:58.767888 custom scheduler stable+%2891341+QPS%29
+2024-05-13T13:14:58.957517 custom scheduler unstable+%28CURR+35469+-+84931+QPS%29
+2024-05-13T13:14:59.586076 custom scheduler stable+%2844742+QPS%29
+2024-05-13T13:15:00.211776 custom scheduler stable+%2826251+QPS%29
+2024-05-13T13:15:00.269463 update_cores radix [1]
+2024-05-13T13:15:00.287808 unpause radix
+2024-05-13T13:15:00.911443 custom scheduler stable+%2826255+QPS%29
+2024-05-13T13:15:01.050306 custom scheduler unstable+%28CURR+37586+-+26122+QPS%29
+2024-05-13T13:15:01.116063 update_cores radix [3]
+2024-05-13T13:15:01.118999 custom scheduler stable+%2826316+QPS%29
+2024-05-13T13:15:01.143322 pause radix
+2024-05-13T13:15:01.235302 update_cores radix [1]
+2024-05-13T13:15:01.252058 unpause radix
+2024-05-13T13:15:01.305308 update_cores radix [3]
+2024-05-13T13:15:01.334402 pause radix
+2024-05-13T13:15:01.621490 custom scheduler stable+%2826380+QPS%29
+2024-05-13T13:15:02.142770 update_cores radix [1]
+2024-05-13T13:15:02.160324 unpause radix
+2024-05-13T13:15:02.209762 update_cores radix [3]
+2024-05-13T13:15:02.235826 pause radix
+2024-05-13T13:15:02.315952 custom scheduler stable+%2826616+QPS%29
+2024-05-13T13:15:02.371394 update_cores radix [1]
+2024-05-13T13:15:02.388749 unpause radix
+2024-05-13T13:15:03.026049 custom scheduler stable+%2826605+QPS%29
+2024-05-13T13:15:03.189035 update_cores radix [3]
+2024-05-13T13:15:03.226510 pause radix
+2024-05-13T13:15:03.359567 update_cores radix [1]
+2024-05-13T13:15:03.382287 unpause radix
+2024-05-13T13:15:03.722841 custom scheduler stable+%2826562+QPS%29
+2024-05-13T13:15:03.913426 custom scheduler unstable+%28CURR+55101+-+27544+QPS%29
+2024-05-13T13:15:03.984341 update_cores radix [3]
+2024-05-13T13:15:04.015859 pause radix
+2024-05-13T13:15:04.615803 custom scheduler stable+%2843385+QPS%29
+2024-05-13T13:15:05.247687 custom scheduler stable+%2849124+QPS%29
+2024-05-13T13:15:05.948783 custom scheduler stable+%2848927+QPS%29
+2024-05-13T13:15:06.646959 custom scheduler stable+%2849268+QPS%29
+2024-05-13T13:15:07.348127 custom scheduler stable+%2849469+QPS%29
+2024-05-13T13:15:08.043415 custom scheduler stable+%2849318+QPS%29
+2024-05-13T13:15:08.753074 custom scheduler stable+%2848915+QPS%29
+2024-05-13T13:15:09.450430 custom scheduler stable+%2840555+QPS%29
+2024-05-13T13:15:10.142591 custom scheduler stable+%2834226+QPS%29
+2024-05-13T13:15:10.833029 custom scheduler stable+%2834244+QPS%29
+2024-05-13T13:15:11.522110 custom scheduler stable+%2833910+QPS%29
+2024-05-13T13:15:12.214754 custom scheduler stable+%2834176+QPS%29
+2024-05-13T13:15:12.907906 custom scheduler stable+%2834378+QPS%29
+2024-05-13T13:15:13.606599 custom scheduler stable+%2834539+QPS%29
+2024-05-13T13:15:13.925781 custom scheduler unstable+%28CURR+97254+-+37161+QPS%29
+2024-05-13T13:15:14.707103 custom scheduler stable+%2869847+QPS%29
+2024-05-13T13:15:15.355885 custom scheduler stable+%2876446+QPS%29
+2024-05-13T13:15:16.066854 custom scheduler stable+%2876085+QPS%29
+2024-05-13T13:15:16.531146 custom scheduler unstable+%28CURR+115344+-+76607+QPS%29
+2024-05-13T13:15:16.593743 custom scheduler stable+%2876597+QPS%29
+2024-05-13T13:15:16.787300 custom scheduler stable+%2876960+QPS%29
+2024-05-13T13:15:17.492303 custom scheduler stable+%2877279+QPS%29
+2024-05-13T13:15:18.204230 custom scheduler stable+%2876489+QPS%29
+2024-05-13T13:15:18.906958 custom scheduler unstable+%28CURR+34284+-+73684+QPS%29
+2024-05-13T13:15:19.660922 custom scheduler stable+%2831546+QPS%29
+2024-05-13T13:15:20.286930 custom scheduler stable+%2819735+QPS%29
+2024-05-13T13:15:20.348091 update_cores radix [1]
+2024-05-13T13:15:20.366402 unpause radix
+2024-05-13T13:15:20.777009 update_cores radix [3]
+2024-05-13T13:15:20.795510 pause radix
+2024-05-13T13:15:20.924322 update_cores radix [1]
+2024-05-13T13:15:20.943446 unpause radix
+2024-05-13T13:15:20.977888 custom scheduler stable+%2819522+QPS%29
+2024-05-13T13:15:20.999389 update_cores radix [3]
+2024-05-13T13:15:21.037769 pause radix
+2024-05-13T13:15:21.667138 custom scheduler stable+%2819597+QPS%29
+2024-05-13T13:15:21.797490 update_cores radix [1]
+2024-05-13T13:15:21.820111 unpause radix
+2024-05-13T13:15:21.879595 update_cores radix [3]
+2024-05-13T13:15:21.907138 pause radix
+2024-05-13T13:15:22.357916 custom scheduler stable+%2819640+QPS%29
+2024-05-13T13:15:22.847801 update_cores radix [1]
+2024-05-13T13:15:22.865991 unpause radix
+2024-05-13T13:15:22.928331 update_cores radix [3]
+2024-05-13T13:15:22.957107 pause radix
+2024-05-13T13:15:23.051914 custom scheduler stable+%2819626+QPS%29
+2024-05-13T13:15:23.742887 custom scheduler stable+%2819551+QPS%29
+2024-05-13T13:15:23.855684 update_cores radix [1]
+2024-05-13T13:15:23.871870 unpause radix
+2024-05-13T13:15:23.917812 update_cores radix [3]
+2024-05-13T13:15:23.945456 pause radix
+2024-05-13T13:15:24.433969 custom scheduler stable+%2817316+QPS%29
+2024-05-13T13:15:24.882217 update_cores radix [1]
+2024-05-13T13:15:24.898863 unpause radix
+2024-05-13T13:15:24.941830 update_cores radix [3]
+2024-05-13T13:15:24.958527 pause radix
+2024-05-13T13:15:25.088860 update_cores radix [1]
+2024-05-13T13:15:25.108129 unpause radix
+2024-05-13T13:15:25.130596 custom scheduler stable+%2815254+QPS%29
+2024-05-13T13:15:25.172962 update_cores radix [3]
+2024-05-13T13:15:25.200398 pause radix
+2024-05-13T13:15:25.821227 custom scheduler stable+%2815386+QPS%29
+2024-05-13T13:15:25.900653 update_cores radix [1]
+2024-05-13T13:15:25.921218 unpause radix
+2024-05-13T13:15:25.972777 update_cores radix [3]
+2024-05-13T13:15:25.989219 pause radix
+2024-05-13T13:15:26.097302 update_cores radix [1]
+2024-05-13T13:15:26.121092 unpause radix
+2024-05-13T13:15:26.181303 update_cores radix [3]
+2024-05-13T13:15:26.199526 pause radix
+2024-05-13T13:15:26.507922 custom scheduler stable+%2815275+QPS%29
+2024-05-13T13:15:26.962712 update_cores radix [1]
+2024-05-13T13:15:26.980889 unpause radix
+2024-05-13T13:15:27.040937 update_cores radix [3]
+2024-05-13T13:15:27.068167 pause radix
+2024-05-13T13:15:27.198280 custom scheduler stable+%2815269+QPS%29
+2024-05-13T13:15:27.887362 custom scheduler stable+%2815127+QPS%29
+2024-05-13T13:15:27.968192 update_cores radix [1]
+2024-05-13T13:15:27.988966 unpause radix
+2024-05-13T13:15:28.047217 update_cores radix [3]
+2024-05-13T13:15:28.063768 pause radix
+2024-05-13T13:15:28.578184 custom scheduler stable+%2815446+QPS%29
+2024-05-13T13:15:28.895496 custom scheduler unstable+%28CURR+51380+-+17704+QPS%29
+2024-05-13T13:15:29.736008 custom scheduler stable+%2868109+QPS%29
+2024-05-13T13:15:30.381352 custom scheduler stable+%2876424+QPS%29
+2024-05-13T13:15:31.093196 custom scheduler stable+%2876777+QPS%29
+2024-05-13T13:15:31.809535 custom scheduler stable+%2876625+QPS%29
+2024-05-13T13:15:32.514055 custom scheduler stable+%2876910+QPS%29
+2024-05-13T13:15:33.220060 custom scheduler stable+%2876766+QPS%29
+2024-05-13T13:15:33.926212 custom scheduler unstable+%28CURR+6421+-+71488+QPS%29
+2024-05-13T13:15:34.859001 custom scheduler stable+%285968+QPS%29
+2024-05-13T13:15:34.901711 update_cores radix [1]
+2024-05-13T13:15:34.924731 unpause radix
+2024-05-13T13:15:35.233013 update_cores radix [3]
+2024-05-13T13:15:35.261953 pause radix
+2024-05-13T13:15:35.399329 update_cores radix [1]
+2024-05-13T13:15:35.420273 unpause radix
+2024-05-13T13:15:35.489330 update_cores radix [3]
+2024-05-13T13:15:35.496545 custom scheduler stable+%285276+QPS%29
+2024-05-13T13:15:35.506955 pause radix
+2024-05-13T13:15:36.182881 custom scheduler stable+%285233+QPS%29
+2024-05-13T13:15:36.250042 update_cores radix [1]
+2024-05-13T13:15:36.268729 unpause radix
+2024-05-13T13:15:36.322166 update_cores radix [3]
+2024-05-13T13:15:36.339448 pause radix
+2024-05-13T13:15:36.461780 update_cores radix [1]
+2024-05-13T13:15:36.482441 unpause radix
+2024-05-13T13:15:36.876643 custom scheduler stable+%285314+QPS%29
+2024-05-13T13:15:37.295257 update_cores radix [3]
+2024-05-13T13:15:37.310441 pause radix
+2024-05-13T13:15:37.469754 update_cores radix [1]
+2024-05-13T13:15:37.490339 unpause radix
+2024-05-13T13:15:37.571506 custom scheduler stable+%285273+QPS%29
+2024-05-13T13:15:38.264682 custom scheduler stable+%285217+QPS%29
+2024-05-13T13:15:38.320781 update_cores radix [3]
+2024-05-13T13:15:38.336175 pause radix
+2024-05-13T13:15:38.450485 update_cores radix [1]
+2024-05-13T13:15:38.473295 unpause radix
+2024-05-13T13:15:38.531288 update_cores radix [3]
+2024-05-13T13:15:38.548693 pause radix
+2024-05-13T13:15:38.889053 custom scheduler unstable+%28CURR+10998+-+5403+QPS%29
+2024-05-13T13:15:39.704918 custom scheduler stable+%2815661+QPS%29
+2024-05-13T13:15:39.759056 update_cores radix [1]
+2024-05-13T13:15:39.783311 unpause radix
+2024-05-13T13:15:40.344104 custom scheduler stable+%2817712+QPS%29
+2024-05-13T13:15:40.379685 update_cores radix [3]
+2024-05-13T13:15:40.410001 pause radix
+2024-05-13T13:15:40.566065 update_cores radix [1]
+2024-05-13T13:15:40.589860 unpause radix
+2024-05-13T13:15:40.645150 update_cores radix [3]
+2024-05-13T13:15:40.676304 pause radix
+2024-05-13T13:15:41.039607 custom scheduler stable+%2817766+QPS%29
+2024-05-13T13:15:41.399874 update_cores radix [1]
+2024-05-13T13:15:41.417150 unpause radix
+2024-05-13T13:15:41.477661 update_cores radix [3]
+2024-05-13T13:15:41.495531 pause radix
+2024-05-13T13:15:41.731687 custom scheduler stable+%2817679+QPS%29
+2024-05-13T13:15:42.420472 custom scheduler stable+%2818207+QPS%29
+2024-05-13T13:15:42.427297 update_cores radix [1]
+2024-05-13T13:15:42.450672 unpause radix
+2024-05-13T13:15:42.504613 update_cores radix [3]
+2024-05-13T13:15:42.532262 pause radix
+2024-05-13T13:15:43.113591 custom scheduler stable+%2817934+QPS%29
+2024-05-13T13:15:43.471808 update_cores radix [1]
+2024-05-13T13:15:43.492045 unpause radix
+2024-05-13T13:15:43.548838 update_cores radix [3]
+2024-05-13T13:15:43.568475 pause radix
+2024-05-13T13:15:43.809541 custom scheduler stable+%2817876+QPS%29
+2024-05-13T13:15:43.872611 custom scheduler unstable+%28CURR+31764+-+19063+QPS%29
+2024-05-13T13:15:44.780997 custom scheduler stable+%2889850+QPS%29
+2024-05-13T13:15:45.449422 custom scheduler stable+%2895832+QPS%29
+2024-05-13T13:15:46.174545 custom scheduler stable+%2897452+QPS%29
+2024-05-13T13:15:46.889943 custom scheduler stable+%2897011+QPS%29
+2024-05-13T13:15:47.602698 custom scheduler stable+%2897074+QPS%29
+2024-05-13T13:15:48.320492 custom scheduler stable+%2896456+QPS%29
+2024-05-13T13:15:48.922923 custom scheduler unstable+%28CURR+45736+-+92919+QPS%29
+2024-05-13T13:15:49.428065 custom scheduler stable+%2863318+QPS%29
+2024-05-13T13:15:50.059245 custom scheduler stable+%2837112+QPS%29
+2024-05-13T13:15:50.754871 custom scheduler stable+%2836836+QPS%29
+2024-05-13T13:15:51.449047 custom scheduler stable+%2836673+QPS%29
+2024-05-13T13:15:52.142799 custom scheduler stable+%2836934+QPS%29
+2024-05-13T13:15:52.839943 custom scheduler stable+%2837006+QPS%29
+2024-05-13T13:15:53.534809 custom scheduler stable+%2836859+QPS%29
+2024-05-13T13:15:53.917474 custom scheduler unstable+%28CURR+101013+-+40028+QPS%29
+2024-05-13T13:15:54.631599 custom scheduler stable+%2874494+QPS%29
+2024-05-13T13:15:55.285117 custom scheduler stable+%2886072+QPS%29
+2024-05-13T13:15:56.018644 custom scheduler stable+%2885460+QPS%29
+2024-05-13T13:15:56.732564 custom scheduler stable+%2885935+QPS%29
+2024-05-13T13:15:57.452137 custom scheduler stable+%2886394+QPS%29
+2024-05-13T13:15:58.173462 custom scheduler stable+%2886116+QPS%29
+2024-05-13T13:15:58.885062 custom scheduler stable+%2884934+QPS%29
+2024-05-13T13:15:58.948210 custom scheduler unstable+%28CURR+40214+-+81748+QPS%29
+2024-05-13T13:15:59.389407 custom scheduler stable+%2858219+QPS%29
+2024-05-13T13:16:00.018683 custom scheduler stable+%2832483+QPS%29
+2024-05-13T13:16:00.711009 custom scheduler stable+%2831748+QPS%29
+2024-05-13T13:16:01.405133 custom scheduler stable+%2831554+QPS%29
+2024-05-13T13:16:02.106300 custom scheduler stable+%2831917+QPS%29
+2024-05-13T13:16:02.798992 custom scheduler stable+%2832282+QPS%29
+2024-05-13T13:16:03.494498 custom scheduler stable+%2831833+QPS%29
+2024-05-13T13:16:03.939316 custom scheduler unstable+%28CURR+74556+-+34076+QPS%29
+2024-05-13T13:16:04.653352 custom scheduler stable+%2855611+QPS%29
+2024-05-13T13:16:05.301273 custom scheduler stable+%2861122+QPS%29
+2024-05-13T13:16:05.364434 custom scheduler unstable+%28CURR+91227+-+61831+QPS%29
+2024-05-13T13:16:05.427473 custom scheduler stable+%2862078+QPS%29
+2024-05-13T13:16:05.731581 end blackscholes
+2024-05-13T13:16:05.736537 custom memcached Some+jobs+are+done%3A+%28high%2C+1%29%2C+%28low%2C+0%29
+2024-05-13T13:16:06.022121 custom scheduler unstable+%28CURR+89949+-+62039+QPS%29
+2024-05-13T13:16:06.086006 custom scheduler stable+%2862290+QPS%29
+2024-05-13T13:16:06.252795 start ferret [2,3] 4
+2024-05-13T13:16:06.795380 custom scheduler stable+%2862457+QPS%29
+2024-05-13T13:16:07.497426 custom scheduler stable+%2862350+QPS%29
+2024-05-13T13:16:08.215648 custom scheduler stable+%2862309+QPS%29
+2024-05-13T13:16:08.673210 custom scheduler unstable+%28CURR+90364+-+62335+QPS%29
+2024-05-13T13:16:08.736840 custom scheduler stable+%2862417+QPS%29
+2024-05-13T13:16:08.929945 custom scheduler unstable+%28CURR+15534+-+58693+QPS%29
+2024-05-13T13:16:09.748999 custom scheduler stable+%2818218+QPS%29
+2024-05-13T13:16:09.804382 update_cores radix [1]
+2024-05-13T13:16:09.825153 unpause radix
+2024-05-13T13:16:10.382842 custom scheduler stable+%2812347+QPS%29
+2024-05-13T13:16:10.485533 update_cores radix [3]
+2024-05-13T13:16:10.514647 pause radix
+2024-05-13T13:16:10.620685 update_cores radix [1]
+2024-05-13T13:16:10.638948 unpause radix
+2024-05-13T13:16:10.694279 update_cores radix [3]
+2024-05-13T13:16:10.712373 pause radix
+2024-05-13T13:16:11.076541 custom scheduler stable+%2812291+QPS%29
+2024-05-13T13:16:11.516838 update_cores radix [1]
+2024-05-13T13:16:11.534319 unpause radix
+2024-05-13T13:16:11.584767 update_cores radix [3]
+2024-05-13T13:16:11.600900 pause radix
+2024-05-13T13:16:11.769399 custom scheduler stable+%2812412+QPS%29
+2024-05-13T13:16:12.458859 custom scheduler stable+%2812405+QPS%29
+2024-05-13T13:16:13.149398 custom scheduler stable+%2812607+QPS%29
+2024-05-13T13:16:13.333820 end freqmine
+2024-05-13T13:16:13.337192 custom memcached Some+jobs+are+done%3A+%28high%2C+1%29%2C+%28low%2C+0%29
+2024-05-13T13:16:13.703289 start vips [2,3] 4
+2024-05-13T13:16:13.853114 custom scheduler stable+%2812504+QPS%29
+2024-05-13T13:16:13.915625 custom scheduler unstable+%28CURR+30837+-+13225+QPS%29
+2024-05-13T13:16:14.669591 custom scheduler stable+%2823293+QPS%29
+2024-05-13T13:16:14.731615 update_cores radix [1]
+2024-05-13T13:16:14.754689 unpause radix
+2024-05-13T13:16:15.314637 custom scheduler stable+%2825923+QPS%29
+2024-05-13T13:16:15.637322 custom scheduler unstable+%28CURR+37747+-+26045+QPS%29
+2024-05-13T13:16:15.641021 update_cores radix [3]
+2024-05-13T13:16:15.658947 pause radix
+2024-05-13T13:16:15.700941 custom scheduler stable+%2826041+QPS%29
+2024-05-13T13:16:16.014472 custom scheduler stable+%2825913+QPS%29
+2024-05-13T13:16:16.694874 update_cores radix [1]
+2024-05-13T13:16:16.710502 custom scheduler stable+%2825890+QPS%29
+2024-05-13T13:16:16.716301 unpause radix
+2024-05-13T13:16:16.769438 update_cores radix [3]
+2024-05-13T13:16:16.789331 pause radix
+2024-05-13T13:16:17.403522 custom scheduler stable+%2825769+QPS%29
+2024-05-13T13:16:17.731850 update_cores radix [1]
+2024-05-13T13:16:17.752532 unpause radix
+2024-05-13T13:16:17.813400 update_cores radix [3]
+2024-05-13T13:16:17.842783 pause radix
+2024-05-13T13:16:18.095876 custom scheduler stable+%2825802+QPS%29
+2024-05-13T13:16:18.755420 update_cores radix [1]
+2024-05-13T13:16:18.777780 unpause radix
+2024-05-13T13:16:18.785551 custom scheduler stable+%2825866+QPS%29
+2024-05-13T13:16:18.836940 update_cores radix [3]
+2024-05-13T13:16:18.862445 pause radix
+2024-05-13T13:16:18.917077 custom scheduler unstable+%28CURR+93047+-+29362+QPS%29
+2024-05-13T13:16:19.578021 custom scheduler stable+%2865299+QPS%29
+2024-05-13T13:16:19.641512 custom scheduler unstable+%28CURR+102794+-+68751+QPS%29
+2024-05-13T13:16:19.707276 custom scheduler stable+%2872069+QPS%29
+2024-05-13T13:16:20.227019 custom scheduler stable+%2880600+QPS%29
+2024-05-13T13:16:20.946884 custom scheduler stable+%2879950+QPS%29
+2024-05-13T13:16:21.402076 custom scheduler unstable+%28CURR+114848+-+79980+QPS%29
+2024-05-13T13:16:21.465818 custom scheduler stable+%2880411+QPS%29
+2024-05-13T13:16:21.659760 custom scheduler stable+%2880212+QPS%29
+2024-05-13T13:16:22.373513 custom scheduler stable+%2881815+QPS%29
+2024-05-13T13:16:23.097583 custom scheduler stable+%2881378+QPS%29
+2024-05-13T13:16:23.815895 custom scheduler stable+%2880737+QPS%29
+2024-05-13T13:16:23.942789 custom scheduler unstable+%28CURR+9018+-+74308+QPS%29
+2024-05-13T13:16:24.818307 custom scheduler stable+%2810799+QPS%29
+2024-05-13T13:16:24.879620 update_cores radix [1]
+2024-05-13T13:16:24.931087 unpause radix
+2024-05-13T13:16:25.089474 update_cores radix [3]
+2024-05-13T13:16:25.453366 custom scheduler stable+%287345+QPS%29
+2024-05-13T13:16:25.647157 pause radix
+2024-05-13T13:16:26.150056 custom scheduler stable+%287481+QPS%29
+2024-05-13T13:16:26.640944 update_cores radix [1]
+2024-05-13T13:16:26.854428 custom scheduler stable+%287336+QPS%29
+2024-05-13T13:16:27.555543 custom scheduler stable+%287037+QPS%29
+2024-05-13T13:16:27.581925 unpause radix
+2024-05-13T13:16:28.251273 custom scheduler stable+%287248+QPS%29
+2024-05-13T13:16:28.881415 custom scheduler unstable+%28CURR+23275+-+8855+QPS%29
+2024-05-13T13:16:29.725825 custom scheduler stable+%2875138+QPS%29
+2024-05-13T13:16:30.379220 custom scheduler stable+%2887130+QPS%29
+2024-05-13T13:16:31.098011 custom scheduler stable+%2886146+QPS%29
+2024-05-13T13:16:31.164025 custom scheduler unstable+%28CURR+127001+-+86939+QPS%29
+2024-05-13T13:16:31.228520 custom scheduler stable+%2886794+QPS%29
+2024-05-13T13:16:31.881411 custom scheduler stable+%2886870+QPS%29
+2024-05-13T13:16:32.595885 custom scheduler stable+%2886562+QPS%29
+2024-05-13T13:16:33.310995 custom scheduler stable+%2886388+QPS%29
+2024-05-13T13:16:34.021078 custom scheduler stable+%2887594+QPS%29
+2024-05-13T13:16:34.745341 custom scheduler stable+%2891727+QPS%29
+2024-05-13T13:16:35.468875 custom scheduler stable+%2892491+QPS%29
+2024-05-13T13:16:36.190048 custom scheduler stable+%2892141+QPS%29
+2024-05-13T13:16:36.899915 custom scheduler stable+%2892475+QPS%29
+2024-05-13T13:16:37.150561 end radix
+2024-05-13T13:16:37.150694 custom memcached Some+jobs+are+done%3A+%28high%2C+0%29%2C+%28low%2C+1%29
+2024-05-13T13:16:37.317947 custom scheduler unstable+%28CURR+56912+-+85835+QPS%29
+2024-05-13T13:16:37.658984 custom scheduler stable+%2888515+QPS%29
+2024-05-13T13:16:37.780728 start dedup [1] 1
+2024-05-13T13:16:37.856475 update_cores dedup [3]
+2024-05-13T13:16:37.889280 pause dedup
+2024-05-13T13:16:37.943054 custom scheduler unstable+%28CURR+129188+-+86993+QPS%29
+2024-05-13T13:16:38.140656 custom scheduler stable+%2891274+QPS%29
+2024-05-13T13:16:38.399677 custom scheduler stable+%2898551+QPS%29
+2024-05-13T13:16:39.116458 custom scheduler stable+%2890650+QPS%29
+2024-05-13T13:16:39.827845 custom scheduler stable+%2873838+QPS%29
+2024-05-13T13:16:40.538810 custom scheduler stable+%2873067+QPS%29
+2024-05-13T13:16:41.250465 custom scheduler stable+%2873205+QPS%29
+2024-05-13T13:16:41.961291 custom scheduler stable+%2873395+QPS%29
+2024-05-13T13:16:42.675615 custom scheduler stable+%2871865+QPS%29
+2024-05-13T13:16:42.741295 custom scheduler unstable+%28CURR+112679+-+72883+QPS%29
+2024-05-13T13:16:42.804847 custom scheduler stable+%2872764+QPS%29
+2024-05-13T13:16:43.451600 custom scheduler stable+%2873027+QPS%29
+2024-05-13T13:16:43.965363 custom scheduler unstable+%28CURR+39346+-+68083+QPS%29
+2024-05-13T13:16:44.343391 custom scheduler stable+%2852562+QPS%29
+2024-05-13T13:16:44.975256 custom scheduler stable+%2831309+QPS%29
+2024-05-13T13:16:45.667157 custom scheduler stable+%2831634+QPS%29
+2024-05-13T13:16:46.360110 custom scheduler stable+%2831648+QPS%29
+2024-05-13T13:16:47.053925 custom scheduler stable+%2831343+QPS%29
+2024-05-13T13:16:47.748371 custom scheduler stable+%2831818+QPS%29
+2024-05-13T13:16:48.442668 custom scheduler stable+%2831707+QPS%29
+2024-05-13T13:16:48.883113 custom scheduler unstable+%28CURR+56393+-+32501+QPS%29
+2024-05-13T13:16:49.722825 custom scheduler stable+%2870964+QPS%29
+2024-05-13T13:16:50.360712 custom scheduler stable+%2877223+QPS%29
+2024-05-13T13:16:51.075030 custom scheduler stable+%2877552+QPS%29
+2024-05-13T13:16:51.779448 custom scheduler stable+%2877593+QPS%29
+2024-05-13T13:16:52.491878 custom scheduler stable+%2877829+QPS%29
+2024-05-13T13:16:53.204448 custom scheduler stable+%2877610+QPS%29
+2024-05-13T13:16:53.912334 custom scheduler stable+%2877854+QPS%29
+2024-05-13T13:16:54.046044 custom scheduler unstable+%28CURR+127717+-+78714+QPS%29
+2024-05-13T13:16:54.176006 custom scheduler stable+%2880298+QPS%29
+2024-05-13T13:16:54.629989 custom scheduler stable+%2883828+QPS%29
+2024-05-13T13:16:55.347409 custom scheduler stable+%2884724+QPS%29
+2024-05-13T13:16:55.741906 custom scheduler unstable+%28CURR+123100+-+84936+QPS%29
+2024-05-13T13:16:55.807566 custom scheduler stable+%2885036+QPS%29
+2024-05-13T13:16:56.069203 custom scheduler stable+%2885420+QPS%29
+2024-05-13T13:16:56.790988 custom scheduler stable+%2885470+QPS%29
+2024-05-13T13:16:57.516821 custom scheduler stable+%2884949+QPS%29
+2024-05-13T13:16:58.257305 custom scheduler stable+%2885317+QPS%29
+2024-05-13T13:16:58.791208 custom scheduler unstable+%28CURR+127197+-+85519+QPS%29
+2024-05-13T13:16:58.858367 custom scheduler stable+%2885139+QPS%29
+2024-05-13T13:16:58.921208 custom scheduler unstable+%28CURR+16464+-+80807+QPS%29
+2024-05-13T13:16:59.800340 custom scheduler stable+%2818103+QPS%29
+2024-05-13T13:16:59.854712 update_cores dedup [1]
+2024-05-13T13:16:59.874927 unpause dedup
+2024-05-13T13:17:00.366282 update_cores dedup [3]
+2024-05-13T13:17:00.395108 pause dedup
+2024-05-13T13:17:00.434725 custom scheduler stable+%2812536+QPS%29
+2024-05-13T13:17:00.586462 update_cores dedup [1]
+2024-05-13T13:17:00.609344 unpause dedup
+2024-05-13T13:17:01.125194 custom scheduler stable+%2812602+QPS%29
+2024-05-13T13:17:01.394746 update_cores dedup [3]
+2024-05-13T13:17:01.422621 pause dedup
+2024-05-13T13:17:01.571360 update_cores dedup [1]
+2024-05-13T13:17:01.593456 unpause dedup
+2024-05-13T13:17:01.644405 update_cores dedup [3]
+2024-05-13T13:17:01.673274 pause dedup
+2024-05-13T13:17:01.820479 custom scheduler stable+%2812762+QPS%29
+2024-05-13T13:17:02.405902 update_cores dedup [1]
+2024-05-13T13:17:02.429355 unpause dedup
+2024-05-13T13:17:02.499021 update_cores dedup [3]
+2024-05-13T13:17:02.510587 custom scheduler stable+%2813048+QPS%29
+2024-05-13T13:17:02.528739 pause dedup
+2024-05-13T13:17:02.642440 update_cores dedup [1]
+2024-05-13T13:17:02.668835 unpause dedup
+2024-05-13T13:17:03.204634 custom scheduler stable+%2812728+QPS%29
+2024-05-13T13:17:03.436311 update_cores dedup [3]
+2024-05-13T13:17:03.894984 custom scheduler unstable+%28CURR+45171+-+14288+QPS%29
+2024-05-13T13:17:04.717741 custom scheduler stable+%2850625+QPS%29
+2024-05-13T13:17:05.188396 pause dedup
+2024-05-13T13:17:05.353764 custom scheduler stable+%2857981+QPS%29
+2024-05-13T13:17:06.055234 custom scheduler stable+%2857787+QPS%29
+2024-05-13T13:17:06.759630 custom scheduler stable+%2857685+QPS%29
+2024-05-13T13:17:07.455006 custom scheduler stable+%2857960+QPS%29
+2024-05-13T13:17:08.153891 custom scheduler stable+%2857510+QPS%29
+2024-05-13T13:17:08.666870 custom scheduler unstable+%28CURR+84947+-+57554+QPS%29
+2024-05-13T13:17:08.730496 custom scheduler stable+%2857260+QPS%29
+2024-05-13T13:17:08.859211 custom scheduler stable+%2857523+QPS%29
+2024-05-13T13:17:08.924977 custom scheduler unstable+%28CURR+115397+-+60089+QPS%29
+2024-05-13T13:17:09.517470 custom scheduler stable+%2883000+QPS%29
+2024-05-13T13:17:09.584100 custom scheduler unstable+%28CURR+126870+-+86557+QPS%29
+2024-05-13T13:17:09.655100 custom scheduler stable+%2887795+QPS%29
+2024-05-13T13:17:09.790638 custom scheduler unstable+%28CURR+138067+-+93730+QPS%29
+2024-05-13T13:17:09.856562 custom scheduler stable+%2896487+QPS%29
+2024-05-13T13:17:10.181327 custom scheduler stable+%2898249+QPS%29
+2024-05-13T13:17:10.906072 custom scheduler stable+%2896675+QPS%29
+2024-05-13T13:17:11.626128 custom scheduler stable+%2897528+QPS%29
+2024-05-13T13:17:12.352335 custom scheduler unstable+%28CURR+141005+-+97512+QPS%29
+2024-05-13T13:17:12.417339 custom scheduler stable+%2897472+QPS%29
+2024-05-13T13:17:13.067248 custom scheduler stable+%2897516+QPS%29
+2024-05-13T13:17:13.797744 custom scheduler stable+%2896595+QPS%29
+2024-05-13T13:17:13.924457 custom scheduler unstable+%28CURR+8839+-+91178+QPS%29
+2024-05-13T13:17:14.864862 custom scheduler stable+%287279+QPS%29
+2024-05-13T13:17:15.488664 custom scheduler stable+%286709+QPS%29
+2024-05-13T13:17:15.646471 update_cores dedup [1]
+2024-05-13T13:17:16.183409 custom scheduler stable+%286881+QPS%29
+2024-05-13T13:17:16.778331 unpause dedup
+2024-05-13T13:17:16.892196 custom scheduler stable+%286974+QPS%29
+2024-05-13T13:17:17.584917 custom scheduler stable+%286948+QPS%29
+2024-05-13T13:17:18.124830 update_cores dedup [3]
+2024-05-13T13:17:18.277298 custom scheduler stable+%286914+QPS%29
+2024-05-13T13:17:18.633499 pause dedup
+2024-05-13T13:17:18.777823 custom scheduler unstable+%28CURR+10133+-+6881+QPS%29
+2024-05-13T13:17:18.839781 custom scheduler stable+%286941+QPS%29
+2024-05-13T13:17:18.904774 custom scheduler unstable+%28CURR+68395+-+10469+QPS%29
+2024-05-13T13:17:19.815996 custom scheduler stable+%2885875+QPS%29
+2024-05-13T13:17:20.474556 custom scheduler stable+%2891987+QPS%29
+2024-05-13T13:17:21.206463 custom scheduler stable+%2891764+QPS%29
+2024-05-13T13:17:21.924990 custom scheduler stable+%2891781+QPS%29
+2024-05-13T13:17:22.649800 custom scheduler stable+%2891156+QPS%29
+2024-05-13T13:17:23.373202 custom scheduler stable+%2891939+QPS%29
+2024-05-13T13:17:23.895927 custom scheduler unstable+%28CURR+47136+-+88080+QPS%29
+2024-05-13T13:17:24.835907 custom scheduler stable+%287849+QPS%29
+2024-05-13T13:17:24.880806 update_cores dedup [1]
+2024-05-13T13:17:24.900843 unpause dedup
+2024-05-13T13:17:25.238584 update_cores dedup [3]
+2024-05-13T13:17:25.276914 pause dedup
+2024-05-13T13:17:25.385105 update_cores dedup [1]
+2024-05-13T13:17:25.404475 unpause dedup
+2024-05-13T13:17:25.451418 update_cores dedup [3]
+2024-05-13T13:17:25.462849 custom scheduler stable+%285179+QPS%29
+2024-05-13T13:17:25.483255 pause dedup
+2024-05-13T13:17:25.773478 custom scheduler unstable+%28CURR+7377+-+5141+QPS%29
+2024-05-13T13:17:25.835617 custom scheduler stable+%285169+QPS%29
+2024-05-13T13:17:26.148216 custom scheduler stable+%285242+QPS%29
+2024-05-13T13:17:26.264544 update_cores dedup [1]
+2024-05-13T13:17:26.287142 unpause dedup
+2024-05-13T13:17:26.339329 update_cores dedup [3]
+2024-05-13T13:17:26.365528 pause dedup
+2024-05-13T13:17:26.838722 custom scheduler stable+%285323+QPS%29
+2024-05-13T13:17:27.295469 update_cores dedup [1]
+2024-05-13T13:17:27.314051 unpause dedup
+2024-05-13T13:17:27.365962 update_cores dedup [3]
+2024-05-13T13:17:27.382228 pause dedup
+2024-05-13T13:17:27.527918 custom scheduler stable+%285197+QPS%29
+2024-05-13T13:17:28.215538 custom scheduler stable+%285142+QPS%29
+2024-05-13T13:17:28.332175 update_cores dedup [1]
+2024-05-13T13:17:28.353262 unpause dedup
+2024-05-13T13:17:28.425069 update_cores dedup [3]
+2024-05-13T13:17:28.442568 pause dedup
+2024-05-13T13:17:28.903732 custom scheduler unstable+%28CURR+52895+-+7909+QPS%29
+2024-05-13T13:17:29.744739 custom scheduler stable+%2873305+QPS%29
+2024-05-13T13:17:30.394652 custom scheduler stable+%2883724+QPS%29
+2024-05-13T13:17:31.114963 custom scheduler stable+%2883734+QPS%29
+2024-05-13T13:17:31.842416 custom scheduler stable+%2884070+QPS%29
+2024-05-13T13:17:32.562197 custom scheduler stable+%2883821+QPS%29
+2024-05-13T13:17:33.293287 custom scheduler stable+%2884055+QPS%29
+2024-05-13T13:17:33.945342 custom scheduler unstable+%28CURR+52314+-+79901+QPS%29
+2024-05-13T13:17:34.010541 custom scheduler stable+%2877480+QPS%29
+2024-05-13T13:17:34.710150 custom scheduler stable+%2849216+QPS%29
+2024-05-13T13:17:35.420412 custom scheduler stable+%2843626+QPS%29
+2024-05-13T13:17:36.118839 custom scheduler stable+%2842847+QPS%29
+2024-05-13T13:17:36.813152 custom scheduler stable+%2842950+QPS%29
+2024-05-13T13:17:37.507162 custom scheduler stable+%2843374+QPS%29
+2024-05-13T13:17:37.762954 custom scheduler unstable+%28CURR+67795+-+43454+QPS%29
+2024-05-13T13:17:37.826115 custom scheduler stable+%2843233+QPS%29
+2024-05-13T13:17:38.210682 custom scheduler stable+%2843323+QPS%29
+2024-05-13T13:17:38.906945 custom scheduler unstable+%28CURR+108434+-+46005+QPS%29
+2024-05-13T13:17:39.693537 custom scheduler stable+%2889825+QPS%29
+2024-05-13T13:17:40.364852 custom scheduler stable+%28100695+QPS%29
+2024-05-13T13:17:41.096341 custom scheduler stable+%28101273+QPS%29
+2024-05-13T13:17:41.822080 custom scheduler stable+%28100559+QPS%29
+2024-05-13T13:17:42.544505 custom scheduler stable+%2899974+QPS%29
+2024-05-13T13:17:43.278065 custom scheduler stable+%28100216+QPS%29
+2024-05-13T13:17:44.025379 custom scheduler stable+%2899520+QPS%29
+2024-05-13T13:17:44.771197 custom scheduler stable+%2896764+QPS%29
+2024-05-13T13:17:45.501843 custom scheduler stable+%2896602+QPS%29
+2024-05-13T13:17:46.230782 custom scheduler stable+%2895861+QPS%29
+2024-05-13T13:17:46.941193 custom scheduler stable+%2897990+QPS%29
+2024-05-13T13:17:47.458697 custom scheduler unstable+%28CURR+140232+-+96665+QPS%29
+2024-05-13T13:17:47.523303 custom scheduler stable+%2896625+QPS%29
+2024-05-13T13:17:47.650544 custom scheduler stable+%2896698+QPS%29
+2024-05-13T13:17:48.359185 custom scheduler stable+%2896830+QPS%29
+2024-05-13T13:17:49.071016 custom scheduler stable+%2891133+QPS%29
+2024-05-13T13:17:49.780490 custom scheduler stable+%2872708+QPS%29
+2024-05-13T13:17:50.492085 custom scheduler stable+%2869915+QPS%29
+2024-05-13T13:17:51.197182 custom scheduler stable+%2870211+QPS%29
+2024-05-13T13:17:51.906382 custom scheduler stable+%2870091+QPS%29
+2024-05-13T13:17:52.614365 custom scheduler stable+%2869662+QPS%29
+2024-05-13T13:17:53.322961 custom scheduler stable+%2870053+QPS%29
+2024-05-13T13:17:54.033208 custom scheduler stable+%2866713+QPS%29
+2024-05-13T13:17:54.728859 custom scheduler stable+%2852852+QPS%29
+2024-05-13T13:17:55.431021 custom scheduler stable+%2849949+QPS%29
+2024-05-13T13:17:56.132041 custom scheduler stable+%2850064+QPS%29
+2024-05-13T13:17:56.834163 custom scheduler stable+%2849705+QPS%29
+2024-05-13T13:17:57.532058 custom scheduler stable+%2849865+QPS%29
+2024-05-13T13:17:58.230453 custom scheduler stable+%2849613+QPS%29
+2024-05-13T13:17:58.931648 custom scheduler stable+%2848004+QPS%29
+2024-05-13T13:17:59.621568 custom scheduler stable+%2834554+QPS%29
+2024-05-13T13:18:00.312638 custom scheduler stable+%2829475+QPS%29
+2024-05-13T13:18:01.007020 custom scheduler stable+%2829303+QPS%29
+2024-05-13T13:18:01.696703 custom scheduler stable+%2829231+QPS%29
+2024-05-13T13:18:02.387969 custom scheduler stable+%2829619+QPS%29
+2024-05-13T13:18:03.080032 custom scheduler stable+%2829379+QPS%29
+2024-05-13T13:18:03.771520 custom scheduler stable+%2829321+QPS%29
+2024-05-13T13:18:03.899262 custom scheduler unstable+%28CURR+62898+-+30856+QPS%29
+2024-05-13T13:18:04.614661 custom scheduler stable+%2856326+QPS%29
+2024-05-13T13:18:05.255068 custom scheduler stable+%2864628+QPS%29
+2024-05-13T13:18:05.963393 custom scheduler stable+%2864879+QPS%29
+2024-05-13T13:18:06.664310 custom scheduler stable+%2864797+QPS%29
+2024-05-13T13:18:07.373139 custom scheduler stable+%2865307+QPS%29
+2024-05-13T13:18:08.075832 custom scheduler stable+%2865257+QPS%29
+2024-05-13T13:18:08.782126 custom scheduler stable+%2864831+QPS%29
+2024-05-13T13:18:08.908917 custom scheduler unstable+%28CURR+17857+-+61760+QPS%29
+2024-05-13T13:18:09.846107 custom scheduler stable+%287349+QPS%29
+2024-05-13T13:18:09.898848 update_cores dedup [1]
+2024-05-13T13:18:09.919097 unpause dedup
+2024-05-13T13:18:09.994220 update_cores dedup [3]
+2024-05-13T13:18:10.011963 pause dedup
+2024-05-13T13:18:10.155463 update_cores dedup [1]
+2024-05-13T13:18:10.176961 unpause dedup
+2024-05-13T13:18:10.227746 update_cores dedup [3]
+2024-05-13T13:18:10.244027 pause dedup
+2024-05-13T13:18:10.476536 custom scheduler stable+%285766+QPS%29
+2024-05-13T13:18:11.026231 update_cores dedup [1]
+2024-05-13T13:18:11.045026 unpause dedup
+2024-05-13T13:18:11.090554 update_cores dedup [3]
+2024-05-13T13:18:11.116973 pause dedup
+2024-05-13T13:18:11.164353 custom scheduler stable+%285704+QPS%29
+2024-05-13T13:18:11.261545 update_cores dedup [1]
+2024-05-13T13:18:11.286285 unpause dedup
+2024-05-13T13:18:11.413155 custom scheduler unstable+%28CURR+8462+-+5789+QPS%29
+2024-05-13T13:18:11.474314 update_cores dedup [3]
+2024-05-13T13:18:11.476515 custom scheduler stable+%285821+QPS%29
+2024-05-13T13:18:11.501142 pause dedup
+2024-05-13T13:18:11.568365 update_cores dedup [1]
+2024-05-13T13:18:11.583870 unpause dedup
+2024-05-13T13:18:11.851567 custom scheduler stable+%285847+QPS%29
+2024-05-13T13:18:12.044581 update_cores dedup [3]
+2024-05-13T13:18:12.082411 pause dedup
+2024-05-13T13:18:12.136436 update_cores dedup [1]
+2024-05-13T13:18:12.154730 unpause dedup
+2024-05-13T13:18:12.164587 custom scheduler unstable+%28CURR+8811+-+5862+QPS%29
+2024-05-13T13:18:12.206039 update_cores dedup [3]
+2024-05-13T13:18:12.224188 pause dedup
+2024-05-13T13:18:12.227618 custom scheduler stable+%285856+QPS%29
+2024-05-13T13:18:12.539171 custom scheduler stable+%285786+QPS%29
+2024-05-13T13:18:13.088414 update_cores dedup [1]
+2024-05-13T13:18:13.107325 unpause dedup
+2024-05-13T13:18:13.150833 update_cores dedup [3]
+2024-05-13T13:18:13.188103 pause dedup
+2024-05-13T13:18:13.228331 custom scheduler stable+%285856+QPS%29
+2024-05-13T13:18:13.928773 custom scheduler unstable+%28CURR+92678+-+10661+QPS%29
+2024-05-13T13:18:14.770799 custom scheduler stable+%2876919+QPS%29
+2024-05-13T13:18:14.900439 custom scheduler unstable+%28CURR+125611+-+85748+QPS%29
+2024-05-13T13:18:14.966864 custom scheduler stable+%2885882+QPS%29
+2024-05-13T13:18:15.419167 custom scheduler stable+%2885674+QPS%29
+2024-05-13T13:18:16.140284 custom scheduler stable+%2885542+QPS%29
+2024-05-13T13:18:16.730063 custom scheduler unstable+%28CURR+125190+-+86210+QPS%29
+2024-05-13T13:18:16.794574 custom scheduler stable+%2886020+QPS%29
+2024-05-13T13:18:16.859837 custom scheduler stable+%2886740+QPS%29
+2024-05-13T13:18:17.577290 custom scheduler stable+%2886124+QPS%29
+2024-05-13T13:18:18.297454 custom scheduler stable+%2886173+QPS%29
+2024-05-13T13:18:18.942714 custom scheduler unstable+%28CURR+29069+-+80085+QPS%29
+2024-05-13T13:18:19.633142 custom scheduler stable+%2838216+QPS%29
+2024-05-13T13:18:20.263257 custom scheduler stable+%2823875+QPS%29
+2024-05-13T13:18:20.316050 update_cores dedup [1]
+2024-05-13T13:18:20.335754 unpause dedup
+2024-05-13T13:18:20.392505 update_cores dedup [3]
+2024-05-13T13:18:20.411707 pause dedup
+2024-05-13T13:18:20.966618 custom scheduler stable+%2823900+QPS%29
+2024-05-13T13:18:21.369072 update_cores dedup [1]
+2024-05-13T13:18:21.404608 unpause dedup
+2024-05-13T13:18:21.457440 update_cores dedup [3]
+2024-05-13T13:18:21.485222 pause dedup
+2024-05-13T13:18:21.660784 custom scheduler stable+%2823872+QPS%29
+2024-05-13T13:18:22.347424 custom scheduler stable+%2824033+QPS%29
+2024-05-13T13:18:22.404445 update_cores dedup [1]
+2024-05-13T13:18:22.424192 unpause dedup
+2024-05-13T13:18:22.491222 update_cores dedup [3]
+2024-05-13T13:18:22.509942 pause dedup
+2024-05-13T13:18:23.051876 custom scheduler stable+%2823992+QPS%29
+2024-05-13T13:18:23.430949 update_cores dedup [1]
+2024-05-13T13:18:23.453027 unpause dedup
+2024-05-13T13:18:23.519950 update_cores dedup [3]
+2024-05-13T13:18:23.550528 pause dedup
+2024-05-13T13:18:23.562494 custom scheduler unstable+%28CURR+34511+-+23836+QPS%29
+2024-05-13T13:18:23.624797 custom scheduler stable+%2823976+QPS%29
+2024-05-13T13:18:23.750738 custom scheduler stable+%2824014+QPS%29
+2024-05-13T13:18:23.876273 custom scheduler unstable+%28CURR+40360+-+24979+QPS%29
+2024-05-13T13:18:24.457768 end vips
+2024-05-13T13:18:24.463520 custom memcached Some+jobs+are+done%3A+%28high%2C+1%29%2C+%28low%2C+0%29
+2024-05-13T13:18:24.466686 custom memcached Free+space+in+high+priority+queue.+Moving+1+jobs+there
+2024-05-13T13:18:24.711992 update_cores dedup [2,3]
+2024-05-13T13:18:24.726841 custom scheduler stable+%2867319+QPS%29
+2024-05-13T13:18:24.778765 unpause dedup
+2024-05-13T13:18:25.367009 custom scheduler stable+%2874471+QPS%29
+2024-05-13T13:18:26.075435 custom scheduler stable+%2874410+QPS%29
+2024-05-13T13:18:26.781970 custom scheduler stable+%2874634+QPS%29
+2024-05-13T13:18:27.489574 custom scheduler stable+%2874583+QPS%29
+2024-05-13T13:18:28.197094 custom scheduler stable+%2874560+QPS%29
+2024-05-13T13:18:28.898534 custom scheduler unstable+%28CURR+47671+-+72135+QPS%29
+2024-05-13T13:18:29.647076 custom scheduler stable+%2831804+QPS%29
+2024-05-13T13:18:30.271925 custom scheduler stable+%2820185+QPS%29
+2024-05-13T13:18:30.958046 custom scheduler stable+%2820045+QPS%29
+2024-05-13T13:18:31.642976 custom scheduler stable+%2820244+QPS%29
+2024-05-13T13:18:32.329210 custom scheduler stable+%2820082+QPS%29
+2024-05-13T13:18:32.952898 custom scheduler unstable+%28CURR+28833+-+20144+QPS%29
+2024-05-13T13:18:33.015224 custom scheduler stable+%2820214+QPS%29
+2024-05-13T13:18:33.708789 custom scheduler stable+%2820442+QPS%29
+2024-05-13T13:18:33.896996 custom scheduler unstable+%28CURR+43419+-+21530+QPS%29
+2024-05-13T13:18:34.659850 custom scheduler stable+%2839569+QPS%29
+2024-05-13T13:18:35.291194 custom scheduler stable+%2844728+QPS%29
+2024-05-13T13:18:35.985185 custom scheduler stable+%2844590+QPS%29
+2024-05-13T13:18:36.683231 custom scheduler stable+%2844371+QPS%29
+2024-05-13T13:18:37.379487 custom scheduler stable+%2844452+QPS%29
+2024-05-13T13:18:38.073389 custom scheduler stable+%2844595+QPS%29
+2024-05-13T13:18:38.766506 custom scheduler stable+%2844727+QPS%29
+2024-05-13T13:18:38.955122 custom scheduler unstable+%28CURR+24289+-+42374+QPS%29
+2024-05-13T13:18:39.268689 custom scheduler stable+%2834626+QPS%29
+2024-05-13T13:18:39.455940 custom scheduler stable+%2829974+QPS%29
+2024-05-13T13:18:40.144964 custom scheduler stable+%2819662+QPS%29
+2024-05-13T13:18:40.833334 custom scheduler stable+%2819645+QPS%29
+2024-05-13T13:18:41.530376 custom scheduler stable+%2819690+QPS%29
+2024-05-13T13:18:42.216874 custom scheduler stable+%2819593+QPS%29
+2024-05-13T13:18:42.909170 custom scheduler stable+%2819564+QPS%29
+2024-05-13T13:18:43.596942 custom scheduler stable+%2819641+QPS%29
+2024-05-13T13:18:43.970827 custom scheduler unstable+%28CURR+8374+-+18222+QPS%29
+2024-05-13T13:18:44.407469 custom scheduler stable+%2812918+QPS%29
+2024-05-13T13:18:45.032859 custom scheduler stable+%287422+QPS%29
+2024-05-13T13:18:45.718503 custom scheduler stable+%287367+QPS%29
+2024-05-13T13:18:46.403484 custom scheduler stable+%287302+QPS%29
+2024-05-13T13:18:47.085696 custom scheduler stable+%287173+QPS%29
+2024-05-13T13:18:47.771709 custom scheduler stable+%287228+QPS%29
+2024-05-13T13:18:48.457650 custom scheduler stable+%287355+QPS%29
+2024-05-13T13:18:48.895351 custom scheduler unstable+%28CURR+27820+-+8687+QPS%29
+2024-05-13T13:18:49.716650 custom scheduler stable+%2841307+QPS%29
+2024-05-13T13:18:50.355394 custom scheduler stable+%2848189+QPS%29
+2024-05-13T13:18:51.054509 custom scheduler stable+%2847913+QPS%29
+2024-05-13T13:18:51.755707 custom scheduler stable+%2848039+QPS%29
+2024-05-13T13:18:52.451933 custom scheduler stable+%2848026+QPS%29
+2024-05-13T13:18:53.151690 custom scheduler stable+%2847831+QPS%29
+2024-05-13T13:18:53.846164 custom scheduler stable+%2848202+QPS%29
+2024-05-13T13:18:54.542580 custom scheduler stable+%2845851+QPS%29
+2024-05-13T13:18:55.238907 custom scheduler stable+%2844693+QPS%29
+2024-05-13T13:18:55.940182 custom scheduler stable+%2844676+QPS%29
+2024-05-13T13:18:56.636811 custom scheduler stable+%2845091+QPS%29
+2024-05-13T13:18:57.330711 custom scheduler stable+%2844766+QPS%29
+2024-05-13T13:18:58.024136 custom scheduler stable+%2845064+QPS%29
+2024-05-13T13:18:58.719986 custom scheduler stable+%2845118+QPS%29
+2024-05-13T13:18:58.909171 custom scheduler unstable+%28CURR+14236+-+42748+QPS%29
+2024-05-13T13:18:59.778060 custom scheduler stable+%289772+QPS%29
+2024-05-13T13:19:00.400852 custom scheduler stable+%286403+QPS%29
+2024-05-13T13:19:01.085065 custom scheduler stable+%286615+QPS%29
+2024-05-13T13:19:01.770091 custom scheduler stable+%286611+QPS%29
+2024-05-13T13:19:02.453470 custom scheduler stable+%286611+QPS%29
+2024-05-13T13:19:03.137447 custom scheduler stable+%286524+QPS%29
+2024-05-13T13:19:03.822162 custom scheduler stable+%286516+QPS%29
+2024-05-13T13:19:04.520165 custom scheduler stable+%285979+QPS%29
+2024-05-13T13:19:05.206546 custom scheduler stable+%285832+QPS%29
+2024-05-13T13:19:05.547669 end dedup
+2024-05-13T13:19:05.547755 custom memcached Some+jobs+are+done%3A+%28high%2C+1%29%2C+%28low%2C+0%29
+2024-05-13T13:19:05.892508 custom scheduler stable+%285928+QPS%29
+2024-05-13T13:19:06.575781 custom scheduler stable+%285831+QPS%29
+2024-05-13T13:19:07.259874 custom scheduler stable+%285856+QPS%29
+2024-05-13T13:19:07.943121 custom scheduler stable+%285701+QPS%29
+2024-05-13T13:19:08.629003 custom scheduler stable+%285810+QPS%29
+2024-05-13T13:19:08.878405 custom scheduler unstable+%28CURR+17590+-+6907+QPS%29
+2024-05-13T13:19:09.787024 custom scheduler stable+%2876716+QPS%29
+2024-05-13T13:19:10.426650 custom scheduler stable+%2883986+QPS%29
+2024-05-13T13:19:11.126818 custom scheduler stable+%2884166+QPS%29
+2024-05-13T13:19:11.825401 custom scheduler stable+%2883463+QPS%29
+2024-05-13T13:19:12.525303 custom scheduler stable+%2883690+QPS%29
+2024-05-13T13:19:12.783495 custom scheduler unstable+%28CURR+120826+-+84238+QPS%29
+2024-05-13T13:19:12.847104 custom scheduler stable+%2884024+QPS%29
+2024-05-13T13:19:13.229312 custom scheduler stable+%2884442+QPS%29
+2024-05-13T13:19:13.926016 custom scheduler unstable+%28CURR+11677+-+78927+QPS%29
+2024-05-13T13:19:14.803000 custom scheduler stable+%2814244+QPS%29
+2024-05-13T13:19:15.426631 custom scheduler stable+%289732+QPS%29
+2024-05-13T13:19:16.112208 custom scheduler stable+%289557+QPS%29
+2024-05-13T13:19:16.800023 custom scheduler stable+%289604+QPS%29
+2024-05-13T13:19:17.489693 custom scheduler stable+%289767+QPS%29
+2024-05-13T13:19:18.176266 custom scheduler stable+%289535+QPS%29
+2024-05-13T13:19:18.860694 custom scheduler stable+%289693+QPS%29
+2024-05-13T13:19:18.923463 custom scheduler unstable+%28CURR+43085+-+11363+QPS%29
+2024-05-13T13:19:19.678416 custom scheduler stable+%2832223+QPS%29
+2024-05-13T13:19:20.308683 custom scheduler stable+%2837979+QPS%29
+2024-05-13T13:19:20.997348 custom scheduler stable+%2838019+QPS%29
+2024-05-13T13:19:21.125997 custom scheduler unstable+%28CURR+56279+-+37788+QPS%29
+2024-05-13T13:19:21.188457 custom scheduler stable+%2837807+QPS%29
+2024-05-13T13:19:21.690697 custom scheduler stable+%2837770+QPS%29
+2024-05-13T13:19:22.381178 custom scheduler stable+%2837758+QPS%29
+2024-05-13T13:19:23.073106 custom scheduler stable+%2837792+QPS%29
+2024-05-13T13:19:23.761840 custom scheduler stable+%2837365+QPS%29
+2024-05-13T13:19:24.452971 custom scheduler stable+%2835206+QPS%29
+2024-05-13T13:19:25.142748 custom scheduler stable+%2833974+QPS%29
+2024-05-13T13:19:25.830858 custom scheduler stable+%2834005+QPS%29
+2024-05-13T13:19:26.523788 custom scheduler stable+%2834397+QPS%29
+2024-05-13T13:19:27.212713 custom scheduler stable+%2833953+QPS%29
+2024-05-13T13:19:27.903089 custom scheduler stable+%2833874+QPS%29
+2024-05-13T13:19:28.591613 custom scheduler stable+%2834010+QPS%29
+2024-05-13T13:19:29.290906 custom scheduler stable+%2834983+QPS%29
+2024-05-13T13:19:29.979957 custom scheduler stable+%2835659+QPS%29
+2024-05-13T13:19:30.671585 custom scheduler stable+%2835328+QPS%29
+2024-05-13T13:19:31.360989 custom scheduler stable+%2835214+QPS%29
+2024-05-13T13:19:32.052540 custom scheduler stable+%2835285+QPS%29
+2024-05-13T13:19:32.739367 custom scheduler stable+%2835912+QPS%29
+2024-05-13T13:19:33.427736 custom scheduler stable+%2835925+QPS%29
+2024-05-13T13:19:33.933760 custom scheduler unstable+%28CURR+62247+-+36863+QPS%29
+2024-05-13T13:19:34.505174 custom scheduler stable+%2845332+QPS%29
+2024-05-13T13:19:35.145841 custom scheduler stable+%2851034+QPS%29
+2024-05-13T13:19:35.841362 custom scheduler stable+%2851205+QPS%29
+2024-05-13T13:19:36.548472 custom scheduler stable+%2850817+QPS%29
+2024-05-13T13:19:37.256302 custom scheduler stable+%2851036+QPS%29
+2024-05-13T13:19:37.957212 custom scheduler stable+%2850993+QPS%29
+2024-05-13T13:19:38.663327 custom scheduler stable+%2851051+QPS%29
+2024-05-13T13:19:39.360541 custom scheduler stable+%2850374+QPS%29
+2024-05-13T13:19:40.058232 custom scheduler stable+%2849218+QPS%29
+2024-05-13T13:19:40.754846 custom scheduler stable+%2848850+QPS%29
+2024-05-13T13:19:41.450583 custom scheduler stable+%2849150+QPS%29
+2024-05-13T13:19:42.143479 custom scheduler stable+%2849859+QPS%29
+2024-05-13T13:19:42.843685 custom scheduler stable+%2849712+QPS%29
+2024-05-13T13:19:43.553898 custom scheduler stable+%2849014+QPS%29
+2024-05-13T13:19:44.246664 custom scheduler stable+%2846353+QPS%29
+2024-05-13T13:19:44.937842 custom scheduler stable+%2843143+QPS%29
+2024-05-13T13:19:45.631549 custom scheduler stable+%2843106+QPS%29
+2024-05-13T13:19:46.324955 custom scheduler stable+%2842794+QPS%29
+2024-05-13T13:19:47.013141 custom scheduler stable+%2843241+QPS%29
+2024-05-13T13:19:47.704341 custom scheduler stable+%2843179+QPS%29
+2024-05-13T13:19:48.398038 custom scheduler stable+%2843029+QPS%29
+2024-05-13T13:19:49.090705 custom scheduler stable+%2839263+QPS%29
+2024-05-13T13:19:49.779323 custom scheduler stable+%2828899+QPS%29
+2024-05-13T13:19:50.469546 custom scheduler stable+%2827847+QPS%29
+2024-05-13T13:19:51.158981 custom scheduler stable+%2827950+QPS%29
+2024-05-13T13:19:51.850574 custom scheduler stable+%2827684+QPS%29
+2024-05-13T13:19:52.537545 custom scheduler stable+%2827902+QPS%29
+2024-05-13T13:19:53.231920 custom scheduler stable+%2827677+QPS%29
+2024-05-13T13:19:53.925485 custom scheduler unstable+%28CURR+77798+-+30083+QPS%29
+2024-05-13T13:19:54.627768 custom scheduler stable+%2856370+QPS%29
+2024-05-13T13:19:55.266940 custom scheduler stable+%2865217+QPS%29
+2024-05-13T13:19:55.968854 custom scheduler stable+%2865106+QPS%29
+2024-05-13T13:19:56.683833 custom scheduler stable+%2864576+QPS%29
+2024-05-13T13:19:57.384871 custom scheduler stable+%2864946+QPS%29
+2024-05-13T13:19:58.089282 custom scheduler stable+%2865227+QPS%29
+2024-05-13T13:19:58.791035 custom scheduler stable+%2865091+QPS%29
+2024-05-13T13:19:59.494016 custom scheduler stable+%2864948+QPS%29
+2024-05-13T13:20:00.202850 custom scheduler stable+%2865281+QPS%29
+2024-05-13T13:20:00.897986 custom scheduler stable+%2865071+QPS%29
+2024-05-13T13:20:01.602683 custom scheduler stable+%2864831+QPS%29
+2024-05-13T13:20:02.303016 custom scheduler stable+%2865276+QPS%29
+2024-05-13T13:20:03.004183 custom scheduler stable+%2865514+QPS%29
+2024-05-13T13:20:03.705530 custom scheduler stable+%2865190+QPS%29
+2024-05-13T13:20:03.894846 custom scheduler unstable+%28CURR+36450+-+63056+QPS%29
+2024-05-13T13:20:04.828078 custom scheduler stable+%288087+QPS%29
+2024-05-13T13:20:05.450185 custom scheduler stable+%285454+QPS%29
+2024-05-13T13:20:06.140053 custom scheduler stable+%285534+QPS%29
+2024-05-13T13:20:06.823613 custom scheduler stable+%285561+QPS%29
+2024-05-13T13:20:07.445792 custom scheduler unstable+%28CURR+8865+-+5589+QPS%29
+2024-05-13T13:20:07.508562 custom scheduler stable+%285609+QPS%29
+2024-05-13T13:20:07.819309 custom scheduler unstable+%28CURR+8372+-+5637+QPS%29
+2024-05-13T13:20:07.881581 custom scheduler stable+%285675+QPS%29
+2024-05-13T13:20:08.191755 custom scheduler stable+%285719+QPS%29
+2024-05-13T13:20:08.874768 custom scheduler unstable+%28CURR+9263+-+5782+QPS%29
+2024-05-13T13:20:09.821236 custom scheduler stable+%2825165+QPS%29
+2024-05-13T13:20:10.450553 custom scheduler stable+%2826640+QPS%29
+2024-05-13T13:20:11.139462 custom scheduler stable+%2826760+QPS%29
+2024-05-13T13:20:11.827155 custom scheduler stable+%2826532+QPS%29
+2024-05-13T13:20:12.514772 custom scheduler stable+%2826601+QPS%29
+2024-05-13T13:20:13.201530 custom scheduler stable+%2826495+QPS%29
+2024-05-13T13:20:13.888169 custom scheduler stable+%2826727+QPS%29
+2024-05-13T13:20:14.577262 custom scheduler stable+%2826848+QPS%29
+2024-05-13T13:20:15.271656 custom scheduler stable+%2827210+QPS%29
+2024-05-13T13:20:15.964918 custom scheduler stable+%2826678+QPS%29
+2024-05-13T13:20:16.659645 custom scheduler stable+%2826558+QPS%29
+2024-05-13T13:20:17.351683 custom scheduler stable+%2826954+QPS%29
+2024-05-13T13:20:18.044875 custom scheduler stable+%2827177+QPS%29
+2024-05-13T13:20:18.733364 custom scheduler stable+%2826842+QPS%29
+2024-05-13T13:20:18.925537 custom scheduler unstable+%28CURR+106134+-+31164+QPS%29
+2024-05-13T13:20:19.693879 custom scheduler stable+%2876916+QPS%29
+2024-05-13T13:20:20.332168 custom scheduler stable+%2886538+QPS%29
+2024-05-13T13:20:21.034555 custom scheduler stable+%2886836+QPS%29
+2024-05-13T13:20:21.741427 custom scheduler stable+%2887637+QPS%29
+2024-05-13T13:20:22.447764 custom scheduler stable+%2887475+QPS%29
+2024-05-13T13:20:22.778048 custom scheduler unstable+%28CURR+125238+-+87378+QPS%29
+2024-05-13T13:20:22.843046 custom scheduler stable+%2887244+QPS%29
+2024-05-13T13:20:23.165179 custom scheduler stable+%2887033+QPS%29
+2024-05-13T13:20:23.869300 custom scheduler stable+%2886091+QPS%29
+2024-05-13T13:20:23.931782 custom scheduler unstable+%28CURR+30367+-+82446+QPS%29
+2024-05-13T13:20:24.558487 custom scheduler stable+%2844050+QPS%29
+2024-05-13T13:20:25.185143 custom scheduler stable+%2824755+QPS%29
+2024-05-13T13:20:25.873707 custom scheduler stable+%2824812+QPS%29
+2024-05-13T13:20:26.564962 custom scheduler stable+%2824827+QPS%29
+2024-05-13T13:20:27.255677 custom scheduler stable+%2824569+QPS%29
+2024-05-13T13:20:27.945407 custom scheduler stable+%2824626+QPS%29
+2024-05-13T13:20:28.636894 custom scheduler stable+%2824618+QPS%29
+2024-05-13T13:20:29.329871 custom scheduler stable+%2825665+QPS%29
+2024-05-13T13:20:30.021088 custom scheduler stable+%2826803+QPS%29
+2024-05-13T13:20:30.713043 custom scheduler stable+%2826982+QPS%29
+2024-05-13T13:20:31.402730 custom scheduler stable+%2827130+QPS%29
+2024-05-13T13:20:32.091449 custom scheduler stable+%2827517+QPS%29
+2024-05-13T13:20:32.779829 custom scheduler stable+%2827190+QPS%29
+2024-05-13T13:20:33.471014 custom scheduler stable+%2826983+QPS%29
+2024-05-13T13:20:34.162218 custom scheduler stable+%2827725+QPS%29
+2024-05-13T13:20:34.854458 custom scheduler stable+%2829871+QPS%29
+2024-05-13T13:20:35.545516 custom scheduler stable+%2829713+QPS%29
+2024-05-13T13:20:36.237295 custom scheduler stable+%2830057+QPS%29
+2024-05-13T13:20:36.933438 custom scheduler stable+%2830044+QPS%29
+2024-05-13T13:20:37.626898 custom scheduler stable+%2829577+QPS%29
+2024-05-13T13:20:38.318759 custom scheduler stable+%2829978+QPS%29
+2024-05-13T13:20:38.885311 custom scheduler unstable+%28CURR+46324+-+30660+QPS%29
+2024-05-13T13:20:39.452271 custom scheduler stable+%2839783+QPS%29
+2024-05-13T13:20:39.515196 custom scheduler unstable+%28CURR+58804+-+40758+QPS%29
+2024-05-13T13:20:39.577514 custom scheduler stable+%2841682+QPS%29
+2024-05-13T13:20:40.081138 custom scheduler stable+%2846350+QPS%29
+2024-05-13T13:20:40.783097 custom scheduler stable+%2846756+QPS%29
+2024-05-13T13:20:41.477094 custom scheduler stable+%2847097+QPS%29
+2024-05-13T13:20:42.171701 custom scheduler stable+%2847081+QPS%29
+2024-05-13T13:20:42.870077 custom scheduler stable+%2847090+QPS%29
+2024-05-13T13:20:43.565402 custom scheduler stable+%2846859+QPS%29
+2024-05-13T13:20:43.888509 custom scheduler unstable+%28CURR+81095+-+48098+QPS%29
+2024-05-13T13:20:44.533901 custom scheduler stable+%2872916+QPS%29
+2024-05-13T13:20:45.175447 custom scheduler stable+%2885651+QPS%29
+2024-05-13T13:20:45.884168 custom scheduler stable+%2885807+QPS%29
+2024-05-13T13:20:46.589079 custom scheduler stable+%2886042+QPS%29
+2024-05-13T13:20:47.292861 custom scheduler stable+%2885181+QPS%29
+2024-05-13T13:20:48.001410 custom scheduler stable+%2884946+QPS%29
+2024-05-13T13:20:48.702663 custom scheduler stable+%2885517+QPS%29
+2024-05-13T13:20:49.404094 custom scheduler stable+%2873349+QPS%29
+2024-05-13T13:20:50.103323 custom scheduler stable+%2863670+QPS%29
+2024-05-13T13:20:50.799443 custom scheduler stable+%2864060+QPS%29
+2024-05-13T13:20:51.494956 custom scheduler stable+%2864287+QPS%29
+2024-05-13T13:20:52.201186 custom scheduler stable+%2864055+QPS%29
+2024-05-13T13:20:52.900213 custom scheduler stable+%2864344+QPS%29
+2024-05-13T13:20:53.609376 custom scheduler stable+%2864032+QPS%29
+2024-05-13T13:20:54.305129 custom scheduler stable+%2856512+QPS%29
+2024-05-13T13:20:54.927640 end ferret
+2024-05-13T13:20:54.927723 custom memcached Some+jobs+are+done%3A+%28high%2C+1%29%2C+%28low%2C+0%29
+2024-05-13T13:20:54.964599 end scheduler
