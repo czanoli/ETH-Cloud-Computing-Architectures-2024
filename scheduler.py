@@ -487,7 +487,7 @@ class Scheduler:
                     self.msgq.task_done()
 
                 [core0, core1] = self.ct.get(25)
-                unpause_lowq = qps < max_qps_one_core and (core0+core1) < 45 # and core1 < 99
+                unpause_lowq = qps < max_qps_one_core and (core0+core1) < 45
                 if stable and unpause_lowq:
                     for j in self.lowq.paused:
                         j.unpause()
