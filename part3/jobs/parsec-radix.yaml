@@ -12,7 +12,7 @@ spec:
         name: parsec-radix
         imagePullPolicy: Always
         command: ["/bin/sh"]
-        args: ["-c", "taskset --cpu-list 0-3 ./run -a run -S splash2x -p radix -i native -n 4"]
+        args: ["-c", "taskset --cpu-list 0-3 ./run -a run -S splash2x -p radix -i native -n 8"]
         # realistically, requires <= 2GB of RAM
         resources:
           requests:

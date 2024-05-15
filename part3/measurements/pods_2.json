@@ -998,7 +998,7 @@
                     {
                         "args": [
                             "-c",
-                            "taskset --cpu-list 0-3 ./run -a run -S splash2x -p radix -i native -n 4"
+                            "taskset --cpu-list 0-3 ./run -a run -S splash2x -p radix -i native -n 8"
                         ],
                         "command": [
                             "/bin/sh"
