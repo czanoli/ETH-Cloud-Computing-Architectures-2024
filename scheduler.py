@@ -217,15 +217,15 @@ p = psutil.Process(getpid())
 p.cpu_affinity([0])
 
 HIGH_QUEUE: List[Tuple[JobKind, int, float]] = [
-    (JobKind.DEDUP, 1, None),
     (JobKind.FERRET, 1, None),
+    (JobKind.DEDUP, 1, None),
     (JobKind.VIPS, 1, None),
     (JobKind.BLACKSCHOLES, 1, None),
     (JobKind.CANNEAL, 1, None),
     (JobKind.FREQMINE, 2, None),
 ]
 LOW_QUEUE: List[Tuple[JobKind, int, float]] = [
-    (JobKind.RADIX, 1, .7),
+    (JobKind.RADIX, 1, .6),
 ]
 
 docker_client = docker_connect()
