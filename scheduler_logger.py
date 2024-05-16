@@ -18,23 +18,18 @@ class Job(Enum):
 
 
 class SchedulerLogger:
-    def __init__(self, to_file = True):
+    def __init__(self):
         start_date = datetime.now().strftime("%Y%m%d_%H%M%S")
 
-        self.to_file = to_file
-        if self.to_file:
-            self.file = open(f"log{start_date}.txt", "w")
+        self.file = open(f"log{start_date}.txt", "w")
         self._log("start", Job.SCHEDULER)
 
     def _log(self, event: str, job_name: Job, args: str = "") -> None:
-        if self.to_file:
-            self.file.write(
-                LOG_STRING.format(timestamp=datetime.now().isoformat(), event=event, job_name=job_name.value,
-                                  args=args).strip() + "\n")
-        print(LOG_STRING.format(timestamp=datetime.now().isoformat(), event=event, job_name=job_name.value,
-                              args=urllib.parse.unquote_plus(args)))
+        self.file.write(
+            LOG_STRING.format(timestamp=datetime.now().isoformat(), event=event, job_name=job_name.value,
+                              args=args).strip() + "\n")
 
-    def job_start(self, job: Job, initial_cores: list[int], initial_threads: int) -> None:
+    def job_start(self, job: Job, initial_cores: list[str], initial_threads: int) -> None:
         assert job != Job.SCHEDULER, "You don't have to log SCHEDULER here"
 
         self._log("start", job, "["+(",".join(str(i) for i in initial_cores))+"] "+str(initial_threads))
@@ -44,7 +39,7 @@ class SchedulerLogger:
 
         self._log("end", job)
 
-    def update_cores(self, job: Job, cores: list[int]) -> None:
+    def update_cores(self, job: Job, cores: list[str]) -> None:
         assert job != Job.SCHEDULER, "You don't have to log SCHEDULER here"
 
         self._log("update_cores", job, "["+(",".join(str(i) for i in cores))+"]")
@@ -64,6 +59,5 @@ class SchedulerLogger:
 
     def end(self) -> None:
         self._log("end", Job.SCHEDULER)
-        if self.to_file:
-            self.file.flush()
-            self.file.close()
+        self.file.flush()
+        self.file.close()

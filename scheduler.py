@@ -12,18 +12,18 @@ from math import floor
 from docker import from_env as docker_connect
 from docker.models.containers import Container
 from queue import Queue
-from threading import Lock, Thread
+from threading import Thread
 import psutil
 from scheduler_logger import SchedulerLogger, Job as JobKind
 
 # hyperparameters
 poll_interval = 0.10 # 100ms
+stability_sleep = 0.075 # 75ms
 max_qps_one_core = 29_000
 max_cpu_threshold = 45 # out of 200
 
 ONE_S_IN_NS = 1e9
 ONE_S_IN_US = 1e6
-pull_images = False
 
 IMAGE_PER_JOB = {}
 IMAGE_PER_JOB[JobKind.BLACKSCHOLES] = {'name':'anakli/cca', 'tag': 'parsec_blackscholes'}
@@ -216,7 +216,7 @@ class CPUThread():
 p = psutil.Process(getpid())
 p.cpu_affinity([0])
 
-HIGH_QUEUE: List[Tuple[JobKind, int, float]] = [
+HIGH_QUEUE: List[Tuple[JobKind, int, float | None]] = [
     (JobKind.FERRET, 1, None),
     (JobKind.DEDUP, 1, None),
     (JobKind.VIPS, 1, None),
@@ -224,14 +224,14 @@ HIGH_QUEUE: List[Tuple[JobKind, int, float]] = [
     (JobKind.CANNEAL, 1, None),
     (JobKind.FREQMINE, 2, None),
 ]
-LOW_QUEUE: List[Tuple[JobKind, int, float]] = [
+LOW_QUEUE: List[Tuple[JobKind, int, float | None]] = [
     (JobKind.RADIX, 1, .6),
 ]
 
 docker_client = docker_connect()
 
 class Job:
-    def __init__(self, logger: SchedulerLogger, job: JobKind, threads: int, cpu_percent: float) -> None:
+    def __init__(self, logger: SchedulerLogger, job: JobKind, threads: int, cpu_percent: float | None) -> None:
         self.logger = logger
         self.job = job
         self.id = None
@@ -342,7 +342,7 @@ class CoreQueue:
         self.q = cast(Queue[Job], Queue())
         self.r = cast(List[Job | None], [None for _ in cores])
 
-    def append(self, jobs: List[Tuple[JobKind, int, float]]) -> None:
+    def append(self, jobs: List[Tuple[JobKind, int, float | None]]) -> None:
         for (jk, threads, shares) in jobs:
             self.q.put(Job(self.logger, jk, threads, shares))
 
@@ -576,7 +576,7 @@ stable = False
 i = 0
 notify_scheduler_every = 2 # * 75ms
 while True:
-    time.sleep(0.075)
+    time.sleep(stability_sleep)
     # take the last 400ms
     curr = mt.stats.last_measurements(4)
     qps = mt.stats.last_measurements(1/poll_interval)
