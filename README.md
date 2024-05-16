@@ -35,3 +35,6 @@ This repository contains starter code for the Cloud Computing Architecture cours
 
 (for part 1d)
 3. `scripts/measure-1d`
+
+(for part 3+)
+3. `scripts/scheduler`
