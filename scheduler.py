@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from typing import List, cast, Tuple
+from typing import List, cast, Tuple, Optional, Dict, Any
 from os import getpid
 from psutil import cpu_percent
 import socket
@@ -8,7 +8,6 @@ import traceback
 import subprocess
 import time
 import re
-from math import floor
 from docker import from_env as docker_connect
 from docker.models.containers import Container
 from queue import Queue
@@ -216,7 +215,7 @@ class CPUThread():
 p = psutil.Process(getpid())
 p.cpu_affinity([0])
 
-HIGH_QUEUE: List[Tuple[JobKind, int, float | None]] = [
+HIGH_QUEUE: List[Tuple[JobKind, int, Optional[float]]] = [
     (JobKind.FERRET, 1, None),
     (JobKind.DEDUP, 1, None),
     (JobKind.VIPS, 1, None),
@@ -224,14 +223,14 @@ HIGH_QUEUE: List[Tuple[JobKind, int, float | None]] = [
     (JobKind.CANNEAL, 1, None),
     (JobKind.FREQMINE, 2, None),
 ]
-LOW_QUEUE: List[Tuple[JobKind, int, float | None]] = [
+LOW_QUEUE: List[Tuple[JobKind, int, Optional[float]]] = [
     (JobKind.RADIX, 1, .6),
 ]
 
 docker_client = docker_connect()
 
 class Job:
-    def __init__(self, logger: SchedulerLogger, job: JobKind, threads: int, cpu_percent: float | None) -> None:
+    def __init__(self, logger: SchedulerLogger, job: JobKind, threads: int, cpu_percent: Optional[float]) -> None:
         self.logger = logger
         self.job = job
         self.id = None
@@ -242,18 +241,18 @@ class Job:
         self._done = False
 
     @property
-    def container(self) -> Container | None:
+    def container(self) -> Optional[Container]:
         if self.id is not None:
             return cast(Container, docker_client.containers.get(self.id))
         else:
             return None
 
     @property
-    def cores_str(self) -> str | None:
+    def cores_str(self) -> Optional[str]:
         return ','.join([str(c) for c in self.cores]) if self.cores is not None else None
 
     @property
-    def cores_list(self) -> List[int] | None:
+    def cores_list(self) -> Optional[List[int]]:
         return self.cores
 
     def update_cores(self, cores: List[int]) -> None:
@@ -272,8 +271,8 @@ class Job:
             assert(image is not None)
             self.cores = cores
             ncores = len(cores)
-            opts = {
-                'cpuset_cpus': self.cores_str,
+            opts: Dict[str, str | int] = {
+                'cpuset_cpus': cast(str, self.cores_str),
             }
             if self.cpu_percent is not None:
                 opts['cpu_period'] = int(ONE_S_IN_US*ncores)
@@ -282,7 +281,7 @@ class Job:
                 f"{image['name']}:{image['tag']}",
                 detach=True,
                 command=f"./run -a run -S {'parsec' if self.job != JobKind.RADIX else 'splash2x'} -p {self.job.value} -i native -n {self.threads}",
-                **opts
+                **cast(Any, opts)
             ))
             self.id = container.id
             self.logger.job_start(self.job, cast(List[int], self.cores_list), self.threads)
@@ -293,7 +292,7 @@ class Job:
         self._done = True
 
     @property
-    def status(self) -> str | None:
+    def status(self) -> Optional[str]:
         container = self.container
         if container is None:
             return None
@@ -340,9 +339,9 @@ class CoreQueue:
         self.logger = logger
         self.cores = cores
         self.q = cast(Queue[Job], Queue())
-        self.r = cast(List[Job | None], [None for _ in cores])
+        self.r = cast(List[Optional[Job]], [None for _ in cores])
 
-    def append(self, jobs: List[Tuple[JobKind, int, float | None]]) -> None:
+    def append(self, jobs: List[Tuple[JobKind, int, Optional[float]]]) -> None:
         for (jk, threads, shares) in jobs:
             self.q.put(Job(self.logger, jk, threads, shares))
 
@@ -383,7 +382,7 @@ class CoreQueue:
     def cores_per_job(self, job: Job) -> List[int]:
         return [self.cores[i] for i,j in self.current if j == job]
 
-    def next_pos(self) -> int | None:
+    def next_pos(self) -> Optional[int]:
         available_indexes = [i for i, e in enumerate(self.r) if e is None]
         return available_indexes[0] if len(available_indexes) > 0 else None
 
@@ -500,7 +499,6 @@ class Scheduler:
 
     def thread(self):
         i = 0
-        qps = 100_000
         while not self._stop:
             try:
                 time.sleep(poll_interval)
@@ -579,7 +577,7 @@ while True:
     time.sleep(stability_sleep)
     # take the last 400ms
     curr = mt.stats.last_measurements(4)
-    qps = mt.stats.last_measurements(1/poll_interval)
+    qps = mt.stats.last_measurements(int(1/poll_interval))
     if abs(curr - qps)/max(1,max(curr, qps)) > 0.3:
         if stable:
             stable = False

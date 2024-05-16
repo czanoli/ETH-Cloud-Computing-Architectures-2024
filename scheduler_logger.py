@@ -29,7 +29,7 @@ class SchedulerLogger:
             LOG_STRING.format(timestamp=datetime.now().isoformat(), event=event, job_name=job_name.value,
                               args=args).strip() + "\n")
 
-    def job_start(self, job: Job, initial_cores: list[str], initial_threads: int) -> None:
+    def job_start(self, job: Job, initial_cores: list[int], initial_threads: int) -> None:
         assert job != Job.SCHEDULER, "You don't have to log SCHEDULER here"
 
         self._log("start", job, "["+(",".join(str(i) for i in initial_cores))+"] "+str(initial_threads))
@@ -39,7 +39,7 @@ class SchedulerLogger:
 
         self._log("end", job)
 
-    def update_cores(self, job: Job, cores: list[str]) -> None:
+    def update_cores(self, job: Job, cores: list[int]) -> None:
         assert job != Job.SCHEDULER, "You don't have to log SCHEDULER here"
 
         self._log("update_cores", job, "["+(",".join(str(i) for i in cores))+"]")
