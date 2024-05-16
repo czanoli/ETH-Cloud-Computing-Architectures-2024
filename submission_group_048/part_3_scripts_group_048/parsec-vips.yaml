@@ -1,0 +1,26 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: parsec-vips
+  labels:
+    name: parsec-vips
+spec:
+  template:
+    spec:
+      containers:
+      - image: anakli/cca:parsec_vips
+        name: parsec-vips
+        imagePullPolicy: Always
+        command: ["/bin/sh"]
+        args: ["-c", "taskset --cpu-list 0-3 ./run -a run -S parsec -p vips -i native -n 6"]
+        # realistically, requires <= 512M of RAM
+        resources:
+          requests:
+            memory: "20G"
+            cpu: "3000m"
+          limits:
+            memory: "31G"
+            cpu: "4000m"
+      restartPolicy: Never
+      nodeSelector:
+        node.kubernetes.io/instance-type: n2d-highmem-4

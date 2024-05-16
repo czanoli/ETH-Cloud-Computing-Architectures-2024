@@ -1,0 +1,26 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: parsec-blackscholes
+  labels:
+    name: parsec-blackscholes
+spec:
+  template:
+    spec:
+      containers:
+      - image: anakli/cca:parsec_blackscholes
+        name: parsec-blackscholes
+        imagePullPolicy: Always
+        command: ["/bin/sh"]
+        args: ["-c", "taskset --cpu-list 0 ./run -a run -S parsec -p blackscholes -i native -n 2"]
+        # realistically, requires <= 512M of RAM
+        resources:
+          requests:
+            memory: "700M"
+            cpu: "800m"
+          limits:
+            memory: "700M"
+            cpu: "1000m"
+      restartPolicy: Never
+      nodeSelector:
+        node.kubernetes.io/instance-type: n2d-highcpu-2

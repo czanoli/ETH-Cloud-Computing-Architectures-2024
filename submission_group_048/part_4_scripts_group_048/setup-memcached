@@ -1,0 +1,6 @@
+#!/bin/sh
+
+sudo apt-get update
+sudo apt install -y memcached libmemcached-tools
+sudo systemctl start memcached
+sudo apt install python3-psutil

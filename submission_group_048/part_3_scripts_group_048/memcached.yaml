@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: some-memcached
+  labels:
+    name: some-memcached
+spec:
+  containers:
+    - image: anakli/memcached:t1
+      name: memcached
+      imagePullPolicy: Always
+      command: ["/bin/sh"]
+      args: ["-c", "taskset --cpu-list 1 ./memcached -t 1 -u memcache"]
+      # realistically, requires <= 512M of RAM
+      resources:
+        requests:
+          memory: "1000M"
+          cpu: "900m"
+        limits:
+          memory: "1000M"
+          cpu: "900m"
+  nodeSelector:
+    node.kubernetes.io/instance-type: n2d-highcpu-2

@@ -1,0 +1,26 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: parsec-canneal
+  labels:
+    name: parsec-canneal
+spec:
+  template:
+    spec:
+      containers:
+      - image: anakli/cca:parsec_canneal
+        name: parsec-canneal
+        imagePullPolicy: Always
+        command: ["/bin/sh"]
+        args: ["-c", "taskset --cpu-list 2-7 ./run -a run -S parsec -p canneal -i native -n 8"]
+        # realistically, requires <= 2GB of RAM
+        resources:
+          requests:
+            memory: "23G"
+            cpu: "3900m"
+          limits:
+            memory: "23G"
+            cpu: "6000m"
+      restartPolicy: Never
+      nodeSelector:
+        node.kubernetes.io/instance-type: e2-standard-8

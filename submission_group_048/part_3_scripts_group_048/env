@@ -1,0 +1,5 @@
+#!/bin/sh -ex
+
+username="ltagliavini"
+export KOPS_STATE_STORE="gs://cca-eth-2024-group-048-$username"
+export PROJECT=`gcloud config get-value project`

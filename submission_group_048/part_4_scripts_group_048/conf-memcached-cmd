@@ -1,0 +1,19 @@
+#!/bin/bash -ex
+
+t=$1
+c=$2
+
+cores=""
+if [[ $c == 1 ]]; then
+  cores="0"
+elif [[ $c == 2 ]]; then
+  cores="0-1"
+fi
+
+sudo cp /tmp/memcached.conf /etc/memcached.conf
+sudo sed -i "s/^-t .*/-t $t/" /etc/memcached.conf
+
+sudo systemctl restart memcached
+
+pid=$(sudo systemctl show --property MainPID --value memcached)
+sudo taskset -a -p --cpu-list $cores $pid

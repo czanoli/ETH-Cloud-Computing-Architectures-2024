@@ -1,0 +1,25 @@
+#!/bin/sh -ex
+
+
+echo "stopping previous jobs"
+
+kubectl delete job parsec-blackscholes parsec-canneal parsec-dedup parsec-ferret parsec-freqmine parsec-radix parsec-vips || true
+
+slp=30
+
+echo "scheduling t=0 jobs..."
+
+# t=0 jobs
+kubectl create -f part3/jobs/parsec-freqmine.yaml || true
+kubectl create -f part3/jobs/parsec-canneal.yaml || true
+kubectl create -f part3/jobs/parsec-ferret.yaml || true
+kubectl create -f part3/jobs/parsec-blackscholes.yaml || true
+
+echo "sleeping for $slp seconds"
+sleep $slp
+echo "scheduling later jobs..."
+
+# next jobs
+kubectl create -f part3/jobs/parsec-dedup.yaml || true
+kubectl create -f part3/jobs/parsec-vips.yaml || true
+kubectl create -f part3/jobs/parsec-radix.yaml || true
