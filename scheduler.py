@@ -466,8 +466,9 @@ class Scheduler:
         self.logger = SchedulerLogger()
 
         self.memcached_pid = int(subprocess.check_output(["sudo", "systemctl", "show", "--property", "MainPID", "--value", "memcached"]))
-        self.memcached_cores_list = None
         self.scheduler_pid = getpid()
+        self.memcached_cores_list = None
+        self.memcached_cores([0,1])
         self.logger.custom_event(JobKind.SCHEDULER, f"memcached pid={self.memcached_pid}")
         self.logger.custom_event(JobKind.SCHEDULER, f"scheduler pid={self.memcached_pid}")
 
@@ -483,7 +484,6 @@ class Scheduler:
         self.t.start()
         # don't run this script alongside memcached
         self.set_affinity(self.scheduler_pid, [2,3])
-        self.memcached_cores([0,1])
 
     def set_affinity(self, pid: int, affinity: List[int]) -> None:
         proc = psutil.Process(pid)
@@ -493,9 +493,14 @@ class Scheduler:
 
     def memcached_cores(self, cores: List[int]) -> None:
         if self.memcached_cores_list != cores:
+            self.set_affinity(self.memcached_pid, cores)
+
+            if self.memcached_cores_list is None:
+                self.logger.job_start(JobKind.MEMCACHED, cores, 2)
+            else:
+                self.logger.update_cores(JobKind.MEMCACHED, cores)
+
             self.memcached_cores_list = cores
-            self.set_affinity(self.memcached_pid, self.memcached_cores_list)
-            self.logger.update_cores(JobKind.MEMCACHED, self.memcached_cores_list)
 
     def thread(self):
         i = 0
