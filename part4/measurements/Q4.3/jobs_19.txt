@@ -1,0 +1,164 @@
+2024-05-16T00:40:37.372239 start scheduler
+2024-05-16T00:40:37.389215 custom scheduler memcached+pid%3D9272
+2024-05-16T00:40:37.389595 custom scheduler scheduler+pid%3D9272
+2024-05-16T00:40:37.390832 update_cores memcached [0,1]
+2024-05-16T00:40:37.962214 start ferret [2] 1
+2024-05-16T00:40:38.269181 start dedup [3] 1
+2024-05-16T00:40:38.667055 start radix [1] 1
+2024-05-16T00:40:38.820763 pause radix
+2024-05-16T00:40:39.626767 unpause radix
+2024-05-16T00:40:39.627832 update_cores memcached [0]
+2024-05-16T00:40:48.014131 update_cores memcached [0,1]
+2024-05-16T00:40:48.048667 pause radix
+2024-05-16T00:41:16.161081 end dedup
+2024-05-16T00:41:16.164370 custom scheduler done%3A+%28high%2C+1%29%2C+%28low%2C+0%29
+2024-05-16T00:41:16.547064 start vips [3] 1
+2024-05-16T00:41:38.996056 unpause radix
+2024-05-16T00:41:38.996898 update_cores memcached [0]
+2024-05-16T00:41:39.767228 update_cores memcached [0,1]
+2024-05-16T00:41:39.789985 pause radix
+2024-05-16T00:41:40.792698 unpause radix
+2024-05-16T00:41:40.793564 update_cores memcached [0]
+2024-05-16T00:41:41.774437 update_cores memcached [0,1]
+2024-05-16T00:41:41.797745 pause radix
+2024-05-16T00:41:42.818694 unpause radix
+2024-05-16T00:41:42.819481 update_cores memcached [0]
+2024-05-16T00:41:43.781324 update_cores memcached [0,1]
+2024-05-16T00:41:43.805647 pause radix
+2024-05-16T00:41:44.809308 unpause radix
+2024-05-16T00:41:44.810216 update_cores memcached [0]
+2024-05-16T00:41:45.788087 update_cores memcached [0,1]
+2024-05-16T00:41:45.821548 pause radix
+2024-05-16T00:41:46.811626 unpause radix
+2024-05-16T00:41:46.812452 update_cores memcached [0]
+2024-05-16T00:41:47.794963 update_cores memcached [0,1]
+2024-05-16T00:41:47.819561 pause radix
+2024-05-16T00:41:58.892639 unpause radix
+2024-05-16T00:41:58.893518 update_cores memcached [0]
+2024-05-16T00:41:59.851630 update_cores memcached [0,1]
+2024-05-16T00:41:59.891779 pause radix
+2024-05-16T00:42:00.877070 unpause radix
+2024-05-16T00:42:00.877956 update_cores memcached [0]
+2024-05-16T00:42:01.859217 update_cores memcached [0,1]
+2024-05-16T00:42:01.881757 pause radix
+2024-05-16T00:42:02.887962 unpause radix
+2024-05-16T00:42:02.888803 update_cores memcached [0]
+2024-05-16T00:42:03.867765 update_cores memcached [0,1]
+2024-05-16T00:42:03.902588 pause radix
+2024-05-16T00:42:04.907089 unpause radix
+2024-05-16T00:42:04.907938 update_cores memcached [0]
+2024-05-16T00:42:05.875060 update_cores memcached [0,1]
+2024-05-16T00:42:05.896758 pause radix
+2024-05-16T00:42:06.903479 unpause radix
+2024-05-16T00:42:06.904443 update_cores memcached [0]
+2024-05-16T00:42:07.882981 update_cores memcached [0,1]
+2024-05-16T00:42:07.908318 pause radix
+2024-05-16T00:42:08.911676 unpause radix
+2024-05-16T00:42:08.912596 update_cores memcached [0]
+2024-05-16T00:42:09.890809 update_cores memcached [0,1]
+2024-05-16T00:42:09.916520 pause radix
+2024-05-16T00:42:10.929768 unpause radix
+2024-05-16T00:42:10.930986 update_cores memcached [0]
+2024-05-16T00:42:11.900167 update_cores memcached [0,1]
+2024-05-16T00:42:11.921587 pause radix
+2024-05-16T00:42:12.927164 unpause radix
+2024-05-16T00:42:12.928217 update_cores memcached [0]
+2024-05-16T00:42:13.907819 update_cores memcached [0,1]
+2024-05-16T00:42:13.943317 pause radix
+2024-05-16T00:42:14.947746 unpause radix
+2024-05-16T00:42:14.948807 update_cores memcached [0]
+2024-05-16T00:42:15.916275 update_cores memcached [0,1]
+2024-05-16T00:42:15.940606 pause radix
+2024-05-16T00:42:16.943424 unpause radix
+2024-05-16T00:42:16.944201 update_cores memcached [0]
+2024-05-16T00:42:17.924225 update_cores memcached [0,1]
+2024-05-16T00:42:17.949219 pause radix
+2024-05-16T00:42:48.892670 unpause radix
+2024-05-16T00:42:48.893398 update_cores memcached [0]
+2024-05-16T00:42:49.067598 update_cores memcached [0,1]
+2024-05-16T00:42:49.117752 pause radix
+2024-05-16T00:42:50.113443 unpause radix
+2024-05-16T00:42:50.114449 update_cores memcached [0]
+2024-05-16T00:42:51.073996 update_cores memcached [0,1]
+2024-05-16T00:42:51.101001 pause radix
+2024-05-16T00:42:52.117056 unpause radix
+2024-05-16T00:42:52.118041 update_cores memcached [0]
+2024-05-16T00:42:53.082099 update_cores memcached [0,1]
+2024-05-16T00:42:53.122475 pause radix
+2024-05-16T00:42:54.128643 unpause radix
+2024-05-16T00:42:54.129513 update_cores memcached [0]
+2024-05-16T00:42:56.880405 end vips
+2024-05-16T00:42:56.883503 custom scheduler done%3A+%28high%2C+1%29%2C+%28low%2C+0%29
+2024-05-16T00:42:57.267853 start blackscholes [3] 1
+2024-05-16T00:42:57.399819 update_cores memcached [0,1]
+2024-05-16T00:42:57.711606 pause radix
+2024-05-16T00:42:58.125144 unpause radix
+2024-05-16T00:42:58.126065 update_cores memcached [0]
+2024-05-16T00:42:58.304079 update_cores memcached [0,1]
+2024-05-16T00:42:58.324661 pause radix
+2024-05-16T00:42:58.728477 unpause radix
+2024-05-16T00:42:58.729308 update_cores memcached [0]
+2024-05-16T00:42:59.105433 update_cores memcached [0,1]
+2024-05-16T00:42:59.127935 pause radix
+2024-05-16T00:43:00.144488 unpause radix
+2024-05-16T00:43:00.145257 update_cores memcached [0]
+2024-05-16T00:43:01.112189 update_cores memcached [0,1]
+2024-05-16T00:43:01.133388 pause radix
+2024-05-16T00:43:02.137158 unpause radix
+2024-05-16T00:43:02.138092 update_cores memcached [0]
+2024-05-16T00:43:03.119456 update_cores memcached [0,1]
+2024-05-16T00:43:03.142476 pause radix
+2024-05-16T00:43:04.148510 unpause radix
+2024-05-16T00:43:04.150625 update_cores memcached [0]
+2024-05-16T00:43:05.126123 update_cores memcached [0,1]
+2024-05-16T00:43:05.148040 pause radix
+2024-05-16T00:43:06.158260 unpause radix
+2024-05-16T00:43:06.159059 update_cores memcached [0]
+2024-05-16T00:43:07.134284 update_cores memcached [0,1]
+2024-05-16T00:43:07.160532 pause radix
+2024-05-16T00:43:09.703503 unpause radix
+2024-05-16T00:43:09.704473 update_cores memcached [0]
+2024-05-16T00:43:09.845654 update_cores memcached [0,1]
+2024-05-16T00:43:10.676437 pause radix
+2024-05-16T00:43:28.948463 unpause radix
+2024-05-16T00:43:28.949160 update_cores memcached [0]
+2024-05-16T00:43:29.324644 update_cores memcached [0,1]
+2024-05-16T00:43:29.347354 pause radix
+2024-05-16T00:43:30.368947 unpause radix
+2024-05-16T00:43:30.369950 update_cores memcached [0]
+2024-05-16T00:43:31.332651 update_cores memcached [0,1]
+2024-05-16T00:43:31.711288 pause radix
+2024-05-16T00:43:32.260586 unpause radix
+2024-05-16T00:43:32.261367 update_cores memcached [0]
+2024-05-16T00:43:33.240103 update_cores memcached [0,1]
+2024-05-16T00:43:33.273639 pause radix
+2024-05-16T00:43:34.281668 unpause radix
+2024-05-16T00:43:34.283179 update_cores memcached [0]
+2024-05-16T00:43:35.249267 update_cores memcached [0,1]
+2024-05-16T00:43:35.278918 pause radix
+2024-05-16T00:43:36.279532 unpause radix
+2024-05-16T00:43:36.280617 update_cores memcached [0]
+2024-05-16T00:43:37.257176 update_cores memcached [0,1]
+2024-05-16T00:43:37.301628 pause radix
+2024-05-16T00:44:31.973260 end blackscholes
+2024-05-16T00:44:31.975980 custom scheduler done%3A+%28high%2C+1%29%2C+%28low%2C+0%29
+2024-05-16T00:44:32.259383 start canneal [3] 1
+2024-05-16T00:44:48.717469 unpause radix
+2024-05-16T00:44:48.718715 update_cores memcached [0]
+2024-05-16T00:44:53.694613 update_cores memcached [0,1]
+2024-05-16T00:44:53.738630 pause radix
+2024-05-16T00:44:54.738940 unpause radix
+2024-05-16T00:44:54.739939 update_cores memcached [0]
+2024-05-16T00:45:00.432458 end radix
+2024-05-16T00:45:00.432516 custom scheduler done%3A+%28high%2C+0%29%2C+%28low%2C+1%29
+2024-05-16T00:45:00.622815 update_cores memcached [0,1]
+2024-05-16T00:46:50.914573 end ferret
+2024-05-16T00:46:50.914651 custom scheduler done%3A+%28high%2C+1%29%2C+%28low%2C+0%29
+2024-05-16T00:46:51.233134 start freqmine [2] 2
+2024-05-16T00:49:08.327561 end canneal
+2024-05-16T00:49:08.327619 custom scheduler done%3A+%28high%2C+1%29%2C+%28low%2C+0%29
+2024-05-16T00:49:08.334116 custom freqmine upgraded+by+1+cores
+2024-05-16T00:49:08.358086 update_cores freqmine [2,3]
+2024-05-16T00:52:00.360051 end freqmine
+2024-05-16T00:52:00.360181 custom scheduler done%3A+%28high%2C+2%29%2C+%28low%2C+0%29
+2024-05-16T00:52:00.675244 end scheduler

@@ -4,6 +4,7 @@ from typing import List, cast, Tuple
 from os import getpid
 from psutil import cpu_percent
 import socket
+import traceback
 import subprocess
 import time
 import re
@@ -11,26 +12,17 @@ from math import floor
 from docker import from_env as docker_connect
 from docker.models.containers import Container
 from queue import Queue
-from threading import Thread
+from threading import Lock, Thread
 import psutil
 from scheduler_logger import SchedulerLogger, Job as JobKind
 
 # hyperparameters
-poll_interval = 0.01 # 10ms
-schedule_interval = 1 # 1s
-ms_interval = 0.1 # 100ms
-# number of consecutive abnormal readings required to trigger a reschedule
-reading_threshold = 0.4 # 40%
-consecutive_threshold_default = 2
-qps_threshold = 5000
-close_enough = 1000
-to_file = True
-keep_lqs = 4
-threads = 2
-max_qps_one_core = 27_000 # around 39939 
-stash_core = 3
+poll_interval = 0.10 # 100ms
+max_qps_one_core = 29_000
+max_cpu_threshold = 45 # out of 200
 
 ONE_S_IN_NS = 1e9
+ONE_S_IN_US = 1e6
 pull_images = False
 
 IMAGE_PER_JOB = {}
@@ -199,19 +191,15 @@ class CPUThread():
             return [tot0/n, tot1/n]
 
     def thread(self):
-        i = 0
         while not self._stop:
-            time.sleep(poll_interval)
-            # if i % 10 == 0:
-                # i = 0
+            # as recomended by psutil
+            time.sleep(0.1)
             self.read()
 
             if not self.qin.empty():
                 count = self.qin.get()
                 self.qout.put(self.avg(count))
                 self.qin.task_done()
-
-            # i += 1
 
     def get(self, readings=int(1/poll_interval)):
         self.qin.put(readings)
@@ -228,36 +216,30 @@ class CPUThread():
 p = psutil.Process(getpid())
 p.cpu_affinity([0])
 
-default_share = 1024
-HIGH_QUEUE: List[Tuple[JobKind, int, int]] = [
-    (JobKind.FREQMINE, 3, default_share),
-    (JobKind.CANNEAL, 3, default_share),
-    (JobKind.BLACKSCHOLES, 2, default_share),
-    (JobKind.FERRET, 4, default_share),
-    (JobKind.VIPS, 4, default_share)
+HIGH_QUEUE: List[Tuple[JobKind, int, float]] = [
+    (JobKind.FERRET, 1, None),
+    (JobKind.DEDUP, 1, None),
+    (JobKind.VIPS, 1, None),
+    (JobKind.BLACKSCHOLES, 1, None),
+    (JobKind.CANNEAL, 1, None),
+    (JobKind.FREQMINE, 2, None),
 ]
-LOW_QUEUE: List[Tuple[JobKind, int, int]] = [
-    (JobKind.RADIX, 1, default_share//2),
-    (JobKind.DEDUP, 1, default_share//2)
+LOW_QUEUE: List[Tuple[JobKind, int, float]] = [
+    (JobKind.RADIX, 1, .6),
 ]
-# HIGH_QUEUE = []
-# LOW_QUEUE = [JobKind.RADIX]
-
-MEMCACHED_CORES = [0]
 
 docker_client = docker_connect()
 
 class Job:
-    def __init__(self, logger: SchedulerLogger, job: JobKind, cores: List[int], threads: int, shares: int) -> None:
+    def __init__(self, logger: SchedulerLogger, job: JobKind, threads: int, cpu_percent: float) -> None:
         self.logger = logger
         self.job = job
         self.id = None
-        self.original_cores = cores
         self.threads = threads
-        self.shares = shares
+        self.cpu_percent = cpu_percent
 
-        self.cores = cores
-        self.update_cores(cores)
+        self.cores = None
+        self._done = False
 
     @property
     def container(self) -> Container | None:
@@ -266,13 +248,12 @@ class Job:
         else:
             return None
 
+    @property
+    def cores_str(self) -> str | None:
+        return ','.join([str(c) for c in self.cores]) if self.cores is not None else None
 
     @property
-    def cores_str(self) -> str:
-        return ','.join([str(c) for c in self.cores])
-
-    @property
-    def cores_list(self) -> List[int]:
+    def cores_list(self) -> List[int] | None:
         return self.cores
 
     def update_cores(self, cores: List[int]) -> None:
@@ -282,25 +263,34 @@ class Job:
         if self.container is not None:
             self.container.update(cpuset_cpus=self.cores_str)
             if prev_cores != self.cores:
-                self.logger.update_cores(self.job, self.cores_list)
+                self.logger.update_cores(self.job, cast(List[int], self.cores_list))
 
-    def run(self) -> None:
+    def run(self, cores: List[int]) -> None:
         if self.id is None:
             # the container has not been created yet
             image = IMAGE_PER_JOB[self.job]
             assert(image is not None)
+            self.cores = cores
+            ncores = len(cores)
+            opts = {
+                'cpuset_cpus': self.cores_str,
+            }
+            if self.cpu_percent is not None:
+                opts['cpu_period'] = int(ONE_S_IN_US*ncores)
+                opts['cpu_quota'] = int(ONE_S_IN_US*self.cpu_percent*ncores)
             container = cast(Container, docker_client.containers.run(
                 f"{image['name']}:{image['tag']}",
                 detach=True,
                 command=f"./run -a run -S {'parsec' if self.job != JobKind.RADIX else 'splash2x'} -p {self.job.value} -i native -n {self.threads}",
-                cpuset_cpus=self.cores_str,
-                cpu_shares=self.shares
+                **opts
             ))
             self.id = container.id
-            self.logger.job_start(self.job, self.cores_list, self.threads)
+            self.logger.job_start(self.job, cast(List[int], self.cores_list), self.threads)
 
     def done(self) -> None:
-        self.logger.job_end(self.job)
+        if not self._done:
+            self.logger.job_end(self.job)
+        self._done = True
 
     @property
     def status(self) -> str | None:
@@ -333,7 +323,6 @@ class Job:
             raise Exception("tried to pause an unstarted container: ", self.job)
 
         if not self.finished and not self.paused:
-            self.update_cores([stash_core])
             container.pause()
             self.logger.job_pause(self.job)     
 
@@ -343,30 +332,29 @@ class Job:
             raise Exception("tried to unpause an unstarted container: ", self.job)
 
         if not self.finished and self.paused:
-            self.update_cores(self.original_cores)
             container.unpause()
             self.logger.job_unpause(self.job)
             
 class CoreQueue:
-    def __init__(self, logger: SchedulerLogger, cores: List[int], concurrent: int) -> None:
+    def __init__(self, logger: SchedulerLogger, cores: List[int]) -> None:
         self.logger = logger
         self.cores = cores
-        self.concurrent = concurrent
         self.q = cast(Queue[Job], Queue())
-        self.r = cast(List[Job], [])
+        self.r = cast(List[Job | None], [None for _ in cores])
 
-    def append(self, jobs: List[Tuple[JobKind, int, int]]) -> None:
+    def append(self, jobs: List[Tuple[JobKind, int, float]]) -> None:
         for (jk, threads, shares) in jobs:
-            self.q.put(Job(self.logger, jk, self.cores, threads, shares))
+            self.q.put(Job(self.logger, jk, threads, shares))
 
     @property
-    def current(self) -> List[Job]:
+    def current(self) -> List[Tuple[int, Job]]:
         # sanity check
-        for j in self.r:
+        jobs = [(i,j) for i, j in enumerate(self.r) if j is not None]
+        for _, j in jobs:
             if not j.created:
                 raise Exception("Job in running list doesn't have an associated container")
 
-        return self.r
+        return jobs
 
     @property
     def empty(self) -> bool:
@@ -374,91 +362,129 @@ class CoreQueue:
 
     @property
     def running(self) -> List[Job]:
-        return [j for j in self.current if not j.paused]
+        return [j for _, j in self.current if not j.paused]
 
     @property
     def paused(self) -> List[Job]:
-        return [j for j in self.current if j.paused]
+        return [j for _, j in self.current if j.paused]
 
     @property
     def done(self) -> bool:
-        return len(self.r) == 0 and self.q.empty()
+        return len([j for j in self.current if j is not None]) == 0 and self.q.empty()
+
+    @property
+    def free_space(self) -> int:
+        return len(self.cores) - len(self.current)
 
     @property
     def has_space(self) -> bool:
         return self.q.empty() and self.free_space > 0
 
-    @property
-    def free_space(self) -> int:
-        return self.concurrent - len(self.r)
+    def cores_per_job(self, job: Job) -> List[int]:
+        return [self.cores[i] for i,j in self.current if j == job]
+
+    def next_pos(self) -> int | None:
+        available_indexes = [i for i, e in enumerate(self.r) if e is None]
+        return available_indexes[0] if len(available_indexes) > 0 else None
+
+    def insert(self, job: Job):
+        i = self.next_pos()
+        if i is None:
+            raise Exception("Tried inserting a job in a queue with no empty space")
+        self.r[i] = job
+        return i
 
     def fill(self) -> List[Job]:
         new = []
-        while len(self.current) < self.concurrent and not self.q.empty():
+        while self.free_space > 0 and not self.q.empty():
             job = self.q.get()
-            self.r.append(job)
-            new.append(job)
-            job.original_cores = self.cores
-            job.update_cores(self.cores)
+            pos = self.next_pos()
+            assert pos is not None
+            core = self.cores[pos]
             if not job.created:
-                job.run()
+                job.run([core])
             elif job.paused:
+                job.update_cores([core])
                 job.unpause()
+            elif job.finished:
+                job.done()
+                self.q.task_done()
+                continue
+            new.append(job)
+            self.insert(job)
             self.q.task_done()
         return new
     
     def reap(self) -> List[Job]:
-        done = [j for j in self.current if j.finished]
-        for j in reversed(self.current):
-            if j in done:
-                j.done()
-                self.r.remove(j)
-        return done
+        done_list = [j for _, j in self.current if j.finished]
+        for j in done_list:
+            self.remove(j)
+            j.done()
+
+        return [j for j in done_list]
+
+    def remove(self, j: Job) -> None:
+        ii = [i for i, jj in self.current if jj == j]
+        for i in ii:
+            self.r[i] = None
 
     def disown(self) -> Job:
+        job = None
         if not self.q.empty():
             job = self.q.get()
             self.q.task_done()
+        elif len(self.current) > 0:
+            _, job = self.current[0]
+            self.remove(job)
+
+        if job is not None:
+            self.logger.custom_event(job.job, f"disowned from q: {','.join(map(str, self.cores))}")
             return job
-
-        for j in self.current:
-            self.r.remove(j)
-            return j
-
         raise Exception("No jobs to disown")
+
+    def upgade(self, job: Job, cores: int) -> None:
+        jobi = [i for i, j in self.current if j == job]
+        if len(jobi) <= 0:
+            raise Exception("Tried to upgrade a job which is not currently running")
+
+        jobi = jobi[0]
+        # also handles if the job is already in this CoreQueue
+        max_cores = min(cores, len([j for j in self.r if j is None or j != job]))
+        self.logger.custom_event(job.job, f"upgraded by {max_cores} cores")
+        for _ in range(max_cores):
+            self.insert(job)
+        job.update_cores(self.cores_per_job(job))
 
     def own(self, job: Job) -> None:
         self.q.put(job)
 
 class Scheduler:
-    msgq = Queue()
     _stop = False
 
     def __init__(self):
         self.ct = CPUThread()
         self.mt = MemcachedThread()
-        self.logger = SchedulerLogger(to_file)
+        self.logger = SchedulerLogger()
 
         self.memcached_pid = int(subprocess.check_output(["sudo", "systemctl", "show", "--property", "MainPID", "--value", "memcached"]))
-        self.memcached_cores = 2
+        self.memcached_cores_list = None
         self.scheduler_pid = getpid()
         self.logger.custom_event(JobKind.SCHEDULER, f"memcached pid={self.memcached_pid}")
         self.logger.custom_event(JobKind.SCHEDULER, f"scheduler pid={self.memcached_pid}")
 
-        self.highq = CoreQueue(self.logger, [2,3], 2)
+        self.highq = CoreQueue(self.logger, [2,3])
         self.highq.append(HIGH_QUEUE)
-        self.lowq = CoreQueue(self.logger, [1], 1)
+        self.lowq = CoreQueue(self.logger, [1])
         self.lowq.append(LOW_QUEUE)
-        self.unstable(0, 0)
+        self._stable = False
+        self._qps = 100000
 
         self.t = Thread(target=self.thread)
         self.t.daemon = True
         self.t.start()
-
         # don't run this script alongside memcached
         self.set_affinity(self.scheduler_pid, [2,3])
-        self.set_affinity(self.memcached_cores, [0,1])
-        self.logger.update_cores(JobKind.MEMCACHED, [0,1])
+        self.memcached_cores([0,1])
 
     def set_affinity(self, pid: int, affinity: List[int]) -> None:
         proc = psutil.Process(pid)
@@ -466,54 +492,59 @@ class Scheduler:
         for t in proc.threads():
             psutil.Process(t.id).cpu_affinity(affinity)
 
+    def memcached_cores(self, cores: List[int]) -> None:
+        if self.memcached_cores_list != cores:
+            self.memcached_cores_list = cores
+            self.set_affinity(self.memcached_pid, self.memcached_cores_list)
+            self.logger.update_cores(JobKind.MEMCACHED, self.memcached_cores_list)
+
     def thread(self):
         i = 0
-        stable = False
         qps = 100_000
         while not self._stop:
             try:
                 time.sleep(poll_interval)
-                if not self.msgq.empty():
-                    action, data = self.msgq.get()
-                    if action == 'stable':
-                        stable = True
-                        qps = data
-                    elif action == 'unstable':
-                        stable = False
-                        curr, _qps = data
-                        qps = max(curr, _qps)
-                    else:
-                        print('unkown action', action)
-                    self.msgq.task_done()
 
-                [core0, core1] = self.ct.get(25)
-                unpause_lowq = qps < max_qps_one_core and (core0+core1) < 45
-                if stable and unpause_lowq:
+                [core0, core1] = self.ct.get(1)
+                unpause_lowq = self._qps < max_qps_one_core and (core0+core1) < 45 and not self.lowq.done
+                if self._stable and unpause_lowq:
                     for j in self.lowq.paused:
                         j.unpause()
+                    self.memcached_cores([0])
                 else:
+                    self.memcached_cores([0,1])
                     for j in self.lowq.running:
                         j.pause()
 
-                if i % 10 == 0:
+                # Every 200ms, update the queues
+                if i % 2 == 0:
                     i = 0
                     highq_done = self.highq.reap()
                     lowq_done = self.lowq.reap()
                     if len(highq_done) > 0 or len(lowq_done) > 0:
-                        self.logger.custom_event(JobKind.MEMCACHED, f"Some jobs are done: (high, {len(highq_done)}), (low, {len(lowq_done)})")
+                        self.logger.custom_event(JobKind.SCHEDULER, f"done: (high, {len(highq_done)}), (low, {len(lowq_done)})")
 
                     self.highq.fill()
                     self.lowq.fill()
 
+                    # shift jobs from the lowq to the highq
                     if self.highq.has_space and not self.lowq.done:
-                        self.logger.custom_event(JobKind.MEMCACHED, f"Free space in high priority queue. Moving {self.highq.free_space} jobs there")
+                        self.logger.custom_event(JobKind.SCHEDULER, f"moving {self.highq.free_space} jobs to highq")
                         # move (up to) two jobs from the lowq to the highq
                         for _ in range(self.highq.free_space):
                             job = self.lowq.disown()
                             self.highq.own(job)
 
+                    # give as many cores as possible to the jobs in the highq if
+                    # there's only one (self.highq.has_space implies that there
+                    # is only one)
+                    if self.highq.has_space and not self.highq.done:
+                        _, job = self.highq.current[0]
+                        self.highq.upgade(job, 2)
+
                 i += 1
-            except:
+            except Exception:
+                traceback.print_exc()
                 continue
 
     @property
@@ -521,12 +552,14 @@ class Scheduler:
         return self.highq.done and self.lowq.done
 
     def stable(self, qps: int):
-        self.logger.custom_event(JobKind.SCHEDULER, f"stable ({qps} QPS)")
-        self.msgq.put(('stable', qps))
+        print(f"stable ({qps} QPS)")
+        self._stable = True
+        self._qps = qps
 
     def unstable(self, qps: int, curr: int):
-        self.logger.custom_event(JobKind.SCHEDULER, f"unstable (CURR {curr} - {qps} QPS)")
-        self.msgq.put(('unstable', (curr, qps)))
+        print(f"unstable (CURR {curr} - {qps} QPS)")
+        self._stable = False
+        self._qps = max(qps, curr)
 
     def stop(self):
         self._stop = True
@@ -539,27 +572,25 @@ scheduler = Scheduler()
 mt = scheduler.mt
 
 # every 50ms
-sleep_interval = 5*poll_interval
 stable = False
 i = 0
+notify_scheduler_every = 2 # * 75ms
 while True:
-    time.sleep(sleep_interval)
-    curr = mt.do('last_measurements', int(sleep_interval//poll_interval))
-    qps = mt.do('qps')
-    # if abs(curr - qps) > qps_threshold:
+    time.sleep(0.075)
+    # take the last 400ms
+    curr = mt.stats.last_measurements(4)
+    qps = mt.stats.last_measurements(1/poll_interval)
     if abs(curr - qps)/max(1,max(curr, qps)) > 0.3:
         if stable:
             stable = False
-            # print('unstable', qps, curr)
             scheduler.unstable(qps, curr)
     else:
         not_stable_before = not stable
         stable = True
-        if not_stable_before or i % 10 == 0:
-            # print('stable', qps)
+        if not_stable_before or i % notify_scheduler_every == 0:
             scheduler.stable(qps)
 
-        if i > 10:
+        if i > notify_scheduler_every:
             i = 0
 
     if scheduler.done:
